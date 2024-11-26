@@ -108,7 +108,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Instructional
 
 Assemble the circuit as shown in the below image. 
-![Circuit Fritz](Fritz.png)
+![Circuit Fritz](Team13Photos/Fritz.png)
 Make sure to attach the cathode of the battery to the voltage divider *AND* to the ground pin of the ESP32!
 
 ## Part 02: Writing the Code
@@ -218,7 +218,7 @@ Circuit setup should look similar to the image above.
 
 ### Arduino Ouput
 
-![Sample Output](Team13Photos\Arduino_output.png)
+![Sample Output](Team13Photos/Arduino_output.png)
 
 Your Arduino output should print this several times (your voltage percentage may differ depending on battery).
 ### Analysis
