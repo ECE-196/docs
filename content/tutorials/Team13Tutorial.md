@@ -108,7 +108,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Instructional
 
 Assemble the circuit as shown in the below image. 
-<img src="Fritz.png" alt="Circuit Fritz"> </img>
+![Circuit Fritz](Fritz.png)
 Make sure to attach the cathode of the battery to the voltage divider *AND* to the ground pin of the ESP32!
 
 ## Part 02: Writing the Code
@@ -212,13 +212,13 @@ Overall this function should provide us with real-time battery status.
 ## Final Circuit Image
 
 
-<img src="Team13Photos\Final_circuit_Image.jpg" alt="Photo of real-life completed circuit"> </img>
+![Photo of Real-Life Completed Circuit](Team13Photos\Final_circuit_Image.jpg)
 
 Circuit setup should look similar to the image above.
 
 ### Arduino Ouput
 
-<img src="Team13Photos\Arduino_output.png" alt="Sample Output"> </img>
+![Sample Output](Team13Photos\Arduino_output.png)
 
 Your Arduino output should print this several times (your voltage percentage may differ depending on battery).
 ### Analysis
