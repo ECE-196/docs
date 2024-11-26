@@ -7,7 +7,7 @@ authors:
   - name: William Luong
 ---
 
-<img src="BatteryCharged.jpg" alt="[Circuit Fritz](https://www.vectorstock.com/royalty-free-vector/fully-charged-battery-color-icon-vector-28877489)"> </img>
+<img src="Team13Photos\BatteryCharged.jpg" alt="[Circuit Fritz](https://www.vectorstock.com/royalty-free-vector/fully-charged-battery-color-icon-vector-28877489)"> </img>
 
 ## Introduction
 
