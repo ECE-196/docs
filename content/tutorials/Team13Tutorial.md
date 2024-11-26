@@ -139,7 +139,7 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
 Another goal of the project is to integrate both hardware and software to create a simple battery indicator system using the ESP32 microcontroller.
 Let's take a dive into the indvidual blocks of code. 
 
-```
+```C
 {
   const int batteryPin = 1;
   const float referenceVoltage = 3.3;
@@ -155,7 +155,7 @@ Let's take a dive into the indvidual blocks of code.
 - `voltageDividerRatio` the scaling factor of the voltage divider
 - `maxBatt` and `minBatt` defines the battery's voltage range. 
 
-```
+```C
 {
   float readBatteryVoltage() {
     int rawADC = analogRead(?)
@@ -173,7 +173,7 @@ Fill out the code function that calculates the battery voltage.
   - mulitply this fraction by the reference voltage.
 - `batteryVoltage` After finding the voltageAtPin how can we find the actual battery voltage (Hint: remember the scaling factor).
 
-```
+```C
 {
   void setup() {
     Serial.begin(115200);
@@ -185,7 +185,7 @@ Fill out the code function that calculates the battery voltage.
 - `Serial.begin(115200)` sets up communication with the serial monitor for real-time data output.
 - `pinMode` This should configures the ADC pin as an input to read the voltage of the circuit.
 
-```
+```C
 {
   void loop() {
     float batteryVoltage = readBatteryVoltage();
