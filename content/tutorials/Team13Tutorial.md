@@ -140,28 +140,32 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
 Another goal of the project is to integrate both hardware and software to create a simple battery indicator system using the ESP32 microcontroller.
 Let's take a dive into the indvidual blocks of code. 
 
-<pre><code class = "language-arduino"> //Constants
+```
+{
   const int batteryPin = 1;
   const float referenceVoltage = 3.3;
   const int resolution = 3950;
   const float voltageDividerRatio = 2.0;
   const float maxBatt = 4.2;
   const float minBatt = 3;
-</code></pre>
+}
+```
 - `batteryPin` is the analog pin connected to the voltage divider's output
 - `referenceVoltage` is the maximum voltage the ADC can read. (normally it's 3.3V for the ESP32)
 - `resolution` defines the ADC's bit resolution, which determines how anlog voltage is assigned to digital values
 - `voltageDividerRatio` the scaling factor of the voltage divider
 - `maxBatt` and `minBatt` defines the battery's voltage range. 
 
-<pre><code class = "language-arduino"> //Function to calculate battery voltage
+```
+{
   float readBatteryVoltage() {
     int rawADC = analogRead(?)
     float voltageAtPin = ?
     float batteryVoltage = ? 
     return batteryVoltage;
   }
-</code></pre>
+}
+```
 
 Fill out the code function that calculates the battery voltage.
 - `analogRead` captures the raw ADC value corresponding to the voltage at the ESP32 pin.
@@ -170,17 +174,20 @@ Fill out the code function that calculates the battery voltage.
   - mulitply this fraction by the reference voltage.
 - `batteryVoltage` After finding the voltageAtPin how can we find the actual battery voltage (Hint: remember the scaling factor).
 
-<pre><code class = "language-arduino"> //setup
+```
+{
   void setup() {
     Serial.begin(115200);
     pinMode(?);
   }
-</code></pre>
+}
+```
 
 - `Serial.begin(115200)` sets up communication with the serial monitor for real-time data output.
 - `pinMode` This should configures the ADC pin as an input to read the voltage of the circuit.
 
-<pre><code class = "language-C"> //loop
+```
+{
   void loop() {
     float batteryVoltage = readBatteryVoltage();
     Serial.print("Battery Voltage: ");
@@ -194,7 +201,8 @@ Fill out the code function that calculates the battery voltage.
 
     delay(10000);
   }
-</code></pre>
+}
+```
 - The loop continously monitors and outputs the battery's state:
 - `readBatteryVoltage()` gets the current battery voltage
 - `Serial.print` displays the voltage in the serial monitor
