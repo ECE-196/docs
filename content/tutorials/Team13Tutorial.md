@@ -7,8 +7,7 @@ authors:
   - name: William Luong
 ---
 
-<img src="Team13Photos\BatteryCharged.jpg" alt="[Circuit Fritz](https://www.vectorstock.com/royalty-free-vector/fully-charged-battery-color-icon-vector-28877489)"> </img>
-
+![Battery](Team13Photos/BatteryCharged.jpg) 
 ## Introduction
 
 This tutorial will teach readers how to use ESP32's ADC pins to measure a battery's charge. Since the ADC pins can take in a max of 3.3V, we will be covering how to implement a voltage divider to lower the maximum voltage of a battery to an amount allowed by the ESP32. For the coding section, we will use the Arduino IDE to write code that will read, display, and convert the battery readings to a charge percentage using a function.
