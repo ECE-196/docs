@@ -49,7 +49,7 @@ We will be using the Arduino IDE (Integrated Development Environment). This is a
 
 ### Required Downloads and Installations
 
-If you don't have the Arduino IDE already, download it <a href="https://www.arduino.cc/en/software"><here>here.</a>
+If you don't have the Arduino IDE already, download it [here](https://www.arduino.cc/en/software).
 
 ### Required Components
 
@@ -241,4 +241,4 @@ We would need to change the voltage divider for a 12V battery because 12V/2 is 6
 
 ### Useful links
 
-<a href="https://www.monolithicpower.com/learning/resources/an-introduction-to-batteries-components-parameters-types-and-chargers"><here>Website that tells the nominal voltage and voltage range of many batteries.</a>
+[Website that tells the nominal voltage and voltage range of many batteries.](https://www.monolithicpower.com/learning/resources/an-introduction-to-batteries-components-parameters-types-and-chargers)
