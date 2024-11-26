@@ -92,7 +92,7 @@ about the technical skills
 If you've taken a look at the battery we gave you, you might notice that it says 3.7V on it. The maximum voltage input for the ESP32 is 3.3V, so we need to find a way to decrease the voltage from the battery, we can do this with a <b>voltage divider</b>.
 
 A voltage divider is a passive linear circuit made up of two resistors, although sometimes more are used to get a specific resistance value. 
-<img src = "voltagedivider.png" alt="Voltage Divider Schematic and Equation"> 
+<img src = "Team13Photos\voltagedivider.png" alt="Voltage Divider Schematic and Equation"> 
 
 We have given you two 47kΩ resistors, so the output voltage will be 3.7V * 47kΩ/(47kΩ + 47kΩ) = 1.85V. 
 
@@ -205,13 +205,13 @@ Overall this function should provide us with real-time battery status.
 ## Final Circuit Image
 
 
-<img src="Final_circuit_Image.jpg" alt="Photo of real-life completed circuit"> </img>
+<img src="Team13Photos\Final_circuit_Image.jpg" alt="Photo of real-life completed circuit"> </img>
 
 Circuit setup should look similar to the image above.
 
 ### Arduino Ouput
 
-<img src="Arduino_output.png" alt="Sample Output"> </img>
+<img src="Team13Photos\Arduino_output.png" alt="Sample Output"> </img>
 
 Your Arduino output should print this several times (your voltage percentage may differ depending on battery).
 ### Analysis
