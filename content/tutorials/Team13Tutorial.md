@@ -7,8 +7,7 @@ authors:
   - name: William Luong
 ---
 
-<img src="BatteryCharged.jpg" alt="[Circuit Fritz](https://www.vectorstock.com/royalty-free-vector/fully-charged-battery-color-icon-vector-28877489)"> </img>
-
+![Battery](Team13Photos/BatteryCharged.jpg) 
 ## Introduction
 
 This tutorial will teach readers how to use ESP32's ADC pins to measure a battery's charge. Since the ADC pins can take in a max of 3.3V, we will be covering how to implement a voltage divider to lower the maximum voltage of a battery to an amount allowed by the ESP32. For the coding section, we will use the Arduino IDE to write code that will read, display, and convert the battery readings to a charge percentage using a function.
@@ -50,7 +49,7 @@ We will be using the Arduino IDE (Integrated Development Environment). This is a
 
 ### Required Downloads and Installations
 
-If you don't have the Arduino IDE already, download it <a href="https://www.arduino.cc/en/software"><here>here.</a>
+If you don't have the Arduino IDE already, download it [here](https://www.arduino.cc/en/software).
 
 ### Required Components
 
@@ -92,7 +91,7 @@ about the technical skills
 If you've taken a look at the battery we gave you, you might notice that it says 3.7V on it. The maximum voltage input for the ESP32 is 3.3V, so we need to find a way to decrease the voltage from the battery, we can do this with a <b>voltage divider</b>.
 
 A voltage divider is a passive linear circuit made up of two resistors, although sometimes more are used to get a specific resistance value. 
-<img src = "voltagedivider.png" alt="Voltage Divider Schematic and Equation"> 
+![Voltage Divider Schematic and Equation](Team13Photos/voltagedivider.png)
 
 We have given you two 47kΩ resistors, so the output voltage will be 3.7V * 47kΩ/(47kΩ + 47kΩ) = 1.85V. 
 
@@ -109,7 +108,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Instructional
 
 Assemble the circuit as shown in the below image. 
-<img src="Fritz.png" alt="Circuit Fritz"> </img>
+![Circuit Fritz](Team13Photos/Fritz.png)
 Make sure to attach the cathode of the battery to the voltage divider *AND* to the ground pin of the ESP32!
 
 ## Part 02: Writing the Code
@@ -140,28 +139,32 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
 Another goal of the project is to integrate both hardware and software to create a simple battery indicator system using the ESP32 microcontroller.
 Let's take a dive into the indvidual blocks of code. 
 
-<pre><code class = "language-arduino"> //Constants
+```
+{
   const int batteryPin = 1;
   const float referenceVoltage = 3.3;
   const int resolution = 3950;
   const float voltageDividerRatio = 2.0;
   const float maxBatt = 4.2;
   const float minBatt = 3;
-</code></pre>
+}
+```
 - `batteryPin` is the analog pin connected to the voltage divider's output
 - `referenceVoltage` is the maximum voltage the ADC can read. (normally it's 3.3V for the ESP32)
 - `resolution` defines the ADC's bit resolution, which determines how anlog voltage is assigned to digital values
 - `voltageDividerRatio` the scaling factor of the voltage divider
 - `maxBatt` and `minBatt` defines the battery's voltage range. 
 
-<pre><code class = "language-arduino"> //Function to calculate battery voltage
+```
+{
   float readBatteryVoltage() {
     int rawADC = analogRead(?)
     float voltageAtPin = ?
     float batteryVoltage = ? 
     return batteryVoltage;
   }
-</code></pre>
+}
+```
 
 Fill out the code function that calculates the battery voltage.
 - `analogRead` captures the raw ADC value corresponding to the voltage at the ESP32 pin.
@@ -170,17 +173,20 @@ Fill out the code function that calculates the battery voltage.
   - mulitply this fraction by the reference voltage.
 - `batteryVoltage` After finding the voltageAtPin how can we find the actual battery voltage (Hint: remember the scaling factor).
 
-<pre><code class = "language-arduino"> //setup
+```
+{
   void setup() {
     Serial.begin(115200);
     pinMode(?);
   }
-</code></pre>
+}
+```
 
 - `Serial.begin(115200)` sets up communication with the serial monitor for real-time data output.
 - `pinMode` This should configures the ADC pin as an input to read the voltage of the circuit.
 
-<pre><code class = "language-C"> //loop
+```
+{
   void loop() {
     float batteryVoltage = readBatteryVoltage();
     Serial.print("Battery Voltage: ");
@@ -194,7 +200,8 @@ Fill out the code function that calculates the battery voltage.
 
     delay(10000);
   }
-</code></pre>
+}
+```
 - The loop continously monitors and outputs the battery's state:
 - `readBatteryVoltage()` gets the current battery voltage
 - `Serial.print` displays the voltage in the serial monitor
@@ -205,13 +212,13 @@ Overall this function should provide us with real-time battery status.
 ## Final Circuit Image
 
 
-<img src="Final_circuit_Image.jpg" alt="Photo of real-life completed circuit"> </img>
+![Photo of Real-Life Completed Circuit](Team13Photos/Final_circuit_Image.jpg)
 
 Circuit setup should look similar to the image above.
 
 ### Arduino Ouput
 
-<img src="Arduino_output.png" alt="Sample Output"> </img>
+![Sample Output](Team13Photos/Arduino_output.png)
 
 Your Arduino output should print this several times (your voltage percentage may differ depending on battery).
 ### Analysis
@@ -234,4 +241,4 @@ We would need to change the voltage divider for a 12V battery because 12V/2 is 6
 
 ### Useful links
 
-<a href="https://www.monolithicpower.com/learning/resources/an-introduction-to-batteries-components-parameters-types-and-chargers"><here>Website that tells the nominal voltage and voltage range of many batteries.</a>
+[Website that tells the nominal voltage and voltage range of many batteries.](https://www.monolithicpower.com/learning/resources/an-introduction-to-batteries-components-parameters-types-and-chargers)
