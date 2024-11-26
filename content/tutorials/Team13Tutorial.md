@@ -212,7 +212,7 @@ Overall this function should provide us with real-time battery status.
 ## Final Circuit Image
 
 
-![Photo of Real-Life Completed Circuit](Team13Photos\Final_circuit_Image.jpg)
+![Photo of Real-Life Completed Circuit](Team13Photos/Final_circuit_Image.jpg)
 
 Circuit setup should look similar to the image above.
 
