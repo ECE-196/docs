@@ -1,10 +1,9 @@
 ---
-title: Battery Indicator with ESP32
-date: 2024-11-21
+title: Building a gyroscope using MPU 6000
+date: 2024-12-4
 authors:
-  - name: Andy Tu
-  - name: Madeline Fruin
-  - name: William Luong
+  - name: Jiahao Han
+  - name: Ryan Sevidal
 ---
 
 ![Battery](Team13Photos/BatteryCharged.jpg) 
