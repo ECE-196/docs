@@ -54,6 +54,7 @@ We are going to use KiCad, so if you don't have it installed, click on either Ki
 List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
+| -------------- | --------- |
 | MPU-6000 module   |  1     |
 | LT1962-3.3 voltage regulator | 1  |
 |Capacitor (1µF)|     2     |
