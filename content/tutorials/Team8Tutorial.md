@@ -155,50 +155,11 @@ Fill out the code function that calculates the battery voltage.
   - mulitply this fraction by the reference voltage.
 - `batteryVoltage` After finding the voltageAtPin how can we find the actual battery voltage (Hint: remember the scaling factor).
 
-```C
-{
-  void setup() {
-  Wire.begin();
-  Serial.begin(?);
-  Wire.beginTransmission(?);
-  Wire.write(?);
-  Wire.write(?);
-  Wire.endTransmission();
-  }
-}
-```
-
-- `Serial.begin(115200)` sets up communication with the serial monitor for real-time data output.
-- `pinMode` This should configures the ADC pin as an input to read the voltage of the circuit.
-
-```C
-{
-  void loop() {
-    float batteryVoltage = readBatteryVoltage();
-    Serial.print("Battery Voltage: ");
-    Serial.print(batteryVoltage);
-    Serial.println(" V");
-
-    int battPercent = ((batteryVoltage-minBatt)/(maxBatt-minBatt))*100;
-    Serial.print("Battery Percentage: ");
-    Serial.print(battPercent);
-    Serial.println(" %");
-
-    delay(10000);
-  }
-}
-```
-- The loop continously monitors and outputs the battery's state:
-- `readBatteryVoltage()` gets the current battery voltage
-- `Serial.print` displays the voltage in the serial monitor
-- `battPercent` calculates the battery's percentage
-- `delay(10000)` pauses the loop for 10 seconds
 
 Overall this function should provide us with readings on orentation for all the axises listed.
 
 ### Arduino Ouput
 
-![Sample Output](Team13Photos/Arduino_output.png)
 
 Your Arduino output should print this several times (Your output may change with what position it is currently in).
 ### Analysis
@@ -207,15 +168,11 @@ The example uses an ESP32 and a MPU 6000 to measure orientation of x y and z pla
 
 ## Challenge Questions
 
-How would this change if we were using a 4.2V 18650 battery? Would you need to change either of the values of the voltage divider or just the code? 
 
-What about a 12V battery?
 
 ### Challenge Answers
 
-We would not need to change the voltage divider for a 4.2V battery because 4.2V/2 is 2.1V, which is under the maximum that the board can take in. We would only need to change the minBatt and maxBatt values in the code.
 
-We would need to change the voltage divider for a 12V battery because 12V/2 is 6V, which is nearly double what the board can take in! We could choose R1 = 300kΩ and R2 = 100kΩ to get 1/4 of 12V, or 3V. We would have to change our maxBatt, minBatt, *and VoltageDividerRatio* in the code.
 
 ## Additional Resources
 
