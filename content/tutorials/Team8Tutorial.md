@@ -105,7 +105,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Instructional
 
 Assemble the circuit as shown in the below image. 
-![below image](Team13Photos/Screen Shot 2024-12-04 at 4.59.05 PM.png)
+![below image](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%204.59.05%20PM.png)
 
 ## Part 02: Writing the Code
 
