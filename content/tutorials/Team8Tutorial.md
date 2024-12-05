@@ -97,6 +97,10 @@ After wiring, we need to get it to the PCB editor. Make sure that everything con
 Once you have checked the wiring of the PCB, we need to render it into a 3D model. First, we need to apply edge cuts to the circuit. Making a box and clicking 'A' will make those edge cuts. Then go back into F copper, and make sure you set it to ground. After you have filled it in, using a Mac, type both option + 3, then it will have a 3d rendering. Like below
 ![image 3d](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%206.40.04%20PM.png)
 
+After creating the board and printing it. Now we have to get the other parts on it. Including the MPU Chip, make sure to place them in the right orientation for each one. Use the schematic or 3d rendering above to properly place the components.
+
+Make sure to test it with a 3.3V to 5V test to make sure it can connect.
+
 ## Part 02: Writing the Code
 
 ### Introduction
