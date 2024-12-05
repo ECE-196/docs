@@ -117,24 +117,15 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
 
 ### Instructional
 
-Another goal of the project is to integrate both hardware and software to create a  system using the ESP32 microcontroller.
-Let's take a dive into the indvidual blocks of code. 
+Another goal of the project is to integrate both hardware and software to create a system using the ESP32 microcontroller.
+Let's first take a look on what to implent in the code
 
 ```C
 {
-  const int batteryPin = 1;
-  const float referenceVoltage = 3.3;
-  const int resolution = 3950;
-  const float voltageDividerRatio = 2.0;
-  const float maxBatt = 4.2;
-  const float minBatt = 3;
+  #include <Wire.h>
 }
 ```
-- `batteryPin` is the analog pin connected to the voltage divider's output
-- `referenceVoltage` is the maximum voltage the ADC can read. (normally it's 3.3V for the ESP32)
-- `resolution` defines the ADC's bit resolution, which determines how anlog voltage is assigned to digital values
-- `voltageDividerRatio` the scaling factor of the voltage divider
-- `maxBatt` and `minBatt` defines the battery's voltage range. 
+- `<Wire.h>` includes functions in the Wire class
 
 ```C
 {
@@ -157,8 +148,12 @@ Fill out the code function that calculates the battery voltage.
 ```C
 {
   void setup() {
-    Serial.begin(115200);
-    pinMode(?);
+  Wire.begin();
+  Serial.begin(?);
+  Wire.beginTransmission(?);
+  Wire.write(?);
+  Wire.write(?);
+  Wire.endTransmission();
   }
 }
 ```
@@ -195,10 +190,10 @@ Overall this function should provide us with readings on orentation for all the 
 
 ![Sample Output](Team13Photos/Arduino_output.png)
 
-Your Arduino output should print this several times (your voltage percentage may differ depending on battery).
+Your Arduino output should print this several times (Your output may change with what position it is currently in).
 ### Analysis
 
-The example uses an ESP32 and a voltage divider to measure a battery's state of charge. This circuit demostrates the core concepts like ADC functionality and Arduino coding. The voltage divder lowers the battery voltage(3.7V to 1.85V) to a safe level for the ESP32 to read. Once the circuit is connected on the breadboard and linked to the ESP32, the Arduino code will adjust for the voltage scaling to calculate and provide an ouput of both the actual voltage and charge percentage. You can see how this employs the concepts of circuit design and programming with the readBatteryVoltage function by converting ADC readings into functional voltage data. The serial monitor should output real-time voltage and it helps validate the system's accuracy. 
+The example uses an ESP32 and a MPU 6000 to measure orientation of x y and z plane, and also collecting the rotational direction x y and z. This circuit demostrates the core concepts like pin compatability and Arduino coding. The board relays the information to the microcontroller, and process that data to a safe level for the ESP32 to read. Once the circuit is connected on and linked to the ESP32, the Arduino code will measure x y and z plane of orientation, and the rotational direction x y and z scalars to calculate and provide an ouput of both the orientation and rotational directions. You can see how this employs the concepts of circuit design and programming with the writing and reading before converting it to data to output back to the Serial monitor.
 
 ## Challenge Questions
 
