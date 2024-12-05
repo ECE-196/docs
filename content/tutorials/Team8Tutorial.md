@@ -73,16 +73,7 @@ The data sheet provides some insight on what attaches where. You might have noti
 The technical skills learned/needed
 in this challenge. There is no need to go into detail as a
 separation document should be prepared to explain more in depth
-about the technical skills
-
-If you've taken a look at the battery we gave you, you might notice that it says 3.7V on it. The maximum voltage input for the ESP32 is 3.3V, so we need to find a way to decrease the voltage from the battery, we can do this with a <b>voltage divider</b>.
-
-A voltage divider is a passive linear circuit made up of two resistors, although sometimes more are used to get a specific resistance value. 
-![LINK](Team13Photos/voltagedivider.png)
-
-We have given you two 47kΩ resistors, so the output voltage will be 3.7V * 47kΩ/(47kΩ + 47kΩ) = 1.85V. 
-
-Notice that our voltage divider halves the input voltage. To combat this division, we will need to remember to multiply our measured voltage by 2 (the reciprocal).
+about the technical skills.
 
 ### Components
 
