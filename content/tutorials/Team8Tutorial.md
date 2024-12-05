@@ -95,7 +95,7 @@ After wiring, we need to get it to the PCB editor. Make sure that everything con
 ![PCB image](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%206.39.43%20PM.png)
 
 Once you have checked the wiring of the PCB, we need to render it into a 3D model. Using a Mac, type both option + 3, then it will have a 3d rendering. Like som 
-![image 3d]()
+![image 3d](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%206.40.04%20PM.png)
 
 ## Part 02: Writing the Code
 
