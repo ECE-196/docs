@@ -57,7 +57,7 @@ List your required hardware components and the quantities here.
 | -------------- | --------- |
 | MPU-6000 module   |  1     |
 | LT1962-3.3 voltage regulator | 1  |
-|Capacitor (1µF)|     2     |
+|Capacitor (1µF)|     1     |
 | Capacitor (.01µF)  |     1     |
 | Capacitor (10µF)|     1     |
 |Capacitor (20µF) |     1     |
@@ -72,7 +72,7 @@ Computer, Arduino IDE, KiCad
 ### Introduction
 
 In this section, we will be discussing where each part should be wired to.
-The data sheet that is attached is the MPU 6000 [LINK]. 
+The data sheet that is attached is the MPU 6000 [LINK](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf). 
 
 ### Objective
 
@@ -97,7 +97,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 | -------------- | --------- |
 | MPU-6000 module   |  1     |
 | LT1962-3.3 voltage regulator | 1  |
-|Capacitor (1µF)|     2     |
+|Capacitor (1µF)|     1      |
 | Capacitor (.01µF)  |     1     |
 | Capacitor (10µF)|     1     |
 |Capacitor (20µF) |     1     |
