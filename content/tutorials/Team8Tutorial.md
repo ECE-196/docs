@@ -5,8 +5,6 @@ authors:
   - name: Jiahao Han
   - name: Ryan Sevidal
 ---
-
-![Battery](Team13Photos/BatteryCharged.jpg) 
 ## Introduction
 
 This tutorial will teach readers how to use the MPU 6000 to measure the x y and z axises to keep upright
@@ -19,29 +17,24 @@ This tutorial will teach readers how to use the MPU 6000 to measure the x y and 
 
 ### Background Information
 
-A battery indicator circuit measures the state of charge (SoC) of a battery and visually outputs whether the battery’s capacity is low or full. These circuits are commonly used in battery management systems, smartphones, and other consumer electronics.
+The MPU chip is primarily used in drones to keep their orientation stable, in your phones, or even in your controllers if you play on it. So, specifically we are trying to do it for drone purposes. We would first need to create the board creating a schematic, then further it by connecting that to a microcontroller that receives the data.
 
-Pros:
-1. Provides real-time feedback on battery life.
-2. Prevents damage to the battery by avoiding overcharging or over-discharging.
-3. Offers insights to maximize battery life and performance.
+What we're aiming for
+1. Making sure that our wiring can power the device on.
+2. Provides real-time feedback on where exactly the device is orientated.
 
-Cons:
-
-1. The more complex the circuit, the higher the cost (e.g., precise resistors may be required).
-2. Limited accuracy, as voltage alone isn’t the only factor that determines the charge state.
 
 Key Concepts:
 
-1. 
+1. Circuit Basics
 2. KiCad Basics
 3. Arduino Basics
 
 ## Getting Started
 
-You will receive an ESP32 board and USB-C to USB-C connector cable. The ESP32 board utilizes the ESP32 (obviously). The ESP32 is a system on a chip with Wifi and bluetooth capacbilities. This means that it can be used to make IoT projects(Internet of things). However, we will be using it very simply, you do not need to understand everything it can do for this tutorial.
+You will receive a MPU 6000 Chip that can connect to Arduino IDE
 
-You will also receive a breadboard, jumper cables, and resistors. The rows of the breadboard are connected while the columns are not. The resistors and jumper cables should fit snuggly into the holes of the breadboard. 
+You will also receive a capacitors, wires, and a LTI1962-3.3 voltage regulators. These will be important and maintaing stable voltage throughout the ciruit.
 
 We will be using the Arduino IDE (Integrated Development Environment). This is a free, open source program that allows users to write code and upload it to boards. 
 
@@ -111,7 +104,7 @@ Assemble the circuit as shown in the below image.
 
 ### Introduction
 
-In this section, we will be discussing the code used to measure the battery's percentage. 
+In this section, we will be discussing the code used to display the orientation it is facing. Printing out values that allign to 0, and axises that range from its max range to its negative max range.
 
 ### Objective
 
@@ -126,13 +119,14 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
 
 ### Components
 
-- ESP32 (with the circuit you just built attached)
+- ESP32 
 - USB-C to USB-C Connector cable for ESP32
+- MPU printed board from part 1
 - Your Computer
 
 ### Instructional
 
-Another goal of the project is to integrate both hardware and software to create a simple battery indicator system using the ESP32 microcontroller.
+Another goal of the project is to integrate both hardware and software to create a  system using the ESP32 microcontroller.
 Let's take a dive into the indvidual blocks of code. 
 
 ```C
@@ -204,13 +198,7 @@ Fill out the code function that calculates the battery voltage.
 - `battPercent` calculates the battery's percentage
 - `delay(10000)` pauses the loop for 10 seconds
 
-Overall this function should provide us with real-time battery status.
-## Final Circuit Image
-
-
-![Photo of Real-Life Completed Circuit](Team13Photos/Final_circuit_Image.jpg)
-
-Circuit setup should look similar to the image above.
+Overall this function should provide us with readings on orentation for all the axises listed.
 
 ### Arduino Ouput
 
@@ -237,4 +225,3 @@ We would need to change the voltage divider for a 12V battery because 12V/2 is 6
 
 ### Useful links
 
-[Website that tells the nominal voltage and voltage range of many batteries.](https://www.monolithicpower.com/learning/resources/an-introduction-to-batteries-components-parameters-types-and-chargers)
