@@ -9,14 +9,13 @@ authors:
 ![Battery](Team13Photos/BatteryCharged.jpg) 
 ## Introduction
 
-This tutorial will teach readers how to use ESP32's ADC pins to measure a battery's charge. Since the ADC pins can take in a max of 3.3V, we will be covering how to implement a voltage divider to lower the maximum voltage of a battery to an amount allowed by the ESP32. For the coding section, we will use the Arduino IDE to write code that will read, display, and convert the battery readings to a charge percentage using a function.
+This tutorial will teach readers how to use the MPU 6000 to measure the x y and z axises to keep upright
 
 ### Learning Objectives
 
-- Voltage Dividers
-- ESP32 ADC/GPIO Pins
+- MPU schematics and ways to utilize the chip
+- Schematic making, as well as using KiCad to 3d render 
 - Arduino C
-- Battery Charge State
 
 ### Background Information
 
@@ -34,8 +33,8 @@ Cons:
 
 Key Concepts:
 
-1. Voltage Divider
-2. Resistor Ratios with Multiple Batteries
+1. 
+2. KiCad Basics
 3. Arduino Basics
 
 ## Getting Started
@@ -48,7 +47,7 @@ We will be using the Arduino IDE (Integrated Development Environment). This is a
 
 ### Required Downloads and Installations
 
-If you don't have the Arduino IDE already, download it [here](https://www.arduino.cc/en/software).
+We are going to use KiCad, so if you don't have it installed, click on either KiCad. Now that we have it installed, below is a list of important components.
 
 ### Required Components
 
@@ -67,7 +66,7 @@ List your required hardware components and the quantities here.
 
 ### Required Tools and Equipment
 
-Computer, Arduino IDE
+Computer, Arduino IDE, KiCad
 
 ## Part 01: Setting up the Circuit
 
