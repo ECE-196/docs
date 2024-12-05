@@ -94,7 +94,7 @@ Assemble the circuit as shown in the below image.
 After wiring, we need to get it to the PCB editor. Make sure that everything connects together well.
 ![PCB image](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%206.39.43%20PM.png)
 
-Once you have checked the wiring of the PCB, we need to render it into a 3D model. Using a Mac, type both option + 3, then it will have a 3d rendering. Like below
+Once you have checked the wiring of the PCB, we need to render it into a 3D model. First, we need to apply edge cuts to the circuit. Making a box and clicking 'A' will make those edge cuts. Then go back into F copper, and make sure you set it to ground. After you have filled it in, using a Mac, type both option + 3, then it will have a 3d rendering. Like below
 ![image 3d](https://github.com/rsevidal/docs/blob/main/content/tutorials/Team13Photos/Screen%20Shot%202024-12-04%20at%206.40.04%20PM.png)
 
 ## Part 02: Writing the Code
