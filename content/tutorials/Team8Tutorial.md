@@ -55,13 +55,12 @@ List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
 | -------------- | --------- |
-|     ESP32      |     1     |
-| ESP32 Connector Cable | 1  |
-|Resistors (47kΩ)|     2     |
-| 18650 Battery  |     1     |
-| Battery Holder |     1     |
-|Mini Breadboard |     1     |
-| Jumper Cables  |     2     |
+| MPU-6000 module   |  1     |
+| LT1962-3.3 voltage regulator | 1  |
+|Capacitor (1µF)|     2     |
+| Capacitor (.01µF)  |     1     |
+| Capacitor (10µF)|     1     |
+|Capacitor (20µF) |     1     |
 
 
 ### Required Tools and Equipment
@@ -72,16 +71,13 @@ Computer, Arduino IDE, KiCad
 
 ### Introduction
 
-In this section, we will be discussing the voltage divider and circuit setup. We will not be writing any code, so a computer is not yet needed.
+In this section, we will be discussing where each part should be wired to.
+The data sheet that is attached is the MPU 6000 [LINK]. 
 
 ### Objective
 
-- Understand how to pick values for a voltage divider.
-- Understand how to properly connect the battery, resistors, and ESP32.
-
-### Background Information
-
-Give a brief explanation of the technical skills learned/needed
+The data sheet provides some insight on what attaches where. You might have noticed that 
+The technical skills learned/needed
 in this challenge. There is no need to go into detail as a
 separation document should be prepared to explain more in depth
 about the technical skills
@@ -97,11 +93,13 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 
 ### Components
 
-- Breadboard
-- Battery and Battery Holder
-- Resistors
-- ESP32
-- Jumper Cables
+| Component Name | Quanitity |
+| MPU-6000 module   |  1     |
+| LT1962-3.3 voltage regulator | 1  |
+|Capacitor (1µF)|     2     |
+| Capacitor (.01µF)  |     1     |
+| Capacitor (10µF)|     1     |
+|Capacitor (20µF) |     1     |
 
 ### Instructional
 
