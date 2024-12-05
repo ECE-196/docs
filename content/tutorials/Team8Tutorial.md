@@ -54,7 +54,6 @@ We are going to use KiCad, so if you don't have it installed, click on either Ki
 List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
-| -------------- | --------- |
 | MPU-6000 module   |  1     |
 | LT1962-3.3 voltage regulator | 1  |
 |Capacitor (1µF)|     2     |
@@ -94,6 +93,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Components
 
 | Component Name | Quanitity |
+| -------------- | --------- |
 | MPU-6000 module   |  1     |
 | LT1962-3.3 voltage regulator | 1  |
 |Capacitor (1µF)|     2     |
@@ -105,7 +105,6 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 
 Assemble the circuit as shown in the below image. 
 ![Circuit Fritz](Team13Photos/Fritz.png)
-Make sure to attach the cathode of the battery to the voltage divider *AND* to the ground pin of the ESP32!
 
 ## Part 02: Writing the Code
 
