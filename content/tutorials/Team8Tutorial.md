@@ -104,7 +104,7 @@ Notice that our voltage divider halves the input voltage. To combat this divisio
 ### Instructional
 
 Assemble the circuit as shown in the below image. 
-![Circuit Fritz](Team13Photos/Screen Shot 2024-12-04 at 4.59.05 PM.png)
+![content/tutorials/Team13Photos/Screen Shot 2024-12-04 at 4.59.05 PM.png]
 
 ## Part 02: Writing the Code
 
