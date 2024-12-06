@@ -3,6 +3,8 @@ title: Servos with ESP32 DevBoard
 date: 2024-12-06
 authors:
   - name: Andrew Lara
+  - name: Adrian Perea
+  - name: Adrian Mendoza
 ---
 
 ![Image of Servo](./Team5/Servo.webp)
