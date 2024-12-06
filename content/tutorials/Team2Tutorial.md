@@ -28,7 +28,8 @@ You should have the Arduino IDE and your preferred Python IDE already downloaded
 
 ### Required Downloads and Installations
 
-[Arduino IDE](https://www.arduino.cc/en/software)
+[Arduino IDE](https://www.arduino.cc/en/software)  
+
 [Visual Studio Code](https://code.visualstudio.com/download)
 
 ### Required Components
