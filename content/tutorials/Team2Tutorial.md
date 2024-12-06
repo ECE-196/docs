@@ -1,13 +1,18 @@
 
 ---
-# ESP32 Communication Over WiFi !
-by Anton John Del Mar, Daniel Chen, Peter Quawas
+title: ESP32 Communicaation Over WiFi !
+date: 2024-12-6
+authors:
+  name: Anton John Del Mar
+  name: Daniel Chen
+  name: Peter Quawas
+---
 
 <img src = "image-5.png" width = "590" height = "300" />  
 
 ## Introduction
 
-In this tutorial we will teach you how to use a pythion script to communicate with your ESP32! In a previous tutorial you learn how to send signals over the serial peripheral interface (SPI), now we will teach you how to send signals wirelessly. We hope this short simple tutorial can help kickstart your project so you don't have to tirelessly search online watching YouTube videos and reading forums like we did!
+In this tutorial we will teach you how to use a python script to communicate with your ESP32! In a previous tutorial you learn how to send signals over the serial peripheral interface (SPI), now we will teach you how to send signals wirelessly. We hope this short simple tutorial can help kickstart your project so you don't have to tirelessly search online watching YouTube videos and reading forums like we did!
 
 ### Learning Objectives
 
