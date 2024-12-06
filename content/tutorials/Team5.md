@@ -1,6 +1,6 @@
 ---
 title: Servos with ESP32 DevBoard
-date: 2024-12-6
+date: 2024-12-06
 authors:
   - name: Andrew Lara
 ---
@@ -45,11 +45,11 @@ PWM (Pulse Width Modulation) is a technique used to control devices like servos 
 2. **Duty Cycle**:
    - Represents the percentage of time the signal is HIGH in each cycle.
    - **Duty Cycle = Time HIGH (ms) / Time per cycle (ms) * 100**
-   - Example: 
+   - Example:
      - **1 ms HIGH** → 5% duty cycle (0° position).
      - **1.5 ms HIGH** → 7.5% duty cycle (90° position).
      - **2 ms HIGH** → 10% duty cycle (180° position).
-   
+
    ![PWM Duty Cycle Image](./Team5/PWM.png)
 
 3. **Pulse Width**:
@@ -116,7 +116,7 @@ At a frequency of **50 Hz (20 ms period)**:
 
 ### Introduction
 
-This section explains how to connect the servo motor to your DevBoard. 
+This section explains how to connect the servo motor to your DevBoard.
 
 ### Objective
 
