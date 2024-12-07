@@ -19,10 +19,17 @@ This tutorial will teach readers how to use the MPU 6000 to measure the x y and 
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
+The MPU chip is primarily used in drones to keep their orientation stable, in your phones, or even in your controllers if you play on it. So, specifically we are trying to do it for drone purposes. We would first need to create the board creating a schematic, then further it by connecting that to a microcontroller that receives the data.
+
+What we're aiming for
+1. Making sure that our wiring can power the device on.
+2. Provides real-time feedback on where exactly the device is orientated.
+
+
+Key Concepts:
+
+1. Circuit Basics
+2. KiCad Basics
 
 ## Getting Started
 
