@@ -1,9 +1,9 @@
 ---
-title: My Super Awesome Tutorial
-date: 1970-01-01
+title: Building a gyroscope using MPU 6000
+date: 2024-12-4
 authors:
-  - name: John Doe
-  - name: Mary Jane
+  - name: Jiahao Han
+  - name: Ryan Sevidal
 ---
 
 ![relevant graphic or workshop logo](image/path)
