@@ -10,15 +10,12 @@ authors:
 
 ## Introduction
 
-Write a short section on what the tutorial is aiming to accomplish.
-What is the motivation behind the tutorial?
-What do you want readers to gain from the tutorial?
+This tutorial will teach readers how to use the MPU 6000 to measure the x y and z axises to keep upright
 
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
-
-Any additional notes from the developers can be included here.
+- MPU schematics and ways to utilize the chip
+- Schematic making, as well as using KiCad to 3d render
 
 ### Background Information
 
