@@ -104,17 +104,17 @@ customize these for each workshop.
 
 ### Required Downloads and Installations
 
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
+we will be using the ... coding program and to instal it go to ...
+
+we also need CAD software. You can use onshape which is online. 
+To be able to use onshape you just need to create a free account. 
 
 ### Required Components
 
 
 | Component Name | Quanitity |
 | -------------- | --------- |
-|  3D printer availability              |     1     |
-|  nonmetal brarings              |     4-6      |
+|  nonmetal brarings    |     4-6      |
 |  soft iron rod (.19 diameter X 1+in length)| 1|
 |  coils/wire|10+ ft|
 |  resistors(blank ohms ~1K)|10|
@@ -123,33 +123,39 @@ You can either make your own tutorials or include a link to them.
 
 ### Required Tools and Equipment
 
-List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
+3D printer availability
+Breadboard and wiring
+computer
+CAD software (onshape)
+List any tools and equipment you need here
 
-## Part 01: Name
+## Part 01: Large Solenoid Coil For Field Generation
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+I will teach you how a solenoid coil works and how to make it using special wiring. 
+We will also learn how to set up the circuit and test for magnetic induction.
 
 ### Objective
 
-- List the learning objectives of this section
+We Need this solenoid coil to be able to control the magnetic field and thus the 
+vector direction of the bloch sphere vector.
 
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
+
 
 ### Components
 
-- List the components needed in this challenge
+
 
 ### Instructional
 
-Teach the contents of this section
+1. Wrap the uncut wiring around something celyndrical. For oure case we need N turns of wire
+
+2. Cut the end of the coul attached to the spool of using wire cutters.
+
+3. If your solenoid is loose you can wrap it on the top and bottom with electrical tape.
 
 ## Example
 
