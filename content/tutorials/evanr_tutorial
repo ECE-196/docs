@@ -1,0 +1,22 @@
+---
+title: Controlling TFT SPI display with ESP32S3
+date: 2025-5-18
+authors:
+  - name: Evan Robert
+---
+
+## Introduction
+
+This tutorial will teach you how to control a TFT SPI display using an ESP32S3.
+
+![Display](./evanr_photos/tftdisplay.png) 
+
+## Overview
+- Wiring up the display
+- Communication over SPI
+- Writing to the display
+- Libraries and displaying interesting graphics
+
+`Some code`
+
+Some *italics* and **bold**.
