@@ -43,10 +43,7 @@ customize these for each workshop.
 
 ### Required Downloads and Installations
 
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
-
+First download the required [arduino](https://www.arduino.cc/en/software/) software 
 ### Required Components
 
 List your required hardware components and the quantities here.
