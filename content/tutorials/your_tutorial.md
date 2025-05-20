@@ -14,7 +14,7 @@ Write a short section on what the tutorial is aiming to accomplish.
 What is the motivation behind the tutorial?
 What do you want readers to gain from the tutorial?
 
-### Learning Objectives
+### Learning Objectives a
 
 - Bullet list of skills/concepts to be covered
 
