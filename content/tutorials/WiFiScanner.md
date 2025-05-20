@@ -5,7 +5,8 @@ authors:
   - name: Jasmine Le
 ---
 
-![relevant graphic or workshop logo](image/path)
+![relevant graphic or workshop logo](imag![esp32beginimage](https://github.com/user-attachments/assets/3c0e92ed-89ed-4ea6-887e-c67e81da1bf5)
+e/path)
 
 ## Introduction
 
