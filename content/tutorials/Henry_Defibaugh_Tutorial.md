@@ -13,5 +13,3 @@ This tutorial demonstrates the use of:
 - **Headers**: `##` for creating section titles.
 - **Bullet Points**: `-` for unordered lists.
 - **Images**: `![alt text](URL)` for embedding images.
-
-Feel free to modify and expand upon this tutorial as you learn more about Markdown!
