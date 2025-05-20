@@ -1,18 +1,32 @@
 ---
-title: My Super Awesome Tutorial
-date: 1970-01-01
+title: Exploring Analog Inputs with a Potentiometer
+date: 2025-06-06
 authors:
-  - name: John Doe
-  - name: Mary Jane
+  - name: Aatash Pestonjamasp
 ---
 
-![relevant graphic or workshop logo](image/path)
+<img src="PotentiometerAP/potentiometer.jpg" alt="Image of a potentiometer" width="35%" height="auto">
+
+
 
 ## Introduction
 
 Write a short section on what the tutorial is aiming to accomplish.
 What is the motivation behind the tutorial?
 What do you want readers to gain from the tutorial?
+
+
+- Using analog input allows for control values **beyond a simple 0 or 1**, like in binary
+- Non binary data values can be mimicked by considering bits across time (Ultrasonic sensor pulse for example)
+    - Drawback is that one may want _continuous_ variable length inputs, like in a game controller
+- By completing this tutorial, you will:
+  -  Learn about how a potentiometer works 
+  -  Learn how a potentiometer be connected to a microcontroller to generate continuous, non-binary inputs
+  - You will also have an optional challenge where you directly apply a potentiometer as a lighting controller
+
+
+
+
 
 ### Learning Objectives a
 
@@ -41,11 +55,22 @@ the participant may need.
 The following are stylistic examples of possible prerequisites,
 customize these for each workshop.
 
+
+- Arduino IDE: Excerpt
+- ESP-32
+- USB-C cable (or whatever cable is used for connecting the ESP-32 to the computer)
+- Potentiometer (any resistance should be fine)
+- 3 Dupont/ Jumper wires
+- Completed Lightshield (optional)
+- -Lightshield for extra exercise
+
 ### Required Downloads and Installations
 
 List any required downloads and installations here.
 Make sure to include tutorials on how to install them.
 You can either make your own tutorials or include a link to them.
+
+- Arduino IDE- LINK HERE
 
 ### Required Components
 
@@ -61,11 +86,17 @@ List your required hardware components and the quantities here.
 List any tools and equipment you need here.
 (Ex, computer, soldering station, etc.)
 
-## Part 01: Name
+
+
+
+## Part 01: Reading Analog values with an ESP-32
 
 ### Introduction
 
 Briefly introduce what  you are teaching in this section.
+- Will cover flashing the ESP 32 (boot mode if needed, working with arduino ide.)
+- (if board has already been flashed, skip to flashing the example code)
+    - Else cover holding boot down, then powering, selecting esp32 s3, etc
 
 ### Objective
 
@@ -86,7 +117,16 @@ about the technical skills
 
 Teach the contents of this section
 
+- Once arduino ide is installed and you can flash code, turn it off
+- wire up potentiomter to 3.3V, gnd, and signal
+- Choose the signal pin based on code, or just modify the number in the code based on what you choose
+- Flash the code that AnalogReads the pin
+- turn the knob and watch the values change
+
+
 ## Example
+
+Show this process?
 
 ### Introduction
 
@@ -105,3 +145,15 @@ Explain how the example used your tutorial topic. Give in-depth analysis of each
 ### Useful links
 
 List any sources you used, documentation, helpful examples, similar projects etc.
+
+
+
+
+## Part 02: Using the potentiometer as a light controller (optional challenge)
+
+- requires light shield
+- warning: this is a somewhat sketchy way of plugging in the lightshield
+  - It should be fine to plug it in this way but do so at your own risk
+
+
+Copy section format from Part 01
