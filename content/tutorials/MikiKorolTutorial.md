@@ -4,6 +4,18 @@ date: 05-16-25
 authors:
   - name: Miki Korol
 ---
+
+Testing Markdown Syntax
+=======
+
+Miki Korol
+---
+**Man I love markdown!**
+
+* First ill do this
+* then ill submit 
+
+  
 ![image](https://github.com/user-attachments/assets/a0ae3235-d7bd-4b30-b160-83ebf1033004)
 ![image](https://github.com/user-attachments/assets/09eee5af-fe3c-47dc-a60a-6af815638270)
 
