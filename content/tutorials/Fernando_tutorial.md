@@ -52,7 +52,7 @@ List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
 | -------------- | --------- |
-|                |           |
+|       IR obstacle avoidance sensor         |           |
 |                |           |
 
 ### Required Tools and Equipment
