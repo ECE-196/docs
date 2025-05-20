@@ -4,7 +4,7 @@ date: 5/19/2025
 author: Kevin Yuan
 ---
 
-![DHT11_image](image/path)
+![DHT11_image](KevinYuanPhotos/dht11.png)
 
 ## Introduction
 
