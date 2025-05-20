@@ -2,8 +2,7 @@
 title: My Super Awesome Tutorial
 date: 1970-01-01
 authors:
-  - name: John Doe
-  - name: Mary Jane
+  - name: Jasmine Le
 ---
 
 ![relevant graphic or workshop logo](image/path)
