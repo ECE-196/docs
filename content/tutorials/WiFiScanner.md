@@ -15,7 +15,9 @@ What do you want readers to gain from the tutorial?
 
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
+- Understand how the ESP32 performs Wi-Fi network scans
+- Learn how to use the Serial Monitor to display data
+- Explore `WiFi.h` library functions and network properties
 
 Any additional notes from the developers can be included here.
 
