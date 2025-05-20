@@ -81,7 +81,13 @@ about the technical skills
 
 ### Instructional
 
-Teach the contents of this section
+- We will start by soldering one side of the wires onto the speaker.
+
+- Place wires from the ESP32 to the breadboard
+  
+- Connect the speaker to the ESP32 through the breadboard
+
+- Next 
 
 ## Example
 
