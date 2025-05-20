@@ -1,5 +1,5 @@
 ---
-title: My Super Awesome Tutorial
+title: ESP32 WiFi Scanner
 date: 2025-19-05
 authors:
   - name: Jasmine Le
