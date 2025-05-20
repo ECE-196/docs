@@ -9,9 +9,8 @@ authors:
 
 ## Introduction
 
-Write a short section on what the tutorial is aiming to accomplish.
-What is the motivation behind the tutorial?
-What do you want readers to gain from the tutorial?
+In the mini project, I will be making an obstacle detecting system using an IR obstacle avoidance senor, LED, and Resistor. From this students will be able to learn how to use the Arduino IDE software and write code so that the ESP tells the sensor an obstacle is near.
+
 
 ### Learning Objectives
 
@@ -52,7 +51,7 @@ List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
 | -------------- | --------- |
-|       IR obstacle avoidance sensor         |           |
+|       IR obstacle avoidance sensor         |       1    |
 |                |           |
 
 ### Required Tools and Equipment
