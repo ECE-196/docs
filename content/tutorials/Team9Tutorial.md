@@ -177,10 +177,6 @@ Installation Process:
 
 ### Example Code
 
-
-
-https://github.com/user-attachments/assets/34143fbf-1968-48fc-ae7c-aee796cb4d17
-
 ## Analysis
 
 ---
