@@ -6,8 +6,6 @@ authors:
 ---
 ![esp32wifitop](https://github.com/user-attachments/assets/34787a73-4880-49aa-9bcc-420d115f39c9)
 
-![relevant graphic or workshop logo](image/path)
-
 ## Introduction
 
 This tutorial walks through building a simple **Wi-Fi scanner** using only the **ESP32 Dev Board**. 
