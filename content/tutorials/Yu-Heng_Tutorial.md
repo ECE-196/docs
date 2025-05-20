@@ -33,16 +33,13 @@ By following this tutorial, you will be able to replace the accelerometer to any
 
 ## Getting Started
 
+
+### Required Downloads and Installations
+
 - You will need to install **Arduino IDE** first. It should work with any OS. </br>
 [Download Arduino IDE](https://www.arduino.cc/en/software)
 - Then inside the Arduino IDE, you will need to install the **MPU6050** library. </br>
 ![MPU6050](Team1Photos/mpu6050lib.png)
-
-### Required Downloads and Installations
-
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
 
 ### Required Components
 
