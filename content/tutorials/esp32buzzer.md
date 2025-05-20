@@ -5,7 +5,8 @@ author:
   - name: Philip Du
 ---
 
-![relevant graphic or workshop logo](image/path)
+![relevant graphic or workshop logo](![image](https://github.com/user-attachments/assets/cd3e9bc2-550a-4a0e-8cba-34842d4a37eb)
+)
 
 ## Introduction
 
