@@ -6,7 +6,7 @@ Welcome to your first Markdown tutorial! Here's how you can get started:
 - **Save** the file with the appropriate extension.
 - **Run** the program to see the output.
 
-![Hello World](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Hello_world_.svg/600px-Hello_world_.svg.png)
+![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
 This tutorial demonstrates the use of:
 
