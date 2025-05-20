@@ -6,7 +6,7 @@ Welcome to your first Markdown tutorial! Here's how you can get started:
 - **Save** the file with the appropriate extension.
 - **Run** the program to see the output.
 
-![Hello World Example](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Markdown_Logo_1.0.png/600px-Markdown_Logo_1.0.png)
+![Hello World](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Hello_world_.svg/600px-Hello_world_.svg.png)
 
 This tutorial demonstrates the use of:
 
@@ -14,3 +14,4 @@ This tutorial demonstrates the use of:
 - **Bullet Points**: `-` for unordered lists.
 - **Images**: `![alt text](URL)` for embedding images.
 
+Feel free to modify and expand upon this tutorial as you learn more about Markdown!
