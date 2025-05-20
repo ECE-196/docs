@@ -1,9 +1,8 @@
 ---
-title: My Super Awesome Tutorial
-date: 1970-01-01
+title: Proximity Detector
+date: 05/19/2025
 authors:
-  - name: John Doe
-  - name: Mary Jane
+  - name: Fernando Salgado
 ---
 
 ![relevant graphic or workshop logo](image/path)
