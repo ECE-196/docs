@@ -4,9 +4,9 @@ date: 2025-19-05
 authors:
   - name: Jasmine Le
 ---
+![esp32wifitop](https://github.com/user-attachments/assets/34787a73-4880-49aa-9bcc-420d115f39c9)
 
-(imag![esp32beginimage](https://github.com/user-attachments/assets/3c0e92ed-89ed-4ea6-887e-c67e81da1bf5)
-e/path)
+![relevant graphic or workshop logo](image/path)
 
 ## Introduction
 
