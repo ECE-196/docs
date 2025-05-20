@@ -78,7 +78,10 @@ about the technical skills
 
 ## Components
 
-- List the components needed in this challenge
+
+![IR obstacle avoidance sensor](source/static/IRobstacle.jpg)
+
+
 
 ### Instructional
 
