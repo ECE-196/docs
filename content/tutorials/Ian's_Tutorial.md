@@ -1,6 +1,6 @@
 # Hello World!
 
-Welcome to the *wonderful world* of Markdown. Whether you're writing notes, documentation, or just exploring, here's what you need to know:
+Welcome to the *wonderful world* of Electrical Engineering. Here is my tutorial:
 
 - **Bold** text makes your points stand out  
 - *Italic* text adds subtle emphasis  
