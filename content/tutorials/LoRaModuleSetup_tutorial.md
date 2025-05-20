@@ -10,6 +10,9 @@ authors:
 ## Introduction
 
 Write a short section on what the tutorial is aiming to accomplish.
+
+This tutorial will teach users how to set up two RYLR993 LoRa modules for simple communications.
+
 What is the motivation behind the tutorial?
 What do you want readers to gain from the tutorial?
 
