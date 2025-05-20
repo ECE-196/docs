@@ -76,7 +76,7 @@ in this challenge. There is no need to go into detail as a
 separation document should be prepared to explain more in depth
 about the technical skills
 
-### Components
+## Components
 
 - List the components needed in this challenge
 
