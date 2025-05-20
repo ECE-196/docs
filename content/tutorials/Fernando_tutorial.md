@@ -79,7 +79,7 @@ about the technical skills
 ## Components
 
 
-![IR obstacle avoidance sensor](content/static/IRobstacle.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
 
 
 
