@@ -85,7 +85,9 @@ about the technical skills
 
 ### Instructional
 
-Teach the contents of this section
+- Step 1: Wire up components
+- Step 2: Write code on Arduino IDE
+- Step 3: Test
 
 ## Example
 
