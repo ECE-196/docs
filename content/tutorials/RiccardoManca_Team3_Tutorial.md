@@ -1,5 +1,5 @@
 ---
-title: My Super Awesome Tutorial
+title: Ultrasonic Sensor Tutorial
 date: 2025-05-19
 authors:
   - name: Riccardo Augusto Manca
@@ -7,7 +7,7 @@ authors:
 
 ![photo of ultrasonic sensor](RiccardoManca_Team3_Tutorial_Photos/IMG_7578.png)
 
-<h1>Ultrasonic Sensor</h1>
+<h1>Ultrasonic Sensor Tutorial</h1>
 
 ## Introduction
 This tutorial will go over how to use an **ultrasonic sensor** along side a **ESP32**
