@@ -1,6 +1,6 @@
 ---
 title: A Comprehensive Guide to Performing Computer Vision Tasks with ESP32-CAM Module
-date: 11-25-2024
+date: 05-19-2025
 authors:
   - name: Purab Balani
   - name: Jasmine Le
