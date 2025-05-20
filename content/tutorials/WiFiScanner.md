@@ -13,6 +13,9 @@ Write a short section on what the tutorial is aiming to accomplish.
 What is the motivation behind the tutorial?
 What do you want readers to gain from the tutorial?
 
+This tutorial walks through building a simple **Wi-Fi scanner** using only the **ESP32 Dev Board**. 
+The project scans for nearby Wi-Fi networks and displays their names and signal strengths through the Serial Monitor. 
+
 ### Learning Objectives
 
 - Understand how the ESP32 performs Wi-Fi network scans
