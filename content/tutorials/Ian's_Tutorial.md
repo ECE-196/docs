@@ -2,11 +2,11 @@
 
 Welcome to the *wonderful world* of Electrical Engineering. Here is my tutorial:
 
-- **Bold** text makes your points stand out  
-- *Italic* text adds subtle emphasis  
+- **Bold** text   
+- *Italic* text   
 - You can even combine them for **_bold and italic_** impact  
-- [Click here](https://www.markdownguide.org) to dive deeper into Markdown basics
+- [Click here](https://www.markdownguide.org) Reference
 
-> "The journey of a thousand lines begins with a single `#`." – Markdown Proverb
+> "Hello WOrld" – Markdown Proverb
 
 ![Markdown Logo](https://markdown-here.com/img/icon256.png)
