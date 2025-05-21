@@ -1,6 +1,7 @@
 #LoRa Signal Tutorial
 
-## Step 1: Hardware
+## Hardware
+- Step 1: 
 
 - Arduino or ESP32 board
 - LoRa transceiver module
@@ -8,10 +9,12 @@
 
 ![RYLR998 Module](./images/RYLR998.png)
 
-## Step 2: Software
+## Software
+- Step 2: 
 `We will insert code using backticks`
 
-## STEP 3: Demo
+## Demo
+- STEP 3: 
 
 
 
