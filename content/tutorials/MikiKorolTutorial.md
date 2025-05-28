@@ -16,7 +16,7 @@ Miki Korol
 * then ill submit 
 
   
-![image](https://github.com/user-attachments/assets/a0ae3235-d7bd-4b30-b160-83ebf1033004)
+<!---![image](https://github.com/user-attachments/assets/a0ae3235-d7bd-4b30-b160-83ebf1033004)-->
 ![image](https://github.com/user-attachments/assets/09eee5af-fe3c-47dc-a60a-6af815638270)
 
 
@@ -86,7 +86,10 @@ simplified version of bloch sphere. To do this we will use a gimble at the
 center of which will be the bloch sphere vector. To realize this we will 
 use a solenoid coil and suspended soft iron bar which will represent the pure 
 state vector. To control the pure state vector we will run current through the 
-solenoids to apply magnetic fields and thus a force on the permeable material. 
+solenoids to apply magnetic fields and thus a force on the permeable material.
+
+For time and complexity reasons we will first model just the up spin and down spin of the 
+bloch sphere before jumping into the whole thing. This means that the compas needle will point either up or down for now.
 
 You will also learn how to develop the code to controll the pure state vector
 to model the mechanics of real quantum bits.
@@ -155,15 +158,25 @@ vector direction of the bloch sphere vector.
 
 ### Background Information
 
+Solenoid coils have been used since their invention in 1823 for a veriety of applications including but not limited to solenoid actuators, transformers, degaussers, and more. They are bassed uppon the princible of Ampere's law which relates the current to the induced magnetic field. You can read about solenoids on the wilepedia page:
 
+https://en.wikipedia.org/wiki/Solenoid#:~:text=A%20solenoid%20(%2F%CB%88so%CA%8A,current%20is%20passed%20through%20it. 
+
+When you weap a coil the summ of all of the fields induced from the individual currents in the wire can produce a high magnitude magnetic field in the center of the coil. 
+
+We will use that concept to apply fields to the iron rod. 
 
 ### Components
 
+1. Voltage Source
 
+2. High Guage Wire (Rated To 3A)
+
+3. Iron Tod (Testing)
 
 ### Instructional
 
-1. Wrap the uncut wiring around something celyndrical. For oure case we need N turns of wire
+1. Wrap the uncut wiring around something celyndrical. For our  case we need N turns of wire
 
 2. Cut the end of the coul attached to the spool of using wire cutters.
 
