@@ -227,11 +227,13 @@ Here are some pictures of the game on the display:
 
 ## What Next?
 
-Snake is pretty cool, but there is much more you can do with graphics libraries and the ESP32-S3. In this tutorial, we used the U8g2 library which offers a wide variety of fonts and granular frame buffer control (note: our ram allowed us to just use full mode), but there are many other options. One such option is the [LovyanGFX library](https://github.com/lovyan03/LovyanGFX) which has more functionality for games (e.g. sprites). With libraries like this and a powerful MCU, the possibilities are endless.
+Snake is pretty cool, but there is much more you can do with graphics libraries and the ESP32-S3. In this tutorial, we used the U8g2 library which offers a wide variety of fonts and granular frame buffer control (note: we have enough RAM to just use full mode), but there are many other options. One such option is the [LovyanGFX library](https://github.com/lovyan03/LovyanGFX) which has more functionality for games (e.g. sprites). With libraries like this and a powerful MCU, the possibilities are endless.
 
 And looking beyond I2C, libraries like [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) can be used in combination with [LVGL](https://lvgl.io/) to create useful widgets and other more advanced display utilities.
 
 ## Full Game Code
+
+Disclaimer: AI was used to assist with the below code. Everything else in the tutorial was written completely by me.
 
 ```cpp
 // main.cpp
