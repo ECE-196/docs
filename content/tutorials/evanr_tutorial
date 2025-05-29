@@ -1,22 +1,507 @@
 ---
-title: Controlling TFT SPI display with ESP32S3
-date: 2025-5-18
+title: Controlling an OLED I2C Display
+date: 2025-6-06
 authors:
   - name: Evan Robert
 ---
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Connecting and Basic Operation](#connecting-and-basic-operation)
+- [Making a Game](#making-a-game)
+- [What Next?](#what-next)
+- [Full Game Code](#full-game-code)
+
 ## Introduction
 
-This tutorial will teach you how to control a TFT SPI display using an ESP32S3.
+This tutorial will go over how to interact with a small OLED display using the popular U8g2 library. After getting the display up and running, we will create a simple game that will be controlled with keyboard input (over serial).
 
-![Display](./evanr_photos/tftdisplay.png) 
+### Objectives
 
-## Overview
-- Wiring up the display
-- Communication over SPI
-- Writing to the display
-- Libraries and displaying interesting graphics
+- Learn the basics of PlatformIO to setup the development environment
+- Write to a display using the U8g2_Arduino library
+- Use serial input (from keyboard) to play a game on the display
+- Learn a little about simple game programming methods
+- Discover alternative libraries that you could use in the future!
 
-`Some code`
+## Getting Started
 
-Some *italics* and **bold**.
+This tutorial assumes some knowledge of C++ programming and working with microcontroller boards (uploading code, etc.).
+
+### Software
+
+If you don't yet have Visual Studio Code, you can install it [here](https://code.visualstudio.com/download).
+
+Once you've installed VSCode, you can install PlatformIO following [these instructions](https://platformio.org/install/ide?install=vscode).
+
+You may be thinking, "Why do I need PlatformIO?" PlatformIO has many advantages over the Arduino IDE including ***much*** faster compilation times and all of the perks that come with a fully featured IDE like VSCode.
+
+
+### Hardware
+
+For this tutorial, you will need:
+- ESP32-S3-mini DevBoard (ECE196 DevBoard) + USB-C cable
+- 4 jumper wires (male/female depending if you are going to use a breadboard)
+- (Optionally) A breadboard (to make it easier to wire and view the display)
+- [This display](https://www.dfrobot.com/product-2018.html?srsltid=AfmBOorc5XP1FScxb6v1ska7cWuQFvcUjEohSnKkPzToyLLywc_ulNUu) or one like it (SSD1306 driver, 128x32, I2C)
+
+Note: this tutorial can be followed/adapted to the many displays supported by the U8g2 library, but we will use the display above.
+
+## Connecting and Basic Operation
+
+In this section, we will wire the display to the DevBoard and display simple graphics to ensure that it is functioning properly.
+
+### Wiring the Display
+
+We are going to communicate with the display using the Inter-Integrated Circuit Protocol, abbreviated as I2C (or I²C or I "squared" C). I2C allows multiple peripherals (displays, sensors, etc.) to communicate with a "controller" on the same bus as long as they have unique addresses. Personally, I enjoy using I2C because it only requires two wires, one for serial data (SDA) and one for serial clock (SCL). This, coupled with the fact that you can "chain" peripherals together, keeps the wiring easy and clean.
+
+To wire our display to the DevBoard, connect:
+- SDA (display) to GPIO 8 (DevBoard)
+- SCL to GPIO 9
+- VCC to 3.3
+- GND to GND
+
+Here is how it should look:
+![alt text](./evanr_photos/wiring.png)
+
+Note: The ESP32-S3 has a GPIO matrix that allows you to route most peripherals to any available GPIO pin; for the purpose of this tutorial we will use the above assignments.
+
+### Creating PlatformIO Project
+
+Click on the PlatformIO extension in the VSCode sidebar and open the PIO Home menu from quick access as shown below:
+ ![home](./evanr_photos/platformiohome.png)
+
+Once you've made it there, create a new project by clicking "New Project". For the board, select the `Espressif ESP32-S3-DevKitC-1-N8 (8 MB QD, No PSRAM)`. For the framework, ensure `Arduino` is selected. The project name and location are up to you.
+
+Once we've created the project, we need to edit the contents of the `platformio.ini` file. This is the main configuration file for PlatformIO projects. Crucially, add the lines 
+`lib_deps = olikraus/U8g2 @ ^2.36.5` to install the U8g2 library. Additionally, we will change a few other settings to ensure everything works as intended. Below is the entire `platformio.ini` file:
+
+```
+; platformio.ini
+
+[env:esp32-s3-devkitc-1]
+platform = espressif32@6.10.0
+board = esp32-s3-devkitc-1
+framework = arduino
+upload_speed = 921600
+monitor_speed = 115200
+build_flags =
+    -D ARDUINO_USB_CDC_ON_BOOT=1
+lib_deps = 
+    olikraus/U8g2 @ ^2.36.5
+```
+
+Make sure to **save** the file to ensure the project is updated!
+
+### Writing to the Display
+
+Now we get to write to the display!
+
+We will write our code in `src\main.cpp`. PlatformIO uses a C++ style project structure with header (.h) and source (.cpp) files (which plenty of resources online/AI can explain).
+
+For our first program, we will write "Hello World!" onto the display. Before we dive in, I implore you to open up the u8g2 [wiki](https://github.com/olikraus/u8g2/wiki), the [reference](https://github.com/olikraus/u8g2/wiki/u8g2reference), and the [setup](https://github.com/olikraus/u8g2/wiki/u8g2setupcpp) pages.
+
+Below is the commented code to write "Hello World!" onto the display. Some things to note are the constructor name which tells us that we are opting to use a full frame buffer (F) and hardware I2C (HW_I2C). Additionally, we pass in the rotation (default, landscape) for the display. When using a full frame buffer, we keep an entire frame of the display in the ram of the ESP32-S3 and use `clearBuffer()` and `sendBuffer()` to clear and transfer the RAM to the display.
+
+```cpp
+// main.cpp
+
+#include <Arduino.h>
+#include <U8g2lib.h>
+
+// Initialize display with SSD1306 128x32 I2C constructor, full frame buffer, and landscape orientation
+U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2(U8G2_R0);
+
+void setup() {
+  // Initialize the display
+  u8g2.begin();
+}
+
+void loop() {
+  // Clear the buffer
+  u8g2.clearBuffer();
+  
+  // Write "Hello World!" to the display
+  u8g2.setFont(u8g2_font_ncenB14_tr);
+  u8g2.drawStr(0,15,"Hello World!");
+  
+  // Send buffer to display
+  u8g2.sendBuffer();
+  
+  delay(1000);
+}
+```
+
+After uploading this code (with the right arrow button in the bottom left), you should see "Hello World!" on the display! If you don't, ensure that your wiring is correct.
+
+## Making a Game
+
+We will now make a simple snake game (with score!) that is controlled with the WASD keys. In this snake game, the player wins after they eat 15 food (score reaches 15).
+
+I'm not going to go over the entire code, but I will touch on the core game and display related logic.
+
+### Game Loop
+
+One of the most important parts of any game is the *game loop*. In our code, this will manifest as the `void loop()` function. In any game loop, we must handle input, states, logic, and rendering.
+
+Here, I want to emphasize the idea of **states**. States are a crucial part of almost any well designed embedded program and allow for easier debugging and cleaner code.
+
+For our snake game, we have four states which we define in an `enum`. These states are `MENU`, `PLAYING`, `GAME_OVER`, and `WIN`, and they represent each of the core parts/screens of the game. The current state decides which logic will run in our game loop, shown below.
+
+```cpp
+// Game loop
+
+void loop() {
+  handleInput();
+  
+  switch (gameState) {
+    case MENU:
+      drawMenu();
+      break;
+    case PLAYING:
+      // Update game logic at controlled intervals
+      if (millis() - lastMoveTime >= moveInterval) {
+        updateGame();
+        lastMoveTime = millis();
+      }
+      drawGame();
+      break;
+    case GAME_OVER:
+    case WIN:
+      // Auto-return to menu after 5 seconds
+      if (millis() - gameOverStartTime >= 5000) {
+        gameState = MENU;
+      }
+      if (gameState == GAME_OVER) {
+        drawGameOver();
+      } else {
+        drawWin();
+      }
+      break;
+  }
+  
+  delay(50);  // Main loop refresh rate
+}
+```
+
+Here, we can see how the game loop handles input and then draws a screen based on the current state.
+
+### Drawing Screens
+
+To actually display the game (display buffers from RAM), we can directly apply what we learned in the prior part of the tutorial with `clearBuffer()` and `sendBuffer()`. To draw to the display, we essentially wrap what we want to show on the display in `clearBuffer()` and `sendBuffer()`. A good example of this is shown in the `drawGame()` function.
+
+```cpp
+// Renders the game play screen with snake, food, and score
+void drawGame() {
+  u8g2.clearBuffer();
+  
+  // Draw snake segments
+  for (int i = 0; i < snakeLength; i++) {
+    u8g2.drawBox(snake[i].x, snake[i].y, SNAKE_SIZE, SNAKE_SIZE);
+  }
+  
+  // Draw food
+  u8g2.drawBox(food.x, food.y, SNAKE_SIZE, SNAKE_SIZE);
+  
+  // Draw score in right panel
+  u8g2.setFont(u8g2_font_5x7_tr);
+  char scoreStr[6];
+  sprintf(scoreStr, "%d/%d", score, WINNING_SCORE);
+  int scoreWidth = u8g2.getStrWidth(scoreStr);
+  int scoreX = PLAY_AREA_WIDTH + (SCORE_AREA_WIDTH - scoreWidth) / 2;
+  u8g2.drawStr(scoreX, 8, scoreStr);
+  
+  u8g2.sendBuffer();
+}
+```
+
+Each call to `drawGame()` draws the snake, food, and score. Importantly, notice that the actual snake movement, collision detection, and game logic is not implemented within the `drawGame()` function. Instead, this logic is implemented within the `updateGame()` function (shown in the full code below). This makes the code much more readable and separates the display related code from the game logic related code.
+
+Now that you know the basics of states, the game loop, and drawing frames, it's time to upload the code and play snake for yourself! Here is a [link to the full game code](#full-game-code) (located at bottom of the page) that you can paste into `main.cpp`. Remember that the controls are w-a-s-d to move. To play the game, open the serial monitor (click the plug in the bottom left) and type into it.
+
+Here are some pictures of the game on the display:
+![title](./evanr_photos/title.jpg)
+![playing](./evanr_photos/playing.jpg)
+
+## What Next?
+
+Snake is pretty cool, but there is much more you can do with graphics libraries and the ESP32-S3. In this tutorial, we used the U8g2 library which offers a wide variety of fonts and granular frame buffer control (note: our ram allowed us to just use full mode), but there are many other options. One such option is the [LovyanGFX library](https://github.com/lovyan03/LovyanGFX) which has more functionality for games (e.g. sprites). With libraries like this and a powerful MCU, the possibilities are endless.
+
+And looking beyond I2C, libraries like [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) can be used in combination with [LVGL](https://lvgl.io/) to create useful widgets and other more advanced display utilities.
+
+## Full Game Code
+
+```cpp
+// main.cpp
+
+#include <Arduino.h>
+#include <U8g2lib.h>
+
+// Display initialization for SSD1306 128x32 OLED
+U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2(U8G2_R0);
+
+// Display and game constants
+#define DISPLAY_WIDTH 128
+#define DISPLAY_HEIGHT 32
+#define SNAKE_SIZE 2
+#define MAX_SNAKE_LENGTH 50
+#define WINNING_SCORE 15
+#define SCORE_AREA_WIDTH 30  // Right side reserved for score display
+#define PLAY_AREA_WIDTH (DISPLAY_WIDTH - SCORE_AREA_WIDTH)
+
+// Game state management
+enum GameState { MENU, PLAYING, GAME_OVER, WIN };
+enum Direction { UP, DOWN, LEFT, RIGHT };
+
+// Game state variables
+GameState gameState = MENU;
+int score = 0;
+unsigned long gameOverStartTime = 0;
+unsigned long lastMoveTime = 0;
+const unsigned long moveInterval = 120;  // Snake speed in milliseconds
+
+// Snake data structure and variables
+struct Point { int x, y; };
+Point snake[MAX_SNAKE_LENGTH];
+int snakeLength = 3;
+Direction currentDirection = RIGHT;
+Direction nextDirection = RIGHT;  // Buffered input to prevent reverse direction
+Point food;
+
+// Function declarations
+void initializeGame();
+void generateFood();
+void handleInput();
+void updateGame();
+void drawMenu();
+void drawGame();
+void drawGameOver();
+void drawWin();
+
+void setup() {
+  Serial.begin(115200);
+  u8g2.begin();
+  randomSeed(analogRead(A1));  // Seed random generator for food placement
+  initializeGame();
+}
+
+void loop() {
+  handleInput();
+  
+  switch (gameState) {
+    case MENU:
+      drawMenu();
+      break;
+    case PLAYING:
+      // Update game logic at controlled intervals
+      if (millis() - lastMoveTime >= moveInterval) {
+        updateGame();
+        lastMoveTime = millis();
+      }
+      drawGame();
+      break;
+    case GAME_OVER:
+    case WIN:
+      // Auto-return to menu after 5 seconds
+      if (millis() - gameOverStartTime >= 5000) {
+        gameState = MENU;
+      }
+      if (gameState == GAME_OVER) {
+        drawGameOver();
+      } else {
+        drawWin();
+      }
+      break;
+  }
+  
+  delay(50);  // Main loop refresh rate
+}
+
+// Resets game variables and snake position to starting state
+void initializeGame() {
+  // Reset game state
+  score = 0;
+  snakeLength = 3;
+  currentDirection = RIGHT;
+  nextDirection = RIGHT;
+  
+  // Initialize snake starting position (horizontal line)
+  for (int i = 0; i < snakeLength; i++) {
+    snake[i].x = 10 - i * SNAKE_SIZE;
+    snake[i].y = 16;
+  }
+  
+  generateFood();
+}
+
+// Places food at a random position that doesn't conflict with snake body
+void generateFood() {
+  do {
+    food.x = random(0, PLAY_AREA_WIDTH / SNAKE_SIZE) * SNAKE_SIZE;
+    food.y = random(0, DISPLAY_HEIGHT / SNAKE_SIZE) * SNAKE_SIZE;
+  } while ([&]() {
+    // Check if food would spawn on snake
+    for (int i = 0; i < snakeLength; i++) {
+      if (snake[i].x == food.x && snake[i].y == food.y) return true;
+    }
+    return false;
+  }());
+}
+
+// Processes serial input for game controls and state changes
+void handleInput() {
+  if (Serial.available() > 0) {
+    char input = Serial.read();
+    
+    // Any key starts game from menu
+    if (gameState == MENU) {
+      gameState = PLAYING;
+      initializeGame();
+      return;
+    }
+    
+    // WASD controls during gameplay
+    if (gameState == PLAYING) {
+      switch (input) {
+        case 'w': case 'W':
+          if (currentDirection != DOWN) nextDirection = UP;
+          break;
+        case 's': case 'S':
+          if (currentDirection != UP) nextDirection = DOWN;
+          break;
+        case 'a': case 'A':
+          if (currentDirection != RIGHT) nextDirection = LEFT;
+          break;
+        case 'd': case 'D':
+          if (currentDirection != LEFT) nextDirection = RIGHT;
+          break;
+      }
+    }
+  }
+}
+
+// Updates snake movement, collision detection, and game logic
+void updateGame() {
+  currentDirection = nextDirection;
+  
+  // Move snake body segments forward
+  for (int i = snakeLength - 1; i > 0; i--) {
+    snake[i] = snake[i - 1];
+  }
+  
+  // Move head based on current direction
+  switch (currentDirection) {
+    case UP:    snake[0].y -= SNAKE_SIZE; break;
+    case DOWN:  snake[0].y += SNAKE_SIZE; break;
+    case LEFT:  snake[0].x -= SNAKE_SIZE; break;
+    case RIGHT: snake[0].x += SNAKE_SIZE; break;
+  }
+  
+  // Handle screen wrapping (horizontal)
+  if (snake[0].x < 0) snake[0].x = PLAY_AREA_WIDTH - SNAKE_SIZE;
+  else if (snake[0].x >= PLAY_AREA_WIDTH) snake[0].x = 0;
+  
+  // Handle screen wrapping (vertical)
+  if (snake[0].y < 0) snake[0].y = DISPLAY_HEIGHT - SNAKE_SIZE;
+  else if (snake[0].y >= DISPLAY_HEIGHT) snake[0].y = 0;
+  
+  // Check for self-collision
+  for (int i = 1; i < snakeLength; i++) {
+    if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+      gameState = GAME_OVER;
+      gameOverStartTime = millis();
+      return;
+    }
+  }
+  
+  // Check food collision
+  if (snake[0].x == food.x && snake[0].y == food.y) {
+    score++;
+    // Check win condition
+    if (score >= WINNING_SCORE) {
+      gameState = WIN;
+      gameOverStartTime = millis();
+      return;
+    }
+    
+    // Grow snake by duplicating tail segment
+    if (snakeLength < MAX_SNAKE_LENGTH) {
+      snake[snakeLength] = snake[snakeLength - 1];
+      snakeLength++;
+    }
+    generateFood();
+  }
+}
+
+// Renders the main menu screen with title and instructions
+void drawMenu() {
+  u8g2.clearBuffer();
+  // Draw title
+  u8g2.setFont(u8g2_font_7x14B_tr);
+  int titleWidth = u8g2.getStrWidth("SNAKE");
+  u8g2.drawStr((DISPLAY_WIDTH - titleWidth) / 2, 15, "SNAKE");
+  
+  // Draw instructions
+  u8g2.setFont(u8g2_font_6x10_tr);
+  int subtitleWidth = u8g2.getStrWidth("Press key to start");
+  u8g2.drawStr((DISPLAY_WIDTH - subtitleWidth) / 2, 28, "Press a key to start");
+  u8g2.sendBuffer();
+}
+
+// Renders the game play screen with snake, food, and score
+void drawGame() {
+  u8g2.clearBuffer();
+  
+  // Draw snake segments
+  for (int i = 0; i < snakeLength; i++) {
+    u8g2.drawBox(snake[i].x, snake[i].y, SNAKE_SIZE, SNAKE_SIZE);
+  }
+  
+  // Draw food
+  u8g2.drawBox(food.x, food.y, SNAKE_SIZE, SNAKE_SIZE);
+  
+  // Draw score in right panel
+  u8g2.setFont(u8g2_font_5x7_tr);
+  char scoreStr[6];
+  sprintf(scoreStr, "%d/%d", score, WINNING_SCORE);
+  int scoreWidth = u8g2.getStrWidth(scoreStr);
+  int scoreX = PLAY_AREA_WIDTH + (SCORE_AREA_WIDTH - scoreWidth) / 2;
+  u8g2.drawStr(scoreX, 8, scoreStr);
+  
+  u8g2.sendBuffer();
+}
+
+// Renders the game over screen with death message and final score
+void drawGameOver() {
+  u8g2.clearBuffer();
+  // Draw game over message
+  u8g2.setFont(u8g2_font_7x14B_tr);
+  int titleWidth = u8g2.getStrWidth("You Died!");
+  u8g2.drawStr((DISPLAY_WIDTH - titleWidth) / 2, 15, "You Died!");
+  
+  // Show final score
+  u8g2.setFont(u8g2_font_6x10_tr);
+  char scoreText[20];
+  sprintf(scoreText, "Score: %d", score);
+  int scoreWidth = u8g2.getStrWidth(scoreText);
+  u8g2.drawStr((DISPLAY_WIDTH - scoreWidth) / 2, 28, scoreText);
+  u8g2.sendBuffer();
+}
+
+// Renders the victory screen when player reaches winning score
+void drawWin() {
+  u8g2.clearBuffer();
+  // Draw victory message
+  u8g2.setFont(u8g2_font_7x14B_tr);
+  int titleWidth = u8g2.getStrWidth("You Win!");
+  u8g2.drawStr((DISPLAY_WIDTH - titleWidth) / 2, 15, "You Win!");
+  
+  // Draw congratulations
+  u8g2.setFont(u8g2_font_6x10_tr);
+  int subtitleWidth = u8g2.getStrWidth("Great job!");
+  u8g2.drawStr((DISPLAY_WIDTH - subtitleWidth) / 2, 28, "Great job!");
+  u8g2.sendBuffer();
+}
+```
