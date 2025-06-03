@@ -2,15 +2,11 @@
 
 May 29, 2025 - Jake Honma - [Team 12](https://sites.google.com/view/ece-196-sp25/poster)
 
--
-
-Graphic of ESP32 connected to actuator w/ stable response.
-
--
+![PID Image](https://i.imgur.com/Btq74vr.png)
 
 ## Introduction
 
-The tutorial will teach students the basics of setting up a PID controller on the ESP32 to control a system to a desired output based on the input and feedback using Arduino IDE. It is important to be able to control a system to get a desired output in projects, including temperature, humidity, and motor systems. This tutorial should give you a general idea on what PIDs are used for, how to tune them, and how they can be applied to your project!
+The tutorial will teach students the basics of setting up a PID controller on the ESP32 to control a system to a desired output based on the input and feedback using Arduino IDE. It is important to be able to control a system to get a desired output in projects, including temperature, humidity, and motor systems. This tutorial should give you a general idea of what PIDs are used for, how to tune them, and how they can be applied to your project!
 
 ## Learning Objectives
 
@@ -22,34 +18,108 @@ The tutorial will teach students the basics of setting up a PID controller on th
 
 We will discuss how to utilize the extension PID_v1 in Arduino IDE to apply a PID controller. Key ideas to know are basic coding skills using Arduino (C++), but it is helpful to have a basic understanding of feedback loops and transfer functions.
 
-In our project, we are controlling the humidity in different environments (rooms) to counteract potential mold growth. We have an Internet of Things system that senses humidity, sends data to a hub, and activates a dehumidifier. The concept was to apply the PID controller to the dehumidifier to stabilize at a desired humidity level with sufficient rise time. These controllers can be applied to multiple systems that require desired outputs based on input from an actuator and a source of feedback. 
+In our project, we are controlling the humidity in different environments (rooms) to counteract potential mold growth. We have an Internet of Things system that senses humidity, sends data to a hub, and activates a dehumidifier. We attempted to apply a PID controller on the dehumidifier to stabilize at a desired RPM, which affects the efficiency of the dehumidifier and humidity levels. These controllers can be applied to multiple systems that require desired outputs based on input from an actuator and a source of feedback. 
 
 ## Required Components
 
-### Required Hardware Components
+### Hardware Components                                     
 
-| Component Name              | Quanitity |
+| Component Name              | Quanitity |                 
 | --------------------------- | --------- |
 | ESP32                       |     1     |
 | Controllable Component      |     1     |
 | Feedback Component          |     1     |
 
-### Required Software Needed 
+### Software Needed 
 
 [Arduino IDE](https://www.arduino.cc/en/software/)
 
   
 # Part 1: PID Overview
 
-### Characteristics of Kp, Kd, & Ki
+## Characteristics of Kp, Kd, & Ki
 
 ![Basic PID Feedback Loop](https://tinyurl.com/5857yb2e)
 
+The function, $e$($t$), represents the error, which is found from the difference between the desired ouput (the difference between the desired output, $r$($t$), and the actual output, $y$($t$). The error signal is fed either forwards or backwards (based on the sign of the summation) into the PID controller. 
 
-### Application / Example
+$K_p$ is the proportional gain which multiplies the magnitude of the error. $K_i$ acts like a memory term and sums past errors, which is commonly tuned to decrease accumulation of error. $K_d$ acts to predict future error by considering the rate of change of the error, which is commonly tuned to decrease overshoot 
 
+The output of the error siganl going through the PID controller results in a new control signal, $u$($t$), which is fed to the plant (transfer function of the system), such that a new output, $y$($t$), is obtained. This process reiterates while the PID controller is effecting the system.
+
+## Tuning PID Values
+
+![Step Response Info](https://lh3.googleusercontent.com/proxy/4eW_Q3inj-2JT-Wfi37R4nqzs7OBV0NxPbDpTBQUFUqtsldw4Y72p5jqLaOqajDJQ7cenbWrRbiAVBzH2Ag6CdsNqeKg7OvmBVoeUVWdMUaG1-yjq4LlNw)
+
+Rise Time, Overshoot, Settling Time, and Steady-State Error shown above can be adjusted by the following PID coefficient changes:
+
+
+| Closed-Loop Response   | Rise Time | Overshoot | Settling Time | Steady-State Error |                
+| ---------------------- | --------- | --------- |-------------- | ------------------ |
+| Kp                     |     decrease     |     increase     |     small changes         |     decrease     |
+| Kd                     |     small change     |     decrease     |     decrease         |     no change     |
+| Ki                     |     small decrease     |     increase     |     increase         |     decrease (can eliminate)     |
+
+Table indicates how increase PID coefficients affects system behaivor (MAE 143B)
+
+# Part 2: Implmenting PIDs in Arduino
+
+## Instructions
+
+Open your Arduino IDE, create a new script, and include the PID library.
+
+    #include <PID_v1.h>
+
+Library for PID commands in Arduino IDE
+Pins will need to be defined to send signals (Ex. from project using a 4-Pin CPU Fan & Peltier Device for functional dehumidifier)
+
+    #define FAN_ENABLE_PIN 42      // Controls fan through a MOSFET
+    #define FAN_PWM_PIN    21      // PWM pin for speed control (adjust RPM)
+    #define PELTIER_PIN    41      // Controls Peltier through a MOSFET MOSFET
+    #define TACH_PIN       26      // Tachometer for RPM feedback
+
+Once pins are set to your desired devices through your ESP32, it is time to initialize variables and PID coefficients.
+
+                                     // in given example
+    double Setpoint = 1310;          // Target RPM
+    double Input = 0;                // Measured RPM
+    double desiredOutput = 255;      // PWM 0–255
+
+    double Kp = X, Ki = Y, Kd = Z;    // PID coefficients (will need tuning to find right values)
+
+Once all parameters are set, call PID function within the library
+Tip: start with zeroing Ki & Kd and tune for Kp
+
+    PID namePID(double* Input, double* desiredOutput, double* Setpoint, double Kp, double Ki, double Kd, int ControllerDirection)
+
+Example:
+
+    PID fanPID(&currentRPM, &fanPWMOutput, &rpmSetpoint, Kp, Ki, Kd, INDIRECT);
+    
+Note: ControllerDirection allows for 'DIRECT' & 'INDIRECT' which correlates to feedforward or feedback (sign of the summation for $y$($t$) in picture above)    
+
+
+
+    namePID.SetMode(int Mode);                       //AUTOMATIC or MANUAL
+    namePID.SetOutputLimits(double Min, double Max); //range of values (for PWM 0-255)
+
+There are functions within the library that are automatically used in the constructor function, PID. These functions can be used to update PID values as the system runs for dynamic response, set the direction for int Controller Direction. It is recommended to look through the link for further information based on required use.
+
+[Arduino PID Library Code](https://github.com/br3ttb/Arduino-PID-Library/blob/master/PID_v1.cpp#L97)
+
+This process will require experimentation to get the correct PID values for a desired response, which will take time.
+
+## Analysis
+
+
+
+## Challenges
 
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
+[Arduino PID Repository](https://github.com/br3ttb/Arduino-PID-Library)
+
+[Introduction: PID Controller Design - University of Michigan](https://tinyurl.com/ybmbsmmp)
+
+MAE 143B Linear Controls Lecture 8 - Professor Morimoto
