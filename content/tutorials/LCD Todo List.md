@@ -5,7 +5,7 @@ authors:
   - name: Elton Villalta
 ---
 
-![](content/tutorials/LCDTodoLogo.jpg)
+![](content/tutorials/download(1).jpg)
 
 ## Introduction
 
