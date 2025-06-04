@@ -10,52 +10,37 @@ authors:
 ## Introduction
 
 - I am aiming to create a LCD todolist that will just sit at my desk
+  
 What is the motivation behind the tutorial?
 - I tend to forget a lot of the things I need to do throughout the day especially if its not in front of me.
+  
 What do you want readers to gain from the tutorial?
 - Power. Aside from that, i hope readers can learn how to program a LCD display and be become more confident in wiring on a bread board.
+  
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
 - Programming
 - prototyping
-  
-Any additional notes from the developers can be included here.
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
-Its just going to be a todo list that is displaying tasks i need to complete for the day. There are other things similar to use but this could be made with common parts .
+![insert todo list picture]()
+Its just going to be a todo list that is displaying tasks I need to complete for the day. There are other things similar to use but this could be made with common electronic parts. Some of the most important concepts to understand is how the LCD IO works as well as how to read breadboard diagrams.
 
 ## Getting Started
-
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
 
 
 
 ### Required Downloads and Installations
 
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
 
+Arduino IDE - The Arduino IDE is where we will be coding the logic to our todo list and uploading it to our ESP32
 
+https://www.arduino.cc/en/software/
 
-Arduino IDE
-(some driver i cant remember of the top of my head)
+USB to UART driver (if not already installed) - this is required to interact between our ESP32 and our PC
+
+https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads
 
 ### Required Components
 
@@ -67,6 +52,7 @@ List your required hardware components and the quantities here.
 |       1602A lcd         |    1       |
 |          esp32s3      |       1    |
 |          jumper wires       |      25     |
+| B103 potentiometer|1|
 | type c to type c cable| 1 |
 
 
@@ -91,7 +77,6 @@ We will be learning how to make our own todo list using a lcd and our esp32 boar
 All you need to complete this tutorial is some basic arduino knowledge 
 
 
-
 ### Components
 - Breadboard
 - 16x2 LCD
@@ -100,7 +85,7 @@ All you need to complete this tutorial is some basic arduino knowledge
   
 ### Instructional
 Go to this website to download Arudino IDE if not installed already.
-https://www.arduino.cc/en/software/
+
 
 Once downloaded, open it up
 
@@ -116,12 +101,10 @@ void setup() {
     lcd.begin(16, 2);
 }
 void loop() {
-  // set the cursor to column 0, line 0 and print a message.
   lcd.setCursor(0, 0);
-  lcd.print("Do ECE 196 HW 1");  // you can change it into any text
-  // set the cursor to column 0, line 1 and print a message.
+  lcd.print("Do ECE 196 HW 1");  // set your text
   lcd.setCursor(0, 1);
-  lcd.print("");    // you can change it into any text
+  lcd.print("Do ECE 101 lab");  
 }
 ```
 Then we want to make sure our esp32 is plugged in to our laptop using a type c to type c cable. If your laptop does not support a type c connection, you may use a regular usb connection.
@@ -133,24 +116,34 @@ We then want to make sure we select the correct board.
 once we select the correct board, we can now jump over to setting up the breadboard circuit.
 
 
+![insert breadboard photo]()
 
+we will be utilizing pins 17, 16, 15, 14, 12, and 11 of our ESP32
+
+Follow the following circuit diagram using the jumper cables, ESP32, LCD, and potentiometer
+
+Going back to the Arduino IDE, we can hit the Upload button.
+
+Once the code is finish uploading, we can adjust the potentiometer to display our tasks!!
 
 ## Example
 
 ### Introduction
 
-So here we have the LCD fully hooked up and programmed displaying "Do ECE 196 HW 1"
+So here we have the LCD fully hooked up and programmed displaying 2 tasks
 
 ### Example
 
 Present the example here. Include visuals to help better understanding
+![insert photo of finished example]()
 
 ### Analysis
 
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+My example completely assembled the breadboard circuit and added custom tasks onto the LCD display. Using the code provided, I was able to program my LCD display to display two tasks from my ECE 196 and ECE 101 class. In the code this is accomplished by setting our cursor to the respective line we want to input characters on. I noticed that after turning the potentiometer between a high and low setting, the display starts to show artifacts and after a while the message would be unreadable.
 
 ## Additional Resources
+https://docs.arduino.cc/software/ide/#ide-v1
+https://docs.arduino.cc/programming/
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
