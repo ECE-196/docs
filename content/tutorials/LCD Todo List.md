@@ -64,34 +64,32 @@ List your required hardware components and the quantities here.
 | Component Name | Quanitity |
 | -------------- | --------- |
 |        bread board        |      1     |
-|       16x2 lcd         |    1       |
+|       1602A lcd         |    1       |
 |          esp32s3      |       1    |
-|                |           |
-|                |           |
+|          jumper wires       |      25     |
+| type c to type c cable| 1 |
+
 
 ### Required Tools and Equipment
 
 List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
+- need a laptop
 
-## Part 01: Name
+## Part 01: 
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+We will be learning how to make our own todo list using a lcd and our esp32 board! I will break it into a few parts.
+
 
 ### Objective
+- learn how to program the lcd display with text
+- assemble complete breadboard circuit
 
-- List the learning objectives of this section
-- Prototype board
-- Program display
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
-- Some familiarity with Arduino
+All you need to complete this tutorial is some basic arduino knowledge 
+
 
 
 ### Components
@@ -99,16 +97,49 @@ about the technical skills
 - 16x2 LCD
 - ESP32S3
 - Type C to Type C cable
-- 
+  
 ### Instructional
+Go to this website to download Arudino IDE if not installed already.
+https://www.arduino.cc/en/software/
 
-Teach the contents of this section
+Once downloaded, open it up
+
+Go to File>New Sketch
+
+Copy-Paste this code into the file
+
+``` #include <LiquidCrystal.h>
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(17, 16, 15, 14, 12, 11);
+void setup() {
+  // set up the LCD's number of columns and rows:
+    lcd.begin(16, 2);
+}
+void loop() {
+  // set the cursor to column 0, line 0 and print a message.
+  lcd.setCursor(0, 0);
+  lcd.print("Do ECE 196 HW 1");  // you can change it into any text
+  // set the cursor to column 0, line 1 and print a message.
+  lcd.setCursor(0, 1);
+  lcd.print("");    // you can change it into any text
+}
+```
+Then we want to make sure our esp32 is plugged in to our laptop using a type c to type c cable. If your laptop does not support a type c connection, you may use a regular usb connection.
+
+We then want to make sure we select the correct board.
+
+![insert pic of board selection menu]
+
+once we select the correct board, we can now jump over to setting up the breadboard circuit.
+
+
+
 
 ## Example
 
 ### Introduction
 
-Introduce the example that you are showing here.
+So here we have the LCD fully hooked up and programmed displaying "Do ECE 196 HW 1"
 
 ### Example
 
