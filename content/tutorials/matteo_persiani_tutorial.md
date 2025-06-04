@@ -1,6 +1,6 @@
 ---
-title: My Super Awesome Tutorial
-date: 19-05-2025
+title: PIR Sensor with ESP32
+date: 03-06-2025
 author:
   - name: Matteo Persiani
 ---
@@ -218,6 +218,8 @@ This section focuses on coding in the Arduino IDE. The language is very similar 
    }
    ```
 ## Example
+
+https://github.com/user-attachments/assets/bcda9a3e-026e-4b88-883c-91de892a472b
 
 ![Serial Monitor Output](./MatteoPersianiPhotos/serial-monitor.png)
 
