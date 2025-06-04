@@ -24,13 +24,13 @@ We need to connect the DHT11 to the DevBoard, follow this wiring:
 - **DHT11 Signal →** GPIO21  
 
 As illustrated in this picture: <br>
-<img src="/pics/DHT11.png" width="300">
+<img src="KevinYuanPhotos/DHT11.png" width="300">
 
 Your wiring should look like this:<br>
-<img src="/pics/IMG_3875.JPG" width="300">
+<img src="KevinYuanPhotos/Example.jpeg" width="300">
 
 **NOTE: There are two different models of DHT11. Do not follow the wiring in the picture below**<br>
-<img src="/pics/bad_dht11.png" width="300">
+<img src="KevinYuanPhotos/bad_dht11.png" width="300">
 
 
 ## Connect ESP32 DevBoard
@@ -93,7 +93,7 @@ void loop() {
 ```
 
 Select **tools**, then click **Serial Monitor**. This is the format you should expect to see:<br>
-<img src="/pics/image_result.png">
+<img src="KevinYuanPhotos/image_result.png">
 
 <br>
 Congratulations! You are now reading data from the DHT11 Sensor in real-time!
