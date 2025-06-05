@@ -220,7 +220,7 @@ Finally in the Serial Monitor, make sure to select the baud that we used in our 
 ![](RiccardoManca_Team3_Tutorial_Photos/serial%20monitor%20baud.png)
 
 
- If all previous steps and part were followed correctly, you should be able to see the readings of the ultrasonic sensor in centimeters, displayed in a new line of the Serial Monitor.
+ **If all previous steps and part were followed correctly, you should be able to see the readings of the ultrasonic sensor in centimeters, displayed in a new line of the Serial Monitor.**
 
 ## Additional Resources
 
