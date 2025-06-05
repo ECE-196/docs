@@ -92,3 +92,48 @@ void loop() {
 ## Troubleshooting
 
 - If movement is reversed, adjust the map() function values
+
+## ESP32 Code(Not fully Tested)
+-Slight modifications to the circuit must be made, Changing the pins for Joystick and Servo.
+
+#include <ESP32Servo.h>
+
+// Create servo object
+Servo myservo;
+
+// Define pins
+const int joystickXPin = 1;  // Joystick X-axis
+const int servoPin = 46;      // Servo control pin
+
+// Variables
+int joystickValue;
+int servoAngle;
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(115200);
+  
+  
+  // Attach servo to pin
+  myservo.attach(servoPin, 500, 2400);
+}
+
+void loop() {
+  // Read joystick value (0-4095)
+  joystickValue = analogRead(joystickXPin);
+  
+  // Map joystick value to servo angle (0-180)
+  servoAngle = map(joystickValue, 0, 1023, 0, 180);
+  
+  // Control servo
+  myservo.write(servoAngle);
+  
+  // Debug output
+  Serial.print("Joystick Value: ");
+  Serial.print(joystickValue);
+  Serial.print(" Servo Angle: ");
+  Serial.println(servoAngle);
+  
+  // Small delay for stability
+  delay(15);
+}
