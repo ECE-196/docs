@@ -111,7 +111,7 @@ Then we want to make sure our esp32 is plugged in to our laptop using a type c t
 
 We then want to make sure we select the correct board.
 
-![insert pic of board selection menu]
+![insert pic of board selection menu](LCDTodoPhotos/S1.png)
 
 once we select the correct board, we can now jump over to setting up the breadboard circuit.
 
@@ -124,6 +124,10 @@ Follow the following circuit diagram using the jumper cables, ESP32, LCD, and po
 
 Going back to the Arduino IDE, we can hit the Upload button.
 
+Make sure your code looks like this
+
+![insert pic of board selection menu](LCDTodoPhotos/S2.png)
+
 Once the code is finish uploading, we can adjust the potentiometer to display our tasks!!
 
 ## Example
@@ -134,8 +138,8 @@ So here we have the LCD fully hooked up and programmed displaying 2 tasks
 
 ### Example
 
-Present the example here. Include visuals to help better understanding
-![insert photo of finished example]()
+
+![insert photo of finished example](LCDTodoPhotos/ExampleFinished.JPG)
 
 ### Analysis
 
