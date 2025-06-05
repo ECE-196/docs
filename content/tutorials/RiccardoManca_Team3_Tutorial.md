@@ -202,7 +202,7 @@ Finally connect the male pins to the header pins of the breadboard as shown in t
 
 ![](RiccardoManca_Team3_Tutorial_Photos/schematic.png)
 
-Your end result should like like something like this:
+Your end result should look like something like this:
 
 ![](RiccardoManca_Team3_Tutorial_Photos/hardware.png)
 
