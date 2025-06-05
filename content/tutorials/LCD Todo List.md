@@ -24,7 +24,7 @@ What do you want readers to gain from the tutorial?
 
 ### Background Information
 
-![insert todo list picture]()
+![insert todo list picture](LCDTodoPhotos/printable-to-do-list-template-1-fefefe-010101.png)
 Its just going to be a todo list that is displaying tasks I need to complete for the day. There are other things similar to use but this could be made with common electronic parts. Some of the most important concepts to understand is how the LCD IO works as well as how to read breadboard diagrams.
 
 ## Getting Started
