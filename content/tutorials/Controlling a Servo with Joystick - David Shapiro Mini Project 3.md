@@ -95,7 +95,7 @@ void loop() {
 
 ## ESP32 Code(Not fully Tested)
 -Slight modifications to the circuit must be made, Changing the pins for Joystick and Servo.
-
+```
 #include <ESP32Servo.h>
 
 // Create servo object
@@ -137,3 +137,4 @@ void loop() {
   // Small delay for stability
   delay(15);
 }
+```
