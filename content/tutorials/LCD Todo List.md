@@ -148,6 +148,7 @@ My example completely assembled the breadboard circuit and added custom tasks on
 
 ## Additional Resources
 https://docs.arduino.cc/software/ide/#ide-v1
+
 https://docs.arduino.cc/programming/
 
 ### Useful links
