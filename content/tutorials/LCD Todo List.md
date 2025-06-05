@@ -116,7 +116,8 @@ We then want to make sure we select the correct board.
 once we select the correct board, we can now jump over to setting up the breadboard circuit.
 
 
-![insert breadboard photo]()
+
+![content/tutorials/LCDTodoLogo.jpg](LCDTodoPhotos/bbwiring.jpg)
 
 we will be utilizing pins 17, 16, 15, 14, 12, and 11 of our ESP32
 
