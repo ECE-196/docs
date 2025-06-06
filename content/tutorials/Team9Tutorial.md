@@ -6,7 +6,8 @@ authors:
 tags: [ESP32-CAM, Computer Vision, IoT, YOLO, Object Detection, Python, OpenCV]  
 ---  
 
-![ESP32-CAM](https://github.com/user-attachments/assets/b54308e5-dd03-415c-a266-4db8675e2418)
+![image](https://github.com/user-attachments/assets/3ea1b21b-82df-472a-acaa-73c45b6e4162)
+
 
 ## Introduction
 
