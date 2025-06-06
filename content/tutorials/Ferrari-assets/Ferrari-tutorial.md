@@ -83,7 +83,7 @@ An Organic Light-Emitting Diode (OLED) display is a type of screen that uses org
 - 1 Adafruit SSD1306 OLED
 - 4 Male to Female Jumper Wires
 
-### Instructional
+### Instructions
 
 #### Hardware
 Since the OLED display uses I2C to communicate with the ESP32-S3 Dev Board, the OLED display can be directly wired to the ESP32-S3 Dev Board. 
@@ -98,13 +98,13 @@ Using your 4 male to female jumper wires, connect the following.
 
 Install the [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306) library and [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library). 
 
-Open your Arduino IDE and go to Sketch > Include Library > Manage Libraries
+Open your Arduino IDE and go to `Sketch > Include Library > Manage Libraries`
 <br>
 Then, search for all the listed libraries and install them. 
 
 Note: If you are on the legacy version of Arduino IDE, you may need to add the [Adafruit_BusIO](https://github.com/B1Bomber/binaryKeyboard/blob/main/Libraries/Adafruit_BusIO-master.zip) library. 
 
-There are some example code for you to refer to under File > Examples > Adafruit SSD1306
+There are some example code for you to refer to under `File > Examples > Adafruit SSD1306`
 <br>
 Connect your ESP32-S3 Dev Board to your computer with a USB C cable and try them out. 
 
@@ -134,7 +134,238 @@ A web socket is a communication protocol that provides independent, simultaneous
 
 - ESP32-S3 Dev Board
 
-### Instructional
+### Instructions
 
-Teach the contents of this section
+Create a new file in your Arduino project directory called `ESPWebController.cpp`.
+<br>
+In that file, set up something like the following. 
+```
+#include "ESPWebController.h"
 
+#include <SPIFFS.h>
+
+ESPWebController* ESPWebController::instance = nullptr;
+
+ESPWebController::ESPWebController() {
+    instance = this;
+}
+
+void ESPWebController::begin() {
+    WiFi.softAP(WIFI_SSID, WIFI_PASSWORD);
+    Serial.print("Access Point IP: ");
+    Serial.println(WiFi.softAPIP());
+
+    if (!SPIFFS.begin(true)) {
+        Serial.println("An Error has occurred while mounting SPIFFS");
+        return;
+    }
+
+    server.begin();
+    webSocket.begin();
+    webSocket.onEvent(onWebSocketEvent);
+}
+
+void ESPWebController::update() {
+    webSocket.loop();
+
+    WiFiClient client = server.available();
+    if (client) {
+        Serial.println("New Client.");
+        handleClientRequest(client);
+        client.stop();
+        Serial.println("Client disconnected.");
+    }
+}
+
+void ESPWebController::handleClientRequest(WiFiClient& client) {
+    String request = client.readStringUntil('\r');
+    client.read();
+
+    if (request.indexOf("GET / ") >= 0) {
+        File file = SPIFFS.open("/index.html", "r");
+        if (!file) {
+            Serial.println("Failed to open /index.html");
+            client.println("HTTP/1.1 500 Internal Server Error");
+            client.println("Content-type:text/plain");
+            client.println("Connection: close");
+            client.println();
+            client.println("Failed to load index.html");
+            return;
+        }
+
+        client.println("HTTP/1.1 200 OK");
+        client.println("Content-type:text/html");
+        client.println("Connection: close");
+        client.println();
+
+        client.write(file);
+
+        while (file.available()) {
+            client.write(file.read());
+        }
+
+        file.close();
+        client.println();
+    }
+}
+
+void ESPWebController::onWebSocketEvent(uint8_t num, WStype_t type, uint8_t* payload, size_t length) {
+    if (type == WStype_TEXT && instance) {
+        String json = (char*)payload;
+
+        JsonDocument doc;
+        deserializeJson(doc, json);
+        EventType eventType = getEventTypeEnum(doc["type"]);
+
+        switch (eventType) {
+            case EventType::INIT: {
+                Serial.printf("ESPWebController.cpp:(EventType::INIT) Check init\n");
+
+                if (instance->onInit) {
+                    bool initialized = instance->onInit();
+                    instance->send(EventType::INIT, [&](JsonDocument& doc) {
+                        doc["initialized"] = initialized;
+                    });
+                }
+                break;
+            }
+            
+            // add your OLED picture changing events here
+
+            default:
+                Serial.println("Received unknown event type");
+                break;
+        }
+    }
+}
+
+void ESPWebController::send(EventType type, std::function<void(JsonDocument&)> fill) {
+    JsonDocument doc;
+    fill(doc);
+    
+    doc["type"] = toString(type);
+
+    String output;
+    serializeJson(doc, output);
+
+    webSocket.broadcastTXT(output);
+}
+```
+---
+
+In the same directory, create the header file for the web controller called `ESPWebController.h`
+<br>
+In that file, set up something like the following. 
+```
+#ifndef ESPWEBCONTROLLER_H
+#define ESPWEBCONTROLLER_H
+
+#include <ArduinoJson.h>
+#include <WebSocketsServer.h>
+#include <WiFi.h>
+
+#include "EventType.h"
+
+// Fill in the blank to name your wifi access point and to set your password
+inline constexpr const char* WIFI_SSID = "___";
+inline constexpr const char* WIFI_PASSWORD = "___";
+
+class ESPWebController {
+   public:
+    ESPWebController();
+    void begin();
+    void update();
+
+    void send(EventType type, std::function<void(JsonDocument&)> fill);
+
+    void setOnInitCallback(std::function<bool()> callback) {
+        onInit = callback;
+    }
+
+    void setOnSetupCallback(std::function<void(int, int)> callback) {
+        onSetup = callback;
+    }
+
+    // add functions to handle your events
+
+   private:
+    void handleClientRequest(WiFiClient& client);
+    static void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t* payload, size_t length);
+
+    static ESPWebController* instance;
+
+    WiFiServer server{80};           // Initialize with port 80
+    WebSocketsServer webSocket{81};  // WebSocket on port 81
+
+    std::function<bool()> onInit;
+    std::function<void(int, int)> onSetup;
+};
+
+#endif
+```
+---
+
+In the same directory, create the event file for the web controller called `EventType.cpp`
+<br>
+In that file, set up something like the following. 
+```
+#include "EventType.h"
+#include <map>
+#include <string>
+
+const char* toString(EventType direction) {
+    switch (direction) {
+
+        // add your event cases for the OLED
+        case EventType::INIT: return "init";
+        case EventType::SETUP: return "setup";
+        case EventType::INFO: return "info";
+        case EventType::UNKNOWN: return "unknown";
+        default: return "invalid";
+    }
+}
+
+std::map<std::string, EventType> eventTypeDict = {
+    {"init", EventType::INIT},
+    {"setup", EventType::SETUP},
+    {"info", EventType::INFO}
+};
+
+EventType getEventTypeEnum(const std::string& str) {
+    auto it = eventTypeDict.find(str);
+    return (it != eventTypeDict.end()) ? it->second : EventType::UNKNOWN;
+}
+```
+---
+
+In the same directory, create the header file for the web controller events called `EventType.h`
+<br>
+In that file, set up something like the following. 
+```
+#ifndef EVENT_TYPE_H
+#define EVENT_TYPE_H
+
+#include <string>
+
+enum class EventType {
+    // add the name of your events from the previous file here
+    INIT,
+    SETUP,
+    INFO,
+    UNKNOWN
+};
+
+const char* toString(EventType direction);
+EventType getEventTypeEnum(const std::string& str);
+
+#endif
+```
+---
+
+In your main Arduino file, add the following line to integrate it with your web socket. 
+<br>
+`#include "ESPWebController.h"`
+
+### Sources and Useful Links
+
+[ECE 196 Spring 2025 Team 3 Repository](https://github.com/jasper-hyj/ece196-project-code)
