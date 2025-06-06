@@ -70,7 +70,389 @@ Flash ESP32-CAM and stream live video via Wi-Fi.
 <summary>Click to view</summary>  
 
 ```cpp
-// Code omitted for brevity; use full firmware from project files
+// #include "esp_camera.h"
+// #include <WiFi.h>
+// #include "esp_system.h"
+// #include "esp_chip_info.h"
+
+// #define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
+// #include "camera_pins.h"
+
+// const char *ssid = "RESNET-GUEST-DEVICE";
+// const char *password = "ResnetConnect";
+
+// void startCameraServer();
+// void setupLedFlash(int pin);
+
+// void setup() {
+//   Serial.begin(115200);
+//   Serial.setDebugOutput(true);
+//   delay(2000); // Give time for serial monitor to connect
+  
+//   Serial.println("\n\n=== ESP32 Camera WiFi Debug ===");
+  
+//   // Basic chip info using ESP32 Arduino methods
+//   Serial.printf("Chip Model: ESP32 variant\n");
+//   Serial.printf("Chip Revision: %d\n", ESP.getChipRevision());
+//   Serial.printf("CPU Frequency: %d MHz\n", ESP.getCpuFreqMHz());
+//   Serial.printf("Flash Size: %d bytes\n", ESP.getFlashChipSize());
+//   Serial.printf("Free Heap: %d bytes\n", ESP.getFreeHeap());
+  
+//   // Check PSRAM
+//   if (psramFound()) {
+//     Serial.printf("PSRAM: Found, size: %d bytes\n", ESP.getPsramSize());
+//   } else {
+//     Serial.println("PSRAM: Not found");
+//   }
+  
+//   // Get MAC using WiFi library method
+//   Serial.println("\nInitializing WiFi...");
+//   WiFi.mode(WIFI_STA);
+//   delay(100);
+  
+//   Serial.print("WiFi MAC address: ");
+//   Serial.println(WiFi.macAddress());
+  
+//   // If MAC is still zeros, WiFi hardware has issues
+//   if (WiFi.macAddress() == "00:00:00:00:00:00") {
+//     Serial.println("CRITICAL ERROR: WiFi hardware not responding!");
+//     Serial.println("Check:");
+//     Serial.println("1. Board selection in Arduino IDE");
+//     Serial.println("2. Flash settings");
+//     Serial.println("3. Hardware may be defective");
+//     Serial.println("Stopping here - fix WiFi hardware first");
+//     while(1) delay(1000); // Stop execution
+//   }
+  
+//   // Camera initialization
+//   Serial.println("\nInitializing camera...");
+//   camera_config_t config;
+//   config.ledc_channel = LEDC_CHANNEL_0;
+//   config.ledc_timer = LEDC_TIMER_0;
+//   config.pin_d0 = Y2_GPIO_NUM;
+//   config.pin_d1 = Y3_GPIO_NUM;
+//   config.pin_d2 = Y4_GPIO_NUM;
+//   config.pin_d3 = Y5_GPIO_NUM;
+//   config.pin_d4 = Y6_GPIO_NUM;
+//   config.pin_d5 = Y7_GPIO_NUM;
+//   config.pin_d6 = Y8_GPIO_NUM;
+//   config.pin_d7 = Y9_GPIO_NUM;
+//   config.pin_xclk = XCLK_GPIO_NUM;
+//   config.pin_pclk = PCLK_GPIO_NUM;
+//   config.pin_vsync = VSYNC_GPIO_NUM;
+//   config.pin_href = HREF_GPIO_NUM;
+//   config.pin_sccb_sda = SIOD_GPIO_NUM;
+//   config.pin_sccb_scl = SIOC_GPIO_NUM;
+//   config.pin_pwdn = PWDN_GPIO_NUM;
+//   config.pin_reset = RESET_GPIO_NUM;
+//   config.xclk_freq_hz = 20000000;
+//   config.frame_size = FRAMESIZE_UXGA;
+//   config.pixel_format = PIXFORMAT_JPEG;
+//   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+//   config.fb_location = CAMERA_FB_IN_PSRAM;
+//   config.jpeg_quality = 12;
+//   config.fb_count = 1;
+
+//   if (config.pixel_format == PIXFORMAT_JPEG) {
+//     if (psramFound()) {
+//       config.jpeg_quality = 10;
+//       config.fb_count = 2;
+//       config.grab_mode = CAMERA_GRAB_LATEST;
+//     } else {
+//       config.frame_size = FRAMESIZE_SVGA;
+//       config.fb_location = CAMERA_FB_IN_DRAM;
+//     }
+//   } else {
+//     config.frame_size = FRAMESIZE_240X240;
+// #if CONFIG_IDF_TARGET_ESP32S3
+//     config.fb_count = 2;
+// #endif
+//   }
+
+//   esp_err_t err = esp_camera_init(&config);
+//   if (err != ESP_OK) {
+//     Serial.printf("Camera init failed with error 0x%x\n", err);
+//     return;
+//   }
+//   Serial.println("Camera initialized successfully!");
+
+//   sensor_t *s = esp_camera_sensor_get();
+//   if (s->id.PID == OV3660_PID) {
+//     s->set_vflip(s, 1);
+//     s->set_brightness(s, 1);
+//     s->set_saturation(s, -2);
+//   }
+//   if (config.pixel_format == PIXFORMAT_JPEG) {
+//     s->set_framesize(s, FRAMESIZE_QVGA);
+//   }
+
+// #if defined(CAMERA_MODEL_ESP32S3_EYE)
+//   s->set_vflip(s, 1);
+// #endif
+
+// #if defined(LED_GPIO_NUM)
+//   setupLedFlash(LED_GPIO_NUM);
+// #endif
+
+//   // Network scanning and connection
+//   Serial.println("\n=== WiFi Connection Process ===");
+//   WiFi.disconnect();
+//   delay(100);
+  
+//   Serial.println("Scanning for networks...");
+//   int n = WiFi.scanNetworks();
+//   Serial.printf("Found %d networks:\n", n);
+  
+//   bool targetFound = false;
+//   for (int i = 0; i < n; ++i) {
+//     Serial.printf("%d: %s (%d dBm) %s\n", 
+//                   i + 1, 
+//                   WiFi.SSID(i).c_str(), 
+//                   WiFi.RSSI(i),
+//                   (WiFi.encryptionType(i) == WIFI_AUTH_OPEN) ? "[OPEN]" : "[SECURED]");
+//     if (WiFi.SSID(i) == ssid) {
+//       targetFound = true;
+//       Serial.printf("*** Target network '%s' found with signal %d dBm\n", ssid, WiFi.RSSI(i));
+//     }
+//   }
+  
+//   if (!targetFound) {
+//     Serial.printf("ERROR: Target network '%s' not found in scan!\n", ssid);
+//     Serial.println("Available networks listed above. Check network name exactly.");
+//     return;
+//   }
+  
+//   Serial.printf("Connecting to '%s'...\n", ssid);
+//   WiFi.begin(ssid, password);
+  
+//   int attempts = 0;
+//   while (WiFi.status() != WL_CONNECTED && attempts < 30) {
+//     delay(1000);
+//     attempts++;
+    
+//     wl_status_t status = WiFi.status();
+//     Serial.printf("Attempt %d: ", attempts);
+    
+//     switch(status) {
+//       case WL_IDLE_STATUS: Serial.println("IDLE"); break;
+//       case WL_NO_SSID_AVAIL: Serial.println("NO_SSID - Network not found"); break;
+//       case WL_SCAN_COMPLETED: Serial.println("SCAN_COMPLETED"); break;
+//       case WL_CONNECTED: Serial.println("CONNECTED!"); break;
+//       case WL_CONNECT_FAILED: Serial.println("CONNECT_FAILED - Wrong password?"); break;
+//       case WL_CONNECTION_LOST: Serial.println("CONNECTION_LOST"); break;
+//       case WL_DISCONNECTED: Serial.println("DISCONNECTED"); break;
+//       default: Serial.printf("UNKNOWN_STATUS_%d\n", status); break;
+//     }
+    
+//     // Try reconnecting every 10 attempts
+//     if (attempts % 10 == 0 && status != WL_CONNECTED) {
+//       Serial.println("Retrying connection...");
+//       WiFi.disconnect();
+//       delay(1000);
+//       WiFi.begin(ssid, password);
+//     }
+//   }
+  
+//   if (WiFi.status() != WL_CONNECTED) {
+//     Serial.println("\n*** FAILED TO CONNECT ***");
+//     Serial.println("Possible issues:");
+//     Serial.println("1. Wrong password");
+//     Serial.println("2. Network requires additional authentication");
+//     Serial.println("3. MAC address filtering");
+//     Serial.println("4. Network is 5GHz only");
+//     return;
+//   }
+  
+//   Serial.println("\n*** WiFi Connected Successfully! ***");
+//   Serial.print("IP address: ");
+//   Serial.println(WiFi.localIP());
+//   Serial.print("Gateway: ");
+//   Serial.println(WiFi.gatewayIP());
+//   Serial.print("DNS: ");
+//   Serial.println(WiFi.dnsIP());
+//   Serial.print("Signal strength: ");
+//   Serial.print(WiFi.RSSI());
+//   Serial.println(" dBm");
+
+//   startCameraServer();
+
+//   Serial.print("\nCamera server ready! Go to: http://");
+//   Serial.println(WiFi.localIP());
+// }
+
+// void loop() {
+//   // Print connection status every 30 seconds
+//   static unsigned long lastCheck = 0;
+//   if (millis() - lastCheck > 30000) {
+//     lastCheck = millis();
+//     if (WiFi.status() == WL_CONNECTED) {
+//       Serial.printf("WiFi OK - IP: %s, Signal: %d dBm\n", 
+//                     WiFi.localIP().toString().c_str(), WiFi.RSSI());
+//     } else {
+//       Serial.println("WiFi connection lost!");
+//     }
+//   }
+//   delay(1000);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include "esp_camera.h"
+#include <WiFi.h>
+
+#define CAMERA_MODEL_XIAO_ESP32S3
+#include "camera_pins.h"
+
+const char *ssid = "RESNET-GUEST-DEVICE";
+const char *password = "ResnetConnect";
+
+void startCameraServer();
+void setupLedFlash(int pin);
+
+void setup() {
+  Serial.begin(115200);
+  Serial.setDebugOutput(false); // Disable debug output for better performance
+  
+  // Optimize CPU frequency
+  setCpuFrequencyMhz(240); // Max frequency for ESP32S3
+  
+  Serial.println("Starting optimized camera setup...");
+
+  camera_config_t config;
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM;
+  config.pin_d1 = Y3_GPIO_NUM;
+  config.pin_d2 = Y4_GPIO_NUM;
+  config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM;
+  config.pin_d5 = Y7_GPIO_NUM;
+  config.pin_d6 = Y8_GPIO_NUM;
+  config.pin_d7 = Y9_GPIO_NUM;
+  config.pin_xclk = XCLK_GPIO_NUM;
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
+  config.pin_href = HREF_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
+  config.pin_pwdn = PWDN_GPIO_NUM;
+  config.pin_reset = RESET_GPIO_NUM;
+  
+  // Optimized camera settings for performance
+  config.xclk_freq_hz = 20000000;
+  config.pixel_format = PIXFORMAT_JPEG;
+  config.grab_mode = CAMERA_GRAB_LATEST; // Always get latest frame
+  config.fb_location = CAMERA_FB_IN_PSRAM;
+  
+  // Performance optimized settings
+  if (psramFound()) {
+    Serial.println("PSRAM found - using optimized settings");
+    config.frame_size = FRAMESIZE_QQVGA;    // 800x600 - good balance
+    config.jpeg_quality = 12;              // Lower quality = faster
+    config.fb_count = 2;                   // Double buffering
+  } else {
+    Serial.println("No PSRAM - using conservative settings");
+    config.frame_size = FRAMESIZE_QQVGA;     // 640x480
+    config.jpeg_quality = 15;
+    config.fb_count = 1;
+    config.fb_location = CAMERA_FB_IN_DRAM;
+  }
+
+  // Initialize camera
+  esp_err_t err = esp_camera_init(&config);
+  if (err != ESP_OK) {
+    Serial.printf("Camera init failed with error 0x%x", err);
+    return;
+  }
+
+  // Get camera sensor for optimization
+  sensor_t *s = esp_camera_sensor_get();
+  
+  // Optimize sensor settings for speed
+  s->set_framesize(s, FRAMESIZE_QQVGA);     // Start with VGA for speed
+  s->set_quality(s, 12);                  // JPEG quality (lower = faster)
+  
+  // Image enhancement settings
+  s->set_brightness(s, 0);     // -2 to 2
+  s->set_contrast(s, 0);       // -2 to 2
+  s->set_saturation(s, 0);     // -2 to 2
+  s->set_special_effect(s, 0); // 0 to 6 (0=No Effect)
+  s->set_whitebal(s, 1);       // 0 = disable , 1 = enable
+  s->set_awb_gain(s, 1);       // 0 = disable , 1 = enable
+  s->set_wb_mode(s, 0);        // 0 to 4 - if awb_gain enabled
+  s->set_exposure_ctrl(s, 1);  // 0 = disable , 1 = enable
+  s->set_aec2(s, 0);           // 0 = disable , 1 = enable
+  s->set_ae_level(s, 0);       // -2 to 2
+  s->set_aec_value(s, 300);    // 0 to 1200
+  s->set_gain_ctrl(s, 1);      // 0 = disable , 1 = enable
+  s->set_agc_gain(s, 0);       // 0 to 30
+  s->set_gainceiling(s, (gainceiling_t)0); // 0 to 6
+  s->set_bpc(s, 0);            // 0 = disable , 1 = enable
+  s->set_wpc(s, 1);            // 0 = disable , 1 = enable
+  s->set_raw_gma(s, 1);        // 0 = disable , 1 = enable
+  s->set_lenc(s, 1);           // 0 = disable , 1 = enable
+  s->set_hmirror(s, 0);        // 0 = disable , 1 = enable
+  s->set_vflip(s, 0);          // 0 = disable , 1 = enable
+  s->set_dcw(s, 1);            // 0 = disable , 1 = enable
+  s->set_colorbar(s, 0);       // 0 = disable , 1 = enable
+
+  // Camera model specific optimizations
+#if defined(CAMERA_MODEL_XIAO_ESP32S3)
+  // No specific flips needed for XIAO ESP32S3
+#endif
+
+#if defined(LED_GPIO_NUM)
+  setupLedFlash(LED_GPIO_NUM);
+#endif
+
+  // WiFi setup with optimizations
+  WiFi.mode(WIFI_STA);
+  WiFi.setSleep(false); // Disable WiFi sleep for consistent performance
+  WiFi.setTxPower(WIFI_POWER_19_5dBm); // Max WiFi power
+  
+  Serial.printf("Connecting to %s", ssid);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+
+  startCameraServer();
+
+  Serial.print("Camera Ready! Use 'http://");
+  Serial.print(WiFi.localIP());
+  Serial.println("' to connect");
+  
+  // Print optimization info
+  Serial.println("\nOptimization Settings Applied:");
+  Serial.printf("CPU Frequency: %d MHz\n", getCpuFrequencyMhz());
+  Serial.printf("PSRAM Available: %s\n", psramFound() ? "Yes" : "No");
+  Serial.printf("Frame Size: %s\n", psramFound() ? "QQVGA" : "QQVGA");
+  Serial.printf("JPEG Quality: %d\n", psramFound() ? 12 : 15);
+  Serial.printf("Frame Buffers: %d\n", psramFound() ? 2 : 1);
+}
+
+void loop() {
+  // Keep loop minimal for best performance
+  delay(1);
+}
+
 ```  
 
 </details>  
