@@ -10,10 +10,6 @@ Testing Markdown Syntax
 
 Miki Korol
 ---
-**Man I love markdown!**
-
-* First ill do this
-* then ill submit 
 
   
 <!---![image](https://github.com/user-attachments/assets/a0ae3235-d7bd-4b30-b160-83ebf1033004)-->
@@ -89,9 +85,9 @@ state vector. To control the pure state vector we will run current through the
 solenoids to apply magnetic fields and thus a force on the permeable material.
 
 For time and complexity reasons we will first model just the up spin and down spin of the 
-bloch sphere before jumping into the whole thing. This means that the compas needle will point either up or down for now.
+bloch sphere before jumping into the whole thing. This means that the compas needle will point either up or down for now starting from the "50%50%" state AKA sideways.
 
-You will also learn how to develop the code to controll the pure state vector
+You will also learn how to develop the code to "measure" the pure state vector
 to model the mechanics of real quantum bits.
 
 Currently there are no programable bloch sphere models on the internet that can 
@@ -100,26 +96,16 @@ the inside of the sphere that looks like a vector and one on the outside to
 represent the pure state vector.
 
 
-
-
-
-## Getting Started
-
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
-
 ### Required Downloads and Installations
 
-we will be using the ... coding program and to instal it go to ...
+You need to download an IDE that has circuit python 2.0. I used VS code which you can download here:
+
+https://code.visualstudio.com/download
+
+To download circuitpy head to extensions and look up Circuitpy 2.0 and download the latest version.
+To flash the ESP 32 and connect the circuit to the code you can follow the steps from this github page: 
+
+https://ece-196.github.io/docs/assignments/vu-meter/firmware/
 
 we also need CAD software. You can use onshape which is online. 
 To be able to use onshape you just need to create a free account. 
@@ -133,8 +119,8 @@ To be able to use onshape you just need to create a free account.
 |  soft iron rod (.19 diameter X 1+in length)| 1|
 |  coils/wire|10+ ft|
 |  resistors(blank ohms ~1K)|10|
-|  voltage source (battery/other)|1|
-|  plastic bloch sphere enclosure(5.5 inch diameter)|1|
+|  High voltage/current source|1|
+|  10W 1 ohm ceramic resistor|1|
 
 ### Required Tools and Equipment
 
@@ -164,33 +150,31 @@ https://en.wikipedia.org/wiki/Solenoid#:~:text=A%20solenoid%20(%2F%CB%88so%CA%8A
 
 When you weap a coil the summ of all of the fields induced from the individual currents in the wire can produce a high magnitude magnetic field in the center of the coil. 
 
-We will use that concept to apply fields to the iron rod. 
+We will use that concept to apply fields to the iron rod which will roatate to align its grains with the field in the lowest energy state. 
 
 ### Components
 
 1. Voltage Source
 
-2. High Guage Wire (Rated To 3A)
+2. High Guage Wire (Rated To 30-60+W)
 
 3. Iron Tod (Testing)
 
 ### Instructional
 
-1. Wrap the uncut wiring around something celyndrical. For our  case we need N turns of wire
+1. Wrap the uncut wiring around something celyndrical. In my case to get enough force I used over 40
+2. turns around the celyndrical tube.
 
-2. Cut the end of the coul attached to the spool of using wire cutters.
+3. Cut the end of the coul attached to the spool of using wire cutters making sure to leace some wire to attach to the circuit.
 
-3. If your solenoid is loose you can wrap it on the top and bottom with electrical tape.
+4. If your solenoid is loose you can wrap it on the top and bottom with electrical tape every few turns. 
 
 ## Example
 
-### Introduction
+![image](https://github.com/user-attachments/assets/f83f9b88-1b96-42a2-aff2-7ee6909ec441)
 
-Introduce the example that you are showing here.
+This is the coul that I used. I ended up having to add more turns of the coil to increase the field and thus the force on the iron rod. 
 
-### Example
-
-Present the example here. Include visuals to help better understanding
 
 ### Analysis
 
