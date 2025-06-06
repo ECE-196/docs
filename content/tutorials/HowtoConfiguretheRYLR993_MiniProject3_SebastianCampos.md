@@ -5,7 +5,7 @@ authors:
   - name: Sebastian Campos
 ---
 
-![alt text](SebastianCamposPhotos/image.png)
+![alt text](SebastianCamposPhotos/LoRa.png)
 
 ## Introduction
 
@@ -24,7 +24,7 @@ the modules.
 
 ### Background Information
 
-![alt text](SebastianCamposPhotos/image-1.png)
+![alt text](SebastianCamposPhotos/RYLR993.png)
 
 LoRa is short for "long range" and is a form of communication that is able to send 
 signals over long distances using low power. LoRa uses a chirped modulation
@@ -112,7 +112,7 @@ jumper cables are properly connecting each module.
 
 ## Visual
 
-![alt text](SebastianCamposPhotos/D7F6E4B5-0C94-4F49-9E06-DA7F1CFBF00D_4_5005_c.jpeg)
+![alt text](SebastianCamposPhotos/wiring.jpeg)
 
 ## Part 02: Configuring the RYLR998
 
@@ -173,7 +173,7 @@ My side the following is displayed: /dev/cu.usbserial-A900fshd. Your port name m
 
 ### Visual
 
-![alt text](SebastianCamposPhotos/image-2.png)
+![alt text](SebastianCamposPhotos/screenshot.png)
 
 ## Part 03: Writing Simple LoRa Reception Code
 
@@ -249,7 +249,7 @@ Essentially, this code makes the ESP 32 ready for any sent signals. When a signa
 
 ## Example
 
-![alt text](SebastianCamposPhotos/72BCA896-0FFD-41C5-AEC2-9499954CE79D_4_5005_c.jpeg)
+![alt text](SebastianCamposPhotos/example.jpeg)
 
 ### Analysis
 
