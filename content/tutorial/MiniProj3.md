@@ -96,6 +96,7 @@ If you look at the esp32 devboard, you can see that the two sides are lined with
 ### Components
 
 1 esp32 devbooard
+
 1 lightshield
 
 ### Instructional
@@ -123,8 +124,11 @@ If you look at the esp32 devboard, you can see that the two sides are lined with
 ### Components
 
 1 esp32 devboard
+
 1 lightshield
+
 1 computer
+
 1 usb-c cable 
 
 ### Instructional
@@ -172,8 +176,11 @@ Python code on the esp32 runs just like on any other computer. There is file cal
 ### Components
 
 1 esp32 devbooard
+
 1 lightshield(or other led configuration)
+
 1 computer
+
 1 usb-c cable 
 
 
