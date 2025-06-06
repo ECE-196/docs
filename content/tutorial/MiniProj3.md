@@ -1,8 +1,8 @@
 ---
 title: Mini Project 3 - blinking lights to a rhythm
-date: 2025-05-19
-authors:
-  - name: Allan Dong
+Start date: 2025-05-19
+author:
+  -  Allan Dong
 ---
 
 
