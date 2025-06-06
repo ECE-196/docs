@@ -157,64 +157,50 @@ This Picture and the video will guide you through the full setup — from wiring
 
 ### Analysis
 
-The example provided demonstrates a real-time parking spot detection system using two ultrasonic sensors connected to an ESP32 microcontroller. This example is a practical implementation of the tutorial’s main topic—real-time parking availability monitoring with ESP32 and Bluetooth Low Energy (BLE).
+The example provided demonstrates a real-time parking spot detection system using two ultrasonic sensors connected to an ESP32 microcontroller. This example is a practical implementation of the tutorial’s main topic—**real-time parking availability monitoring with ESP32 and Bluetooth Low Energy (BLE)**.
 
 Each part of the system contributes to the complete functionality in the following ways:
 
-✅ Sensor Integration
-Two ultrasonic sensors (HC-SR04 or JSN-SR04T) are used to detect the presence or absence of a car by measuring the distance from the sensor to the surface in front of it. If the measured distance is less than a defined threshold (e.g., 30 cm), it indicates that a car is parked in that spot.
+####  Sensor Integration
+Two **ultrasonic sensors** (HC-SR04 or JSN-SR04T) are used to detect the presence or absence of a car by measuring the distance from the sensor to the surface in front of it. If the measured distance is less than a defined threshold (e.g., 30 cm), it indicates that a car is parked in that spot.
 
-Why two sensors? Using two sensors improves accuracy by reducing false positives (e.g., shadows, small obstacles).
+- **Why two sensors?** Using two sensors improves accuracy by reducing false positives (e.g., shadows, small obstacles).
+- **Averaging method:** Distance values are sampled over time and averaged, increasing the stability and reliability of detection.
 
-Averaging method: Distance values are sampled over time and averaged, increasing the stability and reliability of detection.
-
-✅ ESP32 Microcontroller
-The ESP32 reads data from the sensors and handles Bluetooth communication. It also drives two LEDs that indicate spot status:
-
-Green (Available)
-
-Red (Occupied)
+####  ESP32 Microcontroller
+The **ESP32** reads data from the sensors and handles Bluetooth communication. It also drives two LEDs that indicate spot status:
+- Green (Available)
+- Red (Occupied)
 
 ESP32 is ideal for this project because it supports:
+- Real-time signal processing
+- Low-power operation
+- Native BLE capabilities
 
-Real-time signal processing
-
-Low-power operation
-
-Native BLE capabilities
-
-BLE Communication
-The ESP32 advertises sensor data (distance, availability, mode) over Bluetooth using a custom BLE characteristic. A web frontend or mobile app can connect via BLE and receive updates in real time. The data format sent is:
-
-
-
+####  BLE Communication
+The ESP32 advertises sensor data (distance, availability, mode) over Bluetooth using a **custom BLE characteristic**. A web frontend or mobile app can connect via BLE and receive updates in real time. The data format sent is:
+```
 <device_id>,<mode>,<availability>,<distance>
+```
 
-This format is lightweight and easily parsed on the frontend
+This format is lightweight and easily parsed on the frontend.
 
-Web Frontend Integration
+####  Web Frontend Integration
 On the frontend, the website listens for BLE broadcasts, parses the incoming values, and updates the user interface accordingly. For example:
+- Decreases the available spot count when a vehicle is detected.
+- Changes the spot color on a dashboard (e.g., green to red).
+- Updates individual slot statuses dynamically.
 
-Decreases the available spot count when a vehicle is detected.
+This full stack—from sensor to ESP32 to web UI—represents a **complete IoT solution** for smart parking.
 
-Changes the spot color on a dashboard (e.g., green to red).
-
-Updates individual slot statuses dynamically.
-
-This full stack—from sensor to ESP32 to web UI—represents a complete IoT solution for smart parking.
-
-In-Depth Understanding
+####  In-Depth Understanding
 The example captures several key real-world challenges:
+- Signal noise in sensors and how averaging mitigates it.
+- Bluetooth advertising and connection management.
+- Real-time synchronization between embedded hardware and a frontend.
+- User interface feedback and its importance in usability.
 
-Signal noise in sensors and how averaging mitigates it.
-
-Bluetooth advertising and connection management.
-
-Real-time synchronization between embedded hardware and a frontend.
-
-User interface feedback and its importance in usability.
-
-This makes the example an excellent demonstration of embedded systems, IoT communication, and user interface design, all wrapped in a meaningful real-world use case.
+This makes the example an excellent demonstration of **embedded systems**, **IoT communication**, and **user interface design**, all wrapped in a meaningful real-world use case.
 
 ## Additional Resources
 
