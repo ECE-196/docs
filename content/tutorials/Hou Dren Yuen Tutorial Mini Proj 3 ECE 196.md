@@ -286,7 +286,5 @@ To summarize, we created a function that allowed us to display our own messages 
 ## Additional Resources
 
 ### Useful links
-
-List any sources you used, documentation, helpful examples, similar projects etc.
 - SSD 1306 Datasheet - https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
 - ESP 32 S3 Datasheet - https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf
