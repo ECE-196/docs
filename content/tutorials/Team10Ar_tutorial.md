@@ -45,8 +45,6 @@ Similar technologies include IR sensors and camera-based systems. However:
 2. CP210x USB to UART Bridge VCP Drivers (for ESP32-S3 communication)
   - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 
-- Download
-
 3. **Google Chrome** (for Web Bluetooth API compatibility)
 
 ### Required Downloads and Installations
