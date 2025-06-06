@@ -146,10 +146,8 @@ Introduce the example that you are showing here.
 
 ![Workshop Logo](Team10ArPhotos/IMG_1221.jpeg)
 
-<video width="640" height="360" controls>
-  <source src="Team10ArPhotos/IMG_1219.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+▶️ [Watch Demo Video](Team10ArPhotos/IMG_1219.mp4)
+
 
 
 ### Analysis
