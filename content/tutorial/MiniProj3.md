@@ -16,6 +16,7 @@ programmable led's.
 ### Learning Objectives
 
 -python
+
 -esp32 pin control
 
 ### Background Information
@@ -50,7 +51,9 @@ connect to other devices via bluetooth and Wifi, but we are pretty much only wor
 ### Required Downloads and Installations
 
 circuit python
+
 Arduino IDE(optional)
+
 python mido library
 
 ### Required Components
