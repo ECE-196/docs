@@ -138,6 +138,9 @@ If distance < 30, then occupied = true.
 
 BLE sends: 1,A,0,25 (SensorID, Type, Free/Occupied, Distance)
 
+![Workshop Logo](Team10ArPhotos/sen1.png)
+![Workshop Logo](Team10ArPhotos/sen2.png)
+
 ### Introduction
 
 Introduce the example that you are showing here.
