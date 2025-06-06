@@ -49,7 +49,7 @@ First download the required [arduino](https://www.arduino.cc/en/software/) softw
 List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
-| ESP32 | 1 |
+| -------------- |           |
 |                |           |
 |                |           |
 
