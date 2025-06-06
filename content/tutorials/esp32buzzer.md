@@ -81,20 +81,27 @@ Soldering a spring contact and a basic understanding of where to place the cable
 ### Instructional
 
 We will start by soldering one side of the wires onto the speaker.
+
 ![image](https://github.com/user-attachments/assets/231e585b-9bfe-4584-af02-b78938f5624a)
 
 Refer to the datasheet to see which contact is positive. In the case of the speaker I am using, the datasheet states that it is the left contact is the positive one. 
+
 ![image](https://github.com/user-attachments/assets/87051209-7678-4ae5-a363-30ba38f2a89d)
 
 Plug in the resistor and the LED onto the breadboard 
+
 ![image](https://github.com/user-attachments/assets/14e79375-2fcb-4818-b422-4b0a3c521628)
 
 Next using a cable, plug one side into any of the digital pins on the ESP32 and the other end onto the open side of the resistor
+
 Then on the open side of the LED, we will use the GND pin from the ESP32 and plug that into the GND rail on the breadboard and hook it up into the LED
+
 ![image](https://github.com/user-attachments/assets/c0cf3416-a691-4feb-954a-58850bf202ac)
 
 Place the open pins of the speaker into the breadboard, take note of where the positive contact is
+
 Next using a cable, plug one side into any of the digital pins on the ESP32 and the other end into the positive contact of the speaker
+
 Utilizing the GND rail, place the last cable from the rail into the negative contact of the speaker
 
 ![image](https://github.com/user-attachments/assets/9b23fb88-4432-46c2-b1b8-ae881d4a57bf)
