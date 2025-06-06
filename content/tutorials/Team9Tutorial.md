@@ -251,81 +251,43 @@ Use Roboflow’s YOLO model to detect hazards in real-time.
 import cv2
 from inference import get_model
 import supervision as sv
-import pyttsx3
-import time
 
-STREAM_URL = "http://100.117.8.43:81/stream"
+# Replace with your ESP32-CAM stream URL
+STREAM_URL = "http://<IP>:81/stream" #change this
 
-def grab_latest_frame(cap, flush_count=4):
-    frame = None
-    for _ in range(flush_count):
-        ret, f = cap.read()
-        if not ret:
-            break
-        frame = f
-    return frame
-
-def open_stream():
-    cap = cv2.VideoCapture(STREAM_URL)
-    if not cap.isOpened():
-        print("Failed to open stream!")
-        return None
-    return cap
-
-cap = open_stream()
-if cap is None:
+# Open video stream
+cap = cv2.VideoCapture(STREAM_URL)
+if not cap.isOpened():
     raise RuntimeError("Could not open ESP32 stream.")
 
-model = get_model(model_id="196v2/1")
+# Load Roboflow model
+model = get_model(model_id="YOUR MODEL ID") #change this
 box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
 class_names = model.class_names
-engine = pyttsx3.init()
-engine.setProperty('rate', 175)
 
-hazard_classes = {
-    "wet_floor_sign": "wet floor sign",
-    "Safety-cone": "safety cone",
-    "Safety-bollard": "safety bollard",
-    "barrier tape": "barrier tape"
-}
-
-last_spoken_time = 0
-SPEECH_COOLDOWN = 5
-fail_count = 0
-MAX_FAILS = 10
-
+# Main loop
 while True:
-    frame = grab_latest_frame(cap, flush_count=4)
-    if frame is None:
-        fail_count += 1
-        cap.release()
-        time.sleep(1)
-        cap = open_stream()
-        if cap is None or fail_count > MAX_FAILS:
-            break
-        continue
-    fail_count = 0
+    ret, frame = cap.read()
+    if not ret:
+        print("Failed to read frame.")
+        break
+
+    # Run inference
     results = model.infer(frame)[0]
     detections = sv.Detections.from_inference(results)
-    labels = [class_names[cid] for cid in detections.class_id]
-    current_time = time.time()
-    detected_hazards = [hazard_classes[label] for label in labels if label in hazard_classes]
-    detected_hazards = list(dict.fromkeys(detected_hazards))
-    if detected_hazards and (current_time - last_spoken_time >= SPEECH_COOLDOWN):
-        if len(detected_hazards) == 1:
-            message = f"Warning: {detected_hazards[0]} detected ahead."
-        else:
-            combined = ", ".join(detected_hazards[:-1]) + " and " + detected_hazards[-1]
-            message = f"Warning: {combined} detected ahead."
-        engine.say(message)
-        engine.runAndWait()
-        last_spoken_time = current_time
+
+    # Annotate frame
     annotated = box_annotator.annotate(scene=frame, detections=detections)
     annotated = label_annotator.annotate(scene=annotated, detections=detections)
-    cv2.imshow("Live Detection", annotated)
+
+    # Show result
+    cv2.imshow("YOLO Detection", annotated)
+
+    # Press ESC to quit
     if cv2.waitKey(1) & 0xFF == 27:
         break
+
 cap.release()
 cv2.destroyAllWindows()
 ```
