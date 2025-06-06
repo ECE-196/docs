@@ -132,7 +132,7 @@ First download your favorite song as a mp3 file. Then convert it to a midi file 
   import mido
 import json
 
-midi = mido.MidiFile('gen2.mid')
+midi = mido.MidiFile('your_midi_file.mid')
 events = []
 current_time = 0
 
@@ -150,62 +150,83 @@ with open('midi_events.py', 'w') as f:
 
 }
 ```
+Run this file by entering python file.py(file is your file name) in the terminal. This should output a midi_events.py file that you will later put in your devboard's directory.
 
 
-
-## Example
-
-### Introduction
-
-Introduce the example that you are showing here.
-
-### Example
-
-Present the example here. Include visuals to help better understanding
-
-### Analysis
-
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
-
-
-
-## Part 03: Running the Software
+## Part 03: Running on the devboard
 
 
 ### Introduction
 
-This part I will show you how to properly run the file you just wrote on your esp32
+This part I will show you how to properly run everything you just wrote on your esp32
 
 ### Objective
- Learn how to run and execute software that you have written on the esp32 deboard. 
+ Learn how to make files, run, and execute software that you have written on the esp32 deboard. 
 
 ### Background Information
 
-Python code on the esp32 runs just like on any other computer. 
+Python code on the esp32 runs just like on any other computer. There is file called code.py or main.py in your circuitpython directory that automtically runs when saved. You just need to upload the working code there and it should start running. 
 
 ### Components
 
 1 esp32 devbooard
+1 lightshield(or other led configuration)
 1 computer
 1 usb-c cable 
-1 breadboard connection with led
+
 
 ### Instructional
+When you have set your esp32 devboard properly [according to this tutorial]([https://samplab.com/audio-to-mid](https://ece-196.github.io/docs/assignments/vu-meter/firmware/)i), you should have a directory called CircuitPython that you can see on your computer when you connect it via usb-c. Copy the midi_events.py file from the last step to this directory. Also if there isn't already a file called code.py, make one and add this code to it. 
+```C
+{
+import time
+import board
+import digitalio
+from midi_events import events  # <- generated file
+
+# List of LED GPIOs in your specified order
+led_pins = [board.IO39, board.IO38, board.IO37, board.IO36,
+            board.IO35, board.IO48]  # Only using 6 LEDs
+
+leds = []
+for pin in led_pins:
+    led = digitalio.DigitalInOut(pin)
+    led.direction = digitalio.Direction.OUTPUT
+    led.value = False  # Ensure all LEDs are off at startup
+    leds.append(led)
+
+# Start MIDI playback
+start_time = time.monotonic()
+
+current_event = 0
+while current_event < len(events):
+    now = time.monotonic() - start_time
+    event_time = events[current_event]['time']
+    note = events[current_event]['note']
+    
+    if now >= event_time:
+        # Turn off all LEDs
+        for led in leds:
+            led.value = False
+
+       
+        led_index = note % 6  # replace 6 with however many led's you have
+        leds[led_index].value = True
+        
+        # Print which LED is blinking
+        print(f"LED {led_index} (Note {note}) is blinking")
+
+        time.sleep(0.1)  # Flash duration
+        leds[led_index].value = False  
+        current_event += 1
+  }
+}
+```
+A few things you may need to change in this code. In lines 7-8, replace these conection names with whichever GPIO pins you have connected your led's to. Also on line 32 you will need to replace 6 with however many led's you are using. After making these changes, you can just save the file and it should run properly. 
 
 
 ## Example
-
-### Introduction
-
-Introduce the example that you are showing here.
-
-### Example
-
-Present the example here. Include visuals to help better understanding
-
-### Analysis
-
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+Here is a short video of how it should be working once you do everything correctly and upload the right code. [Video here]([https://samplab.com/audio-to-midi](https://youtube.com/shorts/Ye-g7py5aYg?feature=share))
 
 
 
