@@ -1,4 +1,12 @@
+---
+title: Applying a PID controller to ESP32 Tutorial
+date: 2025-06-06
+authors:
+  - name: Jake Honma
+---
 # Applying a PID controller to ESP32 Tutorial
+
+
 
 May 29, 2025 - Jake Honma - [Team 12](https://sites.google.com/view/ece-196-sp25/poster)
 
