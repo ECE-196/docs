@@ -103,11 +103,15 @@ Note: ControllerDirection allows for 'DIRECT' & 'INDIRECT', which correlates to 
     namePID.SetMode(int Mode);                       //AUTOMATIC or MANUAL
     namePID.SetOutputLimits(double Min, double Max); //range of values (for PWM 0-255)
 
-There are functions within the library that are automatically used in the constructor function, PID. These functions can be used to update PID values as the system runs to achieve a dynamic response and to set the direction for the internal controller. It is recommended to look through the link for further information based on the required use.
+There are functions within the library that are automatically used in the constructor function, PID, but should be called regardless. These functions can be used to update PID values as the system runs to achieve a dynamic response and to set the direction for the internal controller. 
+
+It is recommended to look through the link for further information based on the required use.
 
 [Arduino PID Library Code](https://github.com/br3ttb/Arduino-PID-Library/blob/master/PID_v1.cpp#L97)
 
-This process will require experimentation to get the correct PID values for a desired response, which will take time.
+### Note:
+
+PID tuning will require experimentation to get the correct PID values for a desired response, which will take time.
 
 
 ## Challenges
@@ -116,7 +120,7 @@ This process will require experimentation to get the correct PID values for a de
 - There was a lack of fine control on the RPM, meaning that if the PWM needed to increase or decrease, the RPM would change by 100s. This would consistently create a large error due to a natural overshoot, which causes oscillations and never stabilizes.
 -   Instead of a PID controller, we opted for hysteresis, which is another control algorithm that has a desired value with set tolerances and only allows the system to be on or off. These tolerances let the system smoothly function and avoid constant on and off switching.
  
-### Useful links
+## Useful links
 
 [Arduino PID Repository](https://github.com/br3ttb/Arduino-PID-Library)
 
