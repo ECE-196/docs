@@ -152,7 +152,6 @@ Introduce the example that you are showing here.
 </video>
 
 
-
 ### Analysis
 
 Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
