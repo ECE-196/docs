@@ -35,7 +35,6 @@ Computer vision enables machines to understand images and video. The ESP32-CAM c
 | ESP32 Board Support | Adds ESP32 support to Arduino IDE    | [Guide](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) |
 | Python 3.x        | Required for running detection script | [Download](https://www.python.org/)                                         |
 | OpenCV            | Image capture & processing            | `pip install opencv-python`                                                 |
-| pyttsx3           | Text-to-speech engine                 | `pip install pyttsx3`                                                       |
 | inference         | Roboflow's inference SDK              | `pip install inference`                                                     |
 
 ### Required Components
