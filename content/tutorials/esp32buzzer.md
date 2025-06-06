@@ -41,10 +41,9 @@ We will be using Arduino IDE for the software side of things and a breadboard fo
 
 ### Required Downloads and Installations
 
-Download the required [arduino](https://www.arduino.cc/en/software/) software, we will be doing most of the work in here
-### Required Components
+Download the required [arduino](https://www.arduino.cc/en/software/) software, we will be doing the coding here
 
-List your required hardware components and the quantities here.
+### Required Components
 
 | Component Name | Quanitity |
 | -------------- | --------- |
@@ -55,13 +54,11 @@ List your required hardware components and the quantities here.
 | 220 ohm Resistor  | 1         |
 ### Required Tools and Equipment
 
-List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
-
 - A laptop with Arduino IDE downloaded
 - Depending on the speaker, soldering may be needed
 - Usb cable for connections
-- Jumper cables  
+
+
 ## Part 01: Setting up the breadboard
 
 ### Introduction
@@ -71,7 +68,7 @@ We will start this project by placing all of the components needed onto the brea
 ### Objective
 
 - Learn how to set up connections from the breadboard to ESP32
-- Learn how to read a datasheet
+- Learn how to correctly orient a component based on the manufacturer's datasheet 
 
 ### Background Information
 
