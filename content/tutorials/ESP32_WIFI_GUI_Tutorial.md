@@ -1,5 +1,5 @@
 ---
-title: ESP32-S2 Wi-Fi LED Toggle Tutorial
+title: ESP32-S3 Wi-Fi LED Toggle Tutorial
 date: 2025-05-19
 authors:
   - name: Genaro Salazar Ruiz
@@ -9,7 +9,7 @@ authors:
 
 ## Introduction
 
-This tutorial teaches you how to build a simple web page hosted by a SoftAP that allows you to control two onboard LEDs on the ESP32-S2 DevKit. The board creates its own Wi-Fi network, and you can control the hardware through your phone or browser, no internet required.
+This tutorial teaches you how to build a simple web page hosted by a SoftAP that allows you to control two onboard LEDs on the ESP32-S3 DevKit. The board creates its own Wi-Fi network, and you can control the hardware through your phone or browser, no internet required.
 
 ### Learning Objectives
 
@@ -19,7 +19,7 @@ This tutorial teaches you how to build a simple web page hosted by a SoftAP that
 
 ### Background Information
 
-The ESP32-S2 is a Wi-Fi-enabled microcontroller that supports hosting its network using SoftAP mode. Using this, it can serve HTML pages and respond to URL requests. The project focuses on basic GPIO control through the web—a foundational use case for embedded web servers in IoT.
+The ESP32-S3 is a Wi-Fi-enabled microcontroller that supports hosting its own network using SoftAP mode. Using this, it can serve HTML pages and respond to URL requests. The project focuses on basic GPIO control through the web—a foundational use case for embedded web servers in IoT.
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ The ESP32-S2 is a Wi-Fi-enabled microcontroller that supports hosting its networ
 
 | Component Name   | Quantity |
 |------------------|----------|
-| ESP32-S2 DevKit  | 1        |
+| ESP32-S3 DevKit  | 1        |
 | USB-C Cable      | 1        |
 
 ### Required Tools and Equipment
@@ -45,7 +45,7 @@ The ESP32-S2 is a Wi-Fi-enabled microcontroller that supports hosting its networ
 
 ### Introduction
 
-In this section, you'll configure the ESP32-S2 as a Wi-Fi access point and host an HTML page to control two GPIOs connected to LEDs.
+In this section, you'll configure the ESP32-S3 as a Wi-Fi access point and host an HTML page to control two GPIOs connected to LEDs.
 
 ### Objective
 
@@ -58,7 +58,7 @@ You'll use the ESP32 libraries `<WiFi.h>` and `<WebServer.h>` to set up a server
 
 ### Components
 
-- ESP32-S2 DevKit (LEDs on GPIO 17 and 18)
+- ESP32-S3 DevKit (LEDs on GPIO 17 and 18)
 
 ### Instructional
 
@@ -107,7 +107,7 @@ server.handleClient();
 
 ### Introduction
 
-This example shows the complete code that creates an ESP32-based SoftAP, serves a webpage, and allows the user to control two LEDs.
+This example shows the complete code that creates an ESP32 SoftAP, serves a webpage, and allows the user to control two LEDs.
 
 ### Example
 
