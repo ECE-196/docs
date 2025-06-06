@@ -26,8 +26,8 @@ The ESP32-S3 is a Wi-Fi-enabled microcontroller that supports hosting its own ne
 ### Required Downloads and Installations
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
-- ESP32 Board Definitions  
-  Board Manager URL:
+- In Board Manager:
+   [esp32 by Espressif](https://github.com/espressif/arduino-esp32)
 
 ### Required Components
 
@@ -43,25 +43,11 @@ The ESP32-S3 is a Wi-Fi-enabled microcontroller that supports hosting its own ne
 
 ## Part 01: Wi-Fi LED Control via Web Page
 
-### Introduction
-
-In this section, you'll configure the ESP32-S3 as a Wi-Fi access point and host an HTML page to control two GPIOs connected to LEDs.
-
 ### Objective
+- Configure ESP32-S3 as Wi-Fi AP
+- Host HTML to control LEDs on GPIO 17 & 18
 
-- Set up SoftAP mode
-- Control GPIO 17 and GPIO 18 from a browser
-
-### Background Information
-
-You'll use the ESP32 libraries `<WiFi.h>` and `<WebServer.h>` to set up a server. The client browser will connect to the ESP32's network and send GET requests to specific routes, triggering the LEDs.
-
-### Components
-
-- ESP32-S3 DevKit (LEDs on GPIO 17 and 18)
-
-### Instructional
-
+### Setup
 ```cpp
 #include <WiFi.h>
 #include <WebServer.h>
@@ -72,13 +58,13 @@ You'll use the ESP32 libraries `<WiFi.h>` and `<WebServer.h>` to set up a server
 WebServer server(80);
 
 void handleRoot() {
-server.send(200, "text/html", "<html><body>\
-  <h1>LED Control</h1>\
-  <a href='/led1/on'>LED 1 ON</a><br>\
-  <a href='/led1/off'>LED 1 OFF</a><br>\
-  <a href='/led2/on'>LED 2 ON</a><br>\
-  <a href='/led2/off'>LED 2 OFF</a>\
-  </body></html>");
+  server.send(200, "text/html", "<html><body>
+    <h1>LED Control</h1>
+    <a href='/led1/on'>LED 1 ON</a><br>
+    <a href='/led1/off'>LED 1 OFF</a><br>
+    <a href='/led2/on'>LED 2 ON</a><br>
+    <a href='/led2/off'>LED 2 OFF</a>
+    </body></html>");
 }
 
 void handleLED1On()  { digitalWrite(LED1_PIN, HIGH); server.send(200, "text/plain", "LED1 ON"); }
@@ -87,35 +73,66 @@ void handleLED2On()  { digitalWrite(LED2_PIN, HIGH); server.send(200, "text/plai
 void handleLED2Off() { digitalWrite(LED2_PIN, LOW);  server.send(200, "text/plain", "LED2 OFF"); }
 
 void setup() {
-pinMode(LED1_PIN, OUTPUT);
-pinMode(LED2_PIN, OUTPUT);
-WiFi.softAP("ESP32_LED_AP", "genny123");
-server.on("/", handleRoot);
-server.on("/led1/on", handleLED1On);
-server.on("/led1/off", handleLED1Off);
-server.on("/led2/on", handleLED2On);
-server.on("/led2/off", handleLED2Off);
-server.begin();
+  pinMode(LED1_PIN, OUTPUT);
+  pinMode(LED2_PIN, OUTPUT);
+  WiFi.softAP("ESP32_LED_AP", "genny123");
+  server.on("/", handleRoot);
+  server.on("/led1/on", handleLED1On);
+  server.on("/led1/off", handleLED1Off);
+  server.on("/led2/on", handleLED2On);
+  server.on("/led2/off", handleLED2Off);
+  server.begin();
 }
 
 void loop() {
-server.handleClient();
+  server.handleClient();
 }
-
 ```
-## Example
 
-### Introduction
+## Part 02: Flashing the Code to ESP32-S3
 
-This example shows the complete code that creates an ESP32 SoftAP, serves a webpage, and allows the user to control two LEDs.
+### Tools You’ll Need
+- Arduino IDE or VSCode with PlatformIO
+- USB-C cable
+- ESP32 board support package installed via Board Manager
 
-### Example
+### Flashing Instructions
+1. Open Arduino IDE
+2. Go to **Tools > Board > ESP32S3 Dev Module**
+3. Connect your ESP32-S3 board via USB
+4. Select the correct COM port under **Tools > Port** (usually `esp32` and/or `101`)
+5. Paste the Part 01 code into the sketch
+6. Press the **Upload** button
+7. Open **Serial Monitor** (Ctrl+Shift+M) and check for `HTTP server started` and the IP address!
 
-Connect to the ESP32 Wi-Fi network (`ESP32_LED_AP`) using the password `genny123`(you can change this access key yourself), then visit `http://192.168.4.1` in your browser. You’ll see LED toggle buttons. Toggle them and watch as the LEDs turn on/off. Experiment with range and see how far the requests can be sent, and notice the delays in time concerning the access point on the ESP32.
+> ✅ Tip: If upload fails, press and hold the BOOT button while uploading.
+>  🛠 Debug Tip: If you see `WiFi.softAP` succeed but can't access the page, check your device's firewall or captive portal settings.
 
-### Analysis
+### What You Should See
+- A message like `HTTP server started`
+- Wi-Fi network name (e.g., `ESP32_LED_AP`) appears in your available networks list
+- Serial Monitor should show the AP IP, usually `192.168.4.1`(not all IPs are the same! )
 
-This example uses HTML served directly from the microcontroller and leverages the WebServer library to handle URL routing. It’s a lightweight, back-end-less method to control hardware in real time. Ideal for rapid prototyping and IoT applications...
+> 🔐 You can customize the access point name and password by changing `ssid` and `password` in your code. Each ESP32 may use a different IP.
+
+## Part 03: Accessing the Web Server
+
+1. Connect to the `ESP32_LED_AP` Wi-Fi using password `genny123`(access keys can be changed to your preference!)
+2. Open a browser and visit `http://192.168.4.1`
+3. Tap the buttons to toggle LEDs ON/OFF in real time
+
+You can bookmark this page or add it to your phone's home screen for quick access.
+
+
+## What You Should Have Learned
+
+- How to configure ESP32 as a SoftAP
+- How to host a basic HTML control page from the board
+- How to flash and debug code using Arduino IDE
+- How browser requests map to GPIO state changes
+- How to use the Serial Monitor for IP and debug info
+- How to build simple, interactive IoT projects with HTTP
+
 
 ## Additional Resources
 
