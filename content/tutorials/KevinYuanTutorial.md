@@ -1,5 +1,9 @@
-# DHT11 with ESP32 DevBoard
-
+---
+title: DHT11 with ESP32 DevBoard
+date: 2025-06-06
+authors:
+  - name: Kevin Yuan
+---
 ## Introduction
 This tutorial will guide you through interfacing a DHT11 temperature and humidity sensor with an ESP32 DevBoard. You’ll learn how to wire the sensor, install the necessary library, and upload test code to Arduino.
 
