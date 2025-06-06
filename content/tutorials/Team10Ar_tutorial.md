@@ -143,7 +143,14 @@ BLE sends: 1,A,0,25 (SensorID, Type, Free/Occupied, Distance)
 
 ### Introduction
 
-Introduce the example that you are showing here.
+## Introduction
+
+In this tutorial, I will explain how my project, “Real-Time Parking Availability with ESP32,” works from start to finish. The main goal is to help others understand how to build a low-cost smart parking system using an ESP32 microcontroller and ultrasonic sensors.
+
+Parking can be frustrating when drivers don’t know which spots are available. This project solves that by detecting whether a parking space is occupied and sending the result to a live website. When a car is present, the system shows that the spot is full; when it’s empty, it shows that the spot is available.
+
+This Picture and the video will guide you through the full setup — from wiring the hardware and programming the ESP32 to updating the website in real time. By the end, you’ll be able to create your own smart parking system and display live status updates online.
+
 
 ### Example
 
