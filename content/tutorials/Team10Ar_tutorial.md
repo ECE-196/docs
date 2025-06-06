@@ -156,4 +156,6 @@ Explain how the example used your tutorial topic. Give in-depth analysis of each
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
+- [Random Nerd Tutorials: ESP32 BLE](https://randomnerdtutorials.com/esp32-web-bluetooth/)
+- [Web Bluetooth API Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)
+- [NewPing Arduino Library](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home)
