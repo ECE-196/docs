@@ -5,11 +5,11 @@ authors:
   - name: Genaro Salazar Ruiz
 ---
 
-![ESP32 DevKit Board](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/ESP32-DevKitC.jpg/800px-ESP32-DevKitC.jpg)
+![ESP32 SoftAP Webserver Diagram](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/07/ESP32-access-point-1.jpg?w=1280&quality=100&strip=all&ssl=1)
 
 ## Introduction
 
-This tutorial teaches you how to build a simple SoftAP-hosted webpage that lets you control two onboard LEDs on the ESP32-S2 DevKit. The board creates its own Wi-Fi network, and you can control the hardware through your phone or browser—no internet required.
+This tutorial teaches you how to build a simple web page hosted by a SoftAP that allows you to control two onboard LEDs on the ESP32-S2 DevKit. The board creates its own Wi-Fi network, and you can control the hardware through your phone or browser, no internet required.
 
 ### Learning Objectives
 
@@ -19,7 +19,7 @@ This tutorial teaches you how to build a simple SoftAP-hosted webpage that lets 
 
 ### Background Information
 
-The ESP32-S2 is a Wi-Fi-enabled microcontroller that supports hosting its own network using SoftAP mode. Using this, it can serve HTML pages and respond to URL requests. The project focuses on basic GPIO control through the web—a foundational use case for embedded web servers in IoT.
+The ESP32-S2 is a Wi-Fi-enabled microcontroller that supports hosting its network using SoftAP mode. Using this, it can serve HTML pages and respond to URL requests. The project focuses on basic GPIO control through the web—a foundational use case for embedded web servers in IoT.
 
 ## Getting Started
 
@@ -111,11 +111,11 @@ This example shows the complete code that creates an ESP32-based SoftAP, serves 
 
 ### Example
 
-Connect to the ESP32 Wi-Fi network (`ESP32_LED_AP`) using the password `genny123`, then visit `http://192.168.4.1` in your browser. You’ll see LED toggle buttons.
+Connect to the ESP32 Wi-Fi network (`ESP32_LED_AP`) using the password `genny123`, then visit `http://192.168.4.1` in your browser. You’ll see LED toggle buttons. Toggle them and watch as the LEDs turn on/off. Experiment with range and see how far the requests can be sent, and notice the delays in time concerning the access point on the ESP32.
 
 ### Analysis
 
-This example uses HTML served directly from the microcontroller and leverages the WebServer library to handle URL routing. It’s a lightweight, no-backend-required method to control hardware in real time—perfect for rapid prototyping and IoT demos.
+This example uses HTML served directly from the microcontroller and leverages the WebServer library to handle URL routing. It’s a lightweight, back-end-less method to control hardware in real time. Ideal for rapid prototyping and IoT applications...
 
 ## Additional Resources
 
