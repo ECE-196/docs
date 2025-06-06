@@ -1,5 +1,5 @@
 ---
-title: Smart Parking Sensor with ESP32
+title: Real-Time Parking Availability with ESP32
 date: 1970-01-01
 authors:
   - name: John Doe
