@@ -18,26 +18,22 @@ This tutorial is to get you started on your ESP32 and Arduino coding journey. We
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
+We will be introducing coding based on Arduino IDE and how to turn a speaker on as well as change its sound based on frequency. This is a great way to prototype before getting started on designing a PCB. The speaker and led was chosen as these are products everyone has seen or heard of before, but may have never had the chance to work on those parts themselves. 
+
+Pro
+- user controlled sound output
+- connections to things used everyday
+
+Con
+- Could be difficult to scale up
+- Components are fairly costly
+
+Key concepts
+- Basic Arduino code
+- Setting up a circuit
+- Output change based on user input 
 
 ## Getting Started
-
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
-
-We will be using Arduino IDE for the software side of things and a breadboard for all of the connections on the hardware side of things. 
 
 ### Required Downloads and Installations
 
