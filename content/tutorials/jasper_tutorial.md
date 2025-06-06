@@ -1,16 +1,18 @@
 ---
 title: ESP32 WiFi Server & Web Socket Tutorial
-date: 2025-06-06
+date: 2025-05-19
 authors:
   - name: Jasper Huang
 ---
 
+![relevant graphic or workshop logo](https://www.electronicwings.com/storage/PlatformSection/TopicContent/461/icon/How%20to%20create%20ESP32%20WiFi%20Server.jpg)
 
 ## Introduction
-
 This tutorial is designed for anyone that is interested in learning more in using and hosting a WiFi server on the ESP32-S3 devboard and send and communicating realtime using websocket
 
 ### Learning Objectives
+- Learn how to create a WiFi Server on ESP32
+- Learn how to create websocket for immediate signal transfer
 
 - Using PlatformIO (instead of Arduino) for faster development
 - Host a WiFi server (access point) on ESP32
@@ -33,6 +35,7 @@ VSCode installed
 | Component Name    | Quanitity |
 | ----------------- | --------- |
 | ESP32-S3 Devboard | 1         |
+
 
 
 ### Required Tools and Equipment
