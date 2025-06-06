@@ -10,15 +10,11 @@ authors:
 
 ## Introduction
 
-Write a short section on what the tutorial is aiming to accomplish.
-What is the motivation behind the tutorial?
-What do you want readers to gain from the tutorial?
-
+This tutorial is to get you started on your ESP32 and Arduino coding journey. We will start with a speaker to have a more hands on approach to join the bridge between hardware and software. The user should be able to change their code and quickly see that change be outputted based on a different sound that the speaker will produce. This is a great starter project to ease the user into the course for all skill levels. This is a easy way for the user to get accustomed to using the Arduino IDE and components everyone has seen but may have never used. 
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
-
-Any additional notes from the developers can be included here.
+- Getting started with Arduino IDE coding
+- Learn how to make a sound with a speaker 
 
 ### Background Information
 
@@ -41,32 +37,41 @@ the participant may need.
 The following are stylistic examples of possible prerequisites,
 customize these for each workshop.
 
+We will be using Arduino IDE for the software side of things and a breadboard for all of the connections on the hardware side of things. 
+
 ### Required Downloads and Installations
 
-First download the required [arduino](https://www.arduino.cc/en/software/) software 
+Download the required [arduino](https://www.arduino.cc/en/software/) software, we will be doing most of the work in here
 ### Required Components
 
 List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
-| -------------- |           |
-|                |           |
-|                |           |
-
+| -------------- | --------- |
+| ESP32          | 1         |
+| BreadBoard     | 1         |
+| Speaker        | 1         |
+| jumper cables  | 6         |
+| 220 ohm Resistor  | 1         |
 ### Required Tools and Equipment
 
 List any tools and equipment you need here.
 (Ex, computer, soldering station, etc.)
 
-## Part 01: Name
+- A laptop with Arduino IDE downloaded
+- Depending on the speaker, soldering may be needed
+- Usb cable for connections
+- Jumper cables  
+## Part 01: Setting up the breadboard
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+We will start this project by placing all of the components needed onto the breadboard and hooking it up to the correct terminals on the ESP32. 
 
 ### Objective
 
-- List the learning objectives of this section
+- Learn how to set up connections from the breadboard to ESP32
+- Learn how to read a datasheet
 
 ### Background Information
 
