@@ -203,4 +203,5 @@ Once the code has been ran, we can see that the led should light up in tandem wi
 ### Useful links
 
 [Speaker Documentation](https://puiaudio.com/file/specs-AS01508MS-SC11-WP-R.pdf)
+
 [USE a BUZZER MODULE (PIEZO SPEAKER) USING ARDUINO UNO](https://projecthub.arduino.cc/SURYATEJA/use-a-buzzer-module-piezo-speaker-using-arduino-uno-cf4191)
