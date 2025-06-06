@@ -231,7 +231,81 @@ Connect to ESP32 stream and show real-time video using OpenCV.
 
 ---
 
-## Part 03: Performing Object Detection
+## Part 03: Choosing and Training Your Model with Roboflow
+
+### Objective
+Learn how to choose the best model type and train your own dataset using Roboflow.
+
+### Choosing a Model Type
+Roboflow supports many model architectures. For use with an ESP32-CAM that streams to a host machine (which does the heavy computation), you’ll want to select a lightweight model optimized for speed and acceptable accuracy. Good options include:
+
+- **YOLOv5n** – “Nano” version of YOLOv5, very fast but less accurate.
+- **YOLOv8n** – Latest nano version of YOLOv8, offering better trade-offs.
+- **YOLOv8s** – Slightly larger, better accuracy, still usable on laptops.
+- **MobileNet-SSD** – Great for low-latency mobile applications.
+
+> ✅ **Tip:** Start with YOLOv8n and scale up if needed.
+
+---
+
+### Training a Model in Roboflow
+
+1. Go to [https://roboflow.com](https://roboflow.com) and create a free account.
+2. Click **"Create Project"** and set your object detection parameters.
+3. Upload your images and annotate them using Roboflow’s labeling interface.
+4. After labeling, click **"Generate Dataset"** to resize and augment your images.
+5. Click **"Train Model"** and choose a suitable model type (e.g. YOLOv8n).
+6. When training is done, you'll receive a `model_id` for use with the Inference SDK.
+
+---
+
+### Using Your Trained Model
+
+To use your trained model with the Roboflow Inference SDK:
+
+```python
+from inference import get_model
+
+model = get_model(model_id="your_model_id")
+```
+
+If you're deploying with a `.pt` file locally (instead of the Roboflow-hosted model):
+
+- Download the YOLO weights (`weights.pt`) from Roboflow.
+- Use [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) locally:
+
+```bash
+pip install ultralytics
+```
+
+Then you can run:
+
+```python
+from ultralytics import YOLO
+
+model = YOLO("your_model.pt")
+results = model.predict("image.jpg")
+```
+
+---
+
+### Summary
+
+| Scenario | Recommended Model |
+|----------|--------------------|
+| Streaming from ESP32-CAM to PC | YOLOv8n or YOLOv5n |
+| Deployment on Jetson Nano or similar | YOLOv8s |
+| Mobile deployment (e.g., Android app) | MobileNet-SSD |
+| Need best accuracy | YOLOv8m or YOLOv5m |
+
+---
+
+```markdown
+💡 Consider uploading diverse real-world images for best results during training.
+```
+---
+
+## Part 04: Performing Object Detection
 
 ### Objective  
 Use Roboflow’s YOLO model to detect hazards in real-time.
@@ -295,7 +369,7 @@ cv2.destroyAllWindows()
 
 ---
 
-## Part 04: Putting It All Together
+## Part 05: Putting It All Together
 
 ### Objective  
 Create a low-cost, vision-based alert system using ESP32 and YOLO.
