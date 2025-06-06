@@ -149,7 +149,8 @@ Introduce the example that you are showing here.
 
 ![Workshop Logo](Team10ArPhotos/IMG_1221.jpeg)
 
-📹 [Click here to watch the video](Team10ArPhotos/IMG_1219.mp4)
+[▶️ Watch the video on YouTube]([https://drive.google.com/file/d/VIDEO_ID/view?usp=sharing](https://youtu.be/Va69T9wQPG8))
+
 
 
 
