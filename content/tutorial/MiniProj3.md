@@ -1,11 +1,11 @@
 ---
-title: Allan's cool tutorial
+title: Mini Project 3 - blinking lights to a rhythm
 date: 2025-05-19
 authors:
   - name: Allan Dong
 ---
 
-![relevant graphic or workshop logo](image/path)
+
 
 ## Introduction
 
@@ -51,6 +51,7 @@ connect to other devices via bluetooth and Wifi, but we are pretty much only wor
 
 circuit python
 Arduino IDE(optional)
+python mido library
 
 ### Required Components
 
@@ -60,7 +61,7 @@ List your required hardware components and the quantities here.
 | -------------- | --------- |
 |     esp32 board|   1       |
 |     led        |   1       |
-| breadboard     |   1       |
+| lightshield     |   1       |
 
 ### Required Tools and Equipment
 
@@ -68,6 +69,7 @@ List your required hardware components and the quantities here.
 -usb-c cable
 -solder iron(only if you are directly connecting it)
 -breadboard(optional)
+-lightshield
 
 ## Steps: 
 1. Setting up esp32 board
@@ -80,7 +82,7 @@ List your required hardware components and the quantities here.
 
 ### Introduction
 
-This part I will show you how to connect a led to the esp32 board, via breadboard. You can also directly connect it to the pins if you want, but I won't be showing it here 
+This part I will show you how to connect a led to the esp32 board, via lightshield in this case. You can also directly connect it to the pins or via a breadboard, but I won't be showing it here since using the lightshield makes it much easier. 
 
 ### Objective
  Learn how to connect simple components to the esp32 devboard. 
@@ -92,26 +94,13 @@ If you look at the esp32 devboard, you can see that the two sides are lined with
 ### Components
 
 1 esp32 devbooard
-1 breadboard
-1 led
+1 lightshield
 
 ### Instructional
 
-Assemblt the components together. Connect a wire from any output pin on the esp32 to the power on the breadboard. Then connect one side of the led to this 3.3V connection and the other to ground. If you utilize a resistor add it in series with the led. 
+Assemble the components together. Connect the lightshield to the esp32 devboard via the header pins on the side.  
 
-## Example
-
-### Introduction
-
-Introduce the example that you are showing here.
-
-### Example
-
-Present the example here. Include visuals to help better understanding
-
-### Analysis
-
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+![esp32_board_withshield](together.jpg)
 
 
 
@@ -120,23 +109,25 @@ Explain how the example used your tutorial topic. Give in-depth analysis of each
 
 ### Introduction
 
-This part I will show you how to write the proper code to blink the led to the rhythm of a uploaded song file
+This part I will show you how to write the proper code to blink the led's to the rhythm of a uploaded song file
 
 ### Objective
- Learn how to program simple components connected to a esp32 board via a breadboard. 
+ Learn how to convert songs to a usable format for the esp32, then blink led's to the songs beat. 
 
 ### Background Information
 
-If you look at the esp32 devboard, you can see that the two sides are lined with pins that can output 3.3V to connected components. While 3.3V can be on the higher side for led's it should still be fine. If it is too bright you can add a small resistor between the devboard and the led to slightly lower the current. 
+If you look at the esp32 devboard, you can see that the two sides are lined with pins that can output 3.3V to connected components. While 3.3V can be on the higher side for led's it should still be fine. 
 
 ### Components
 
-1 esp32 devbooard
+1 esp32 devboard
+1 lightshield
 1 computer
 1 usb-c cable 
 
 ### Instructional
-Make a python file in the directory the esp32 board shows up as on your computer. Add this code to the file and save it. This should automatically save the file onto your esp32 devboard. 
+First download your favorite song as a mp3 file. Then convert it to a midi file [here]([https://example.com](https://samplab.com/audio-to-midi)).
+
 
 ## Example
 
