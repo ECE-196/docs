@@ -65,8 +65,7 @@ List your required hardware components and the quantities here.
 |     Jumper wires                       |      10+     |
 |     220Ω resistors                     |      10+     |
 |     Logic Level  Shifter               |      1       |
-|
-|
+---------------------------------------------------------
 
 ### Required Tools and Equipment
 
