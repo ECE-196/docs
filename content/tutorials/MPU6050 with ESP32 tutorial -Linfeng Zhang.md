@@ -47,12 +47,13 @@ project, I will add a useful link below as tutorial.
 
 ### Required Components
 
-| Component Name          | Quanitity |
-| wires                   |     4     |
-| ESP32 s3 mini           |     1     |
-| MPU6050 accelerometer   |     1     |
-| Bread board             |     1     |
-| USB cable               |     1     |
+| Component Name         | Quantity |
+|------------------------|----------|
+| Wires                  | 4        |
+| ESP32 S3 Mini          | 1        |
+| MPU6050 Accelerometer  | 1        |
+| Breadboard             | 1        |
+| USB Cable              | 1        |
 
 ### Required Tools and Equipment
 
