@@ -22,14 +22,15 @@ This tutorial aims to teach you about the wifi capabilities on the ESP32. This i
 
 This tutorial will show you how to connect an OLED screen to your ESP32 Devboard. This will allow you to create a picture that you can show on the wall. You can remotely change the picture shown on the wall through wifi. Some alternatives would be an IR remote with an IR reader or bluetooth. The IR remote is not very expandable because you need to preset images. However, the IR remote is very easy to implement. Bluetooth is more expandable for future projects, but you need a specific app for compatibility with the ESP32. For this wifi implementation, you have the same expandability of the bluetooth version and the freedom to use your favorite browser at the same time. 
 
+An Organic Light-Emitting Diode (OLED) display is a type of screen that uses organic compounds to emit light when an electric current is applied. Unlike traditional screens like Liquid Crystal Displays (LCDs), OLED displays do not use a backlight because each pixel emits its own light. So, the OLED displays create stunningly vivid pictures. 
 
-Explain important concepts that are necessary to understand.
+A web socket is a communication protocol that provides independent, simultaneous, and persistent connections between a client (your web browser in this case) and a server (your ESP32 in this case) over a single TCP connection. A web socket is preferred because there is lower latency than HTTP and is persistent, meaning the conneciton will be stable until you explicitly close the connection. 
 
 Include (and cite if needed) any visuals that will help the audience understand.
 
 ## Getting Started
 
-For any software prerequisites, write a simple excerpt on each
+<!-- For any software prerequisites, write a simple excerpt on each
 technology the participant will be expecting to download and install.
 Aim to demystify the technologies being used and explain any design
 decisions that were taken. Walk through the installation processes
@@ -39,13 +40,13 @@ the participant will receive. A table showing component names and
 quantities should suffice. Link any reference sheets or guides that
 the participant may need.
 The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
+customize these for each workshop. -->
 
 ### Required Downloads and Installations
-
-List any required downloads and installations here.
+<!-- List any required downloads and installations here.
 Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
+You can either make your own tutorials or include a link to them. -->
+
 - Arduino set up from [Lab 2](https://ece-196.github.io/docs/assignments/spinning-and-blinking/)
 
 
@@ -65,11 +66,11 @@ You can either make your own tutorials or include a link to them.
 - Optional: AC to DC Wall Plug Power Adapter
 - Optional: Enclosure Fabrication tool (3D printer, Laser Cutter, CNC Mill, etc)
 
-## Part 01: Name
+## Part 01: Set up the web socket
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+In this section, you will learn how to set up a web socket on the ESP32-S3 Dev Board
 
 ### Objective
 
