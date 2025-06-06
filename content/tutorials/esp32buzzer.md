@@ -196,8 +196,7 @@ void loop(){
 
 ### Analysis
 
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
-Once the code has been ran, we can see that the led should light up in tandem with the speaker making a sound. We can see this is because there wasn't a `delay()` 
+Once the code has been ran, we can see that the led should light up in tandem with the speaker making a sound. We can see this is because there wasn't a `delay()` between the LED turning on and the speaker turning on. There are many things that can be changed in this code, based on the value given for the frequency of the tone, the sound would change if the value were higher or lower.
 
 ## Additional Resources
 
