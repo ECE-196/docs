@@ -39,17 +39,15 @@ Similar technologies include IR sensors and camera-based systems. However:
 
 1. Arduino IDE
 
-Download Link
-
-Add the ESP32 board using the Board Manager:
-File → Preferences → Add URL:
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+- [Download Link](https://www.arduino.cc/en/software)  
+   - Add the ESP32 board using the Board Manager
 
 2. CP210x USB to UART Bridge VCP Drivers (for ESP32-S3 communication)
+  - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 
 - Download
 
-3. Google Chrome (for Web Bluetooth API compatibility)
+3. **Google Chrome** (for Web Bluetooth API compatibility)
 
 ### Required Downloads and Installations
 
