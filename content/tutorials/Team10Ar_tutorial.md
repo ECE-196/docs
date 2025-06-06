@@ -146,7 +146,8 @@ Introduce the example that you are showing here.
 
 ![Workshop Logo](Team10ArPhotos/IMG_1221.jpeg)
 
-▶️ [Watch Demo Video](Team10ArPhotos/IMG_1219.mp4)
+📹 [Click here to watch the video](Team10ArPhotos/IMG_1219.mp4)
+
 
 
 
