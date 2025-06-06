@@ -1,11 +1,11 @@
 ---
 title: Real-Time Parking Availability with ESP32
 date: 2025-06-06
-authors:
+author:
   - name: Aron Bariagabr
 ---
 
-![relevant graphic or workshop logo](image/path)
+![Workshop Logo](Logo front.png)
 
 ## Introduction
 
