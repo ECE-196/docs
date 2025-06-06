@@ -8,7 +8,8 @@ group 7 members:
   - name: Leithon Magana
 ---
 
-![relevant graphic or workshop logo](image/path)
+[magnetic reed switches](https://github.com/user-attachments/assets/f098feff-a916-4f7f-b12d-150238565848)
+
 
 ## Introduction
 
