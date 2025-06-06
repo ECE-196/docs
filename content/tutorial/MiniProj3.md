@@ -185,7 +185,7 @@ Python code on the esp32 runs just like on any other computer. There is file cal
 
 
 ### Instructional
-When you have set your esp32 devboard properly [according to this tutorial]([https://samplab.com/audio-to-mid](https://ece-196.github.io/docs/assignments/vu-meter/firmware/)i), you should have a directory called CircuitPython that you can see on your computer when you connect it via usb-c. Copy the midi_events.py file from the last step to this directory. Also if there isn't already a file called code.py, make one and add this code to it. 
+When you have set your esp32 devboard properly [according to this tutorial](https://ece-196.github.io/docs/assignments/vu-meter/firmware/), you should have a directory called CircuitPython that you can see on your computer when you connect it via usb-c. Copy the midi_events.py file from the last step to this directory. Also if there isn't already a file called code.py, make one and add this code to it. 
 ```C
 {
 import time
@@ -235,7 +235,7 @@ A few things you may need to change in this code. In lines 7-8, replace these co
 
 
 ## Example
-Here is a short video of how it should be working once you do everything correctly and upload the right code. [Video here]([https://samplab.com/audio-to-midi](https://youtube.com/shorts/Ye-g7py5aYg?feature=share))
+Here is a short video of how it should be working once you do everything correctly and upload the right code. [Video here]([https://youtube.com/shorts/Ye-g7py5aYg?feature=share])
 
 
 
