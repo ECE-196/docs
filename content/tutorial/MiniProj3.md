@@ -126,7 +126,31 @@ If you look at the esp32 devboard, you can see that the two sides are lined with
 1 usb-c cable 
 
 ### Instructional
-First download your favorite song as a mp3 file. Then convert it to a midi file [here]([https://example.com](https://samplab.com/audio-to-midi)).
+First download your favorite song as a mp3 file. Then convert it to a midi file [here](https://samplab.com/audio-to-midi). With this mid file, put it into this python file
+```C
+{
+  import mido
+import json
+
+midi = mido.MidiFile('gen2.mid')
+events = []
+current_time = 0
+
+for msg in midi:
+    current_time += msg.time
+    if msg.type == 'note_on' and msg.velocity > 0:
+        events.append({
+            'time': current_time,
+            'note': msg.note
+        })
+
+with open('midi_events.py', 'w') as f:
+    f.write('events = ')
+    json.dump(events, f)
+
+}
+```
+
 
 
 ## Example
