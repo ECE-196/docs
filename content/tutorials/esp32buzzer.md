@@ -1,7 +1,7 @@
 ---
 title: Buzzing the ESP32
 date: 5-19-2025
-author:
+authors:
   - name: Philip Du
 ---
 
