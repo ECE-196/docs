@@ -76,9 +76,8 @@ List your required hardware components and the quantities here.
 
 ## Steps: 
 1. Setting up esp32 board
-2. Installing software on your computer
-3. Programming the esp32 board
-4. Getting the software onto your esp32 board
+2. Programming the esp32 board
+3. Getting the software onto your esp32 board
 
 ## Part 01: setting up esp32 board
 ![esp32_board](esp32.jpg)
@@ -156,7 +155,7 @@ with open('midi_events.py', 'w') as f:
 Run this file by entering python file.py(file is your file name) in the terminal. This should output a midi_events.py file that you will later put in your devboard's directory.
 
 
-## Part 03: Running on the devboard
+## Part 03: Getting the software onto your esp32 board
 
 
 ### Introduction
