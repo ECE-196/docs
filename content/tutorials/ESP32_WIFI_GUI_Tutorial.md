@@ -124,3 +124,4 @@ This example uses HTML served directly from the microcontroller and leverages th
 - [ESP32 Arduino Docs](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
 - [ESP32 GitHub Repo](https://github.com/espressif/arduino-esp32)
 - [WebServer Library](https://www.arduino.cc/reference/en/libraries/webserver/)
+- [ChatGPT reference](https://chatgpt.com/)
