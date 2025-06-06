@@ -20,9 +20,11 @@ This tutorial aims to teach you about the wifi capabilities on the ESP32. This i
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
+This tutorial will show you how to connect an OLED screen to your ESP32 Devboard. This will allow you to create a picture that you can show on the wall. You can remotely change the picture shown on the wall through wifi. Some alternatives would be an IR remote with an IR reader or bluetooth. The IR remote is not very expandable because you need to preset images. However, the IR remote is very easy to implement. Bluetooth is more expandable for future projects, but you need a specific app for compatibility with the ESP32. For this wifi implementation, you have the same expandability of the bluetooth version and the freedom to use your favorite browser at the same time. 
+
+
 Explain important concepts that are necessary to understand.
+
 Include (and cite if needed) any visuals that will help the audience understand.
 
 ## Getting Started
@@ -44,20 +46,23 @@ customize these for each workshop.
 List any required downloads and installations here.
 Make sure to include tutorials on how to install them.
 You can either make your own tutorials or include a link to them.
+- Arduino set up from [Lab 2](https://ece-196.github.io/docs/assignments/spinning-and-blinking/)
+
 
 ### Required Components
 
-List your required hardware components and the quantities here.
-
 | Component Name | Quanitity |
 | -------------- | --------- |
-|                |           |
-|                |           |
+|ESP32-S3 Dev Board|1|
+|USB C Cable|1|
+|Adafruit SSD1306 OLED|1|
+|Male to Female Jumper Wire|4|
 
 ### Required Tools and Equipment
 
 - Computer
-- Components from previous section
+- Components from the previous section
+- Optional: AC to DC Wall Plug Power Adapter
 - Optional: Enclosure Fabrication tool (3D printer, Laser Cutter, CNC Mill, etc)
 
 ## Part 01: Name
