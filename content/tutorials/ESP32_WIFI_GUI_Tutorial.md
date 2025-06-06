@@ -111,7 +111,7 @@ This example shows the complete code that creates an ESP32 SoftAP, serves a webp
 
 ### Example
 
-Connect to the ESP32 Wi-Fi network (`ESP32_LED_AP`) using the password `genny123`, then visit `http://192.168.4.1` in your browser. You’ll see LED toggle buttons. Toggle them and watch as the LEDs turn on/off. Experiment with range and see how far the requests can be sent, and notice the delays in time concerning the access point on the ESP32.
+Connect to the ESP32 Wi-Fi network (`ESP32_LED_AP`) using the password `genny123`(you can change this access key yourself), then visit `http://192.168.4.1` in your browser. You’ll see LED toggle buttons. Toggle them and watch as the LEDs turn on/off. Experiment with range and see how far the requests can be sent, and notice the delays in time concerning the access point on the ESP32.
 
 ### Analysis
 
