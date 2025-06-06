@@ -78,7 +78,7 @@ Soldering a spring contact and a basic understanding of where to place the cable
 - 220 ohm resistor
 - jumper cables
 
-### Instructional
+### Instructions
 
 We will start by soldering one side of the wires onto the speaker.
 
@@ -119,26 +119,89 @@ The next part of this project will utilize arduino IDE to get what we placed ont
 
 ### Background Information
 
-Now that we have everything hooked up to the ESP32, next we will 
+Now that we have everything hooked up to the ESP32, next we will utilize the Arduino IDE to control all of the components that we hooked up. 
+
+
+### Components
+- ESP32
+- USB cable
+  
+### Instructions
+
+Plug the USB cable into the ESP32 and connect it into your laptop/computer
+
+Open up Arduino IDE
+
+Take note of which digital pins were used as that will communicate which pin to be outputted. 
+
+```
+const int buzzer = x; //buzzer to ESP32 pin x
+const int LED = y; //LED to ESP32 pin y
+
+```
+
+Next we will use the variables declared as an output
+
+```
+void setup(){
+   
+  pinMode(buzzer, OUTPUT); // Set buzzer - pin x as an output
+  pinMode(LED, OUTPUT); // Set LED - pin y as an output
+}
+```
+
+Lastly, we will be putting everything into a loop, turning the LED on and off, and the speaker on and off as well
+
+```
+void   loop(){
+ 
+  digitalWrite(LED, HIGH);  // Turns on the LED
+  tone(buzzer, [FREQ]); // Send FREQ KHz sound signal...
+  delay(1000);         // ...for 1 sec
+  digitalWrite(LED, LOW);   //Turns off the LED
+  noTone(buzzer);     // Stop sound...
+  delay(1000);         // ...for 1sec
+  
+}
+```
 
 ## Example
 
-### Introduction
+### Example code 
 
-Introduce the example that you are showing here.
+```
+const int buzzer = 35; //buzzer to ESP32 pin 35
+const int LED = 34; //LED to ESP32 pin 34
 
-### Example
+void setup(){
+   
+  pinMode(buzzer, OUTPUT); // Set buzzer - pin 35 as an output
+  pinMode(LED, OUTPUT); // Set LED - pin 34 as an output
+}
 
-Present the example here. Include visuals to help better understanding
+void loop(){
+ 
+  digitalWrite(LED, HIGH);  // Turns on the LED
+  tone(buzzer, 1000); // Send 1KHz sound signal...
+  delay(1000);         // ...for 1 sec
+  digitalWrite(LED, LOW);   //Turns off the LED
+  noTone(buzzer);     // Stop sound...
+  delay(1000);         // ...for 1sec
+  
+}
+```
+### Final produce image
+
+![image](https://github.com/user-attachments/assets/b9e0ed09-f84d-46c4-b075-8f308924f919)
 
 ### Analysis
 
 Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+Once the code has been ran, we can see that the led should light up in tandem with the speaker making a sound. We can see this is because there wasn't a `delay()` 
 
 ## Additional Resources
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
 [Speaker Documentation](https://puiaudio.com/file/specs-AS01508MS-SC11-WP-R.pdf)
 [USE a BUZZER MODULE (PIEZO SPEAKER) USING ARDUINO UNO](https://projecthub.arduino.cc/SURYATEJA/use-a-buzzer-module-piezo-speaker-using-arduino-uno-cf4191)
