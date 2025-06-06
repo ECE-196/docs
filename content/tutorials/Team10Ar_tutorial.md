@@ -144,7 +144,15 @@ Introduce the example that you are showing here.
 
 ### Example
 
-Present the example here. Include visuals to help better understanding
+![Workshop Logo](Team10ArPhotos/IMG_1221.jpeg)
+
+<div style="text-align: center;">
+  <video width="80%" controls>
+    <source src="Team10ArPhotos/IMG_1219.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
 ### Analysis
 
