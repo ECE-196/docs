@@ -139,8 +139,6 @@ BLE sends: 1,A,0,25 (SensorID, Type, Free/Occupied, Distance)
 ![Workshop Logo](Team10ArPhotos/sen2.png)
 ![Workshop Logo](Team10ArPhotos/proof.png)
 
-### Introduction
-
 ## Introduction
 
 In this tutorial, I will explain how my project, “Real-Time Parking Availability with ESP32,” works from start to finish. The main goal is to help others understand how to build a low-cost smart parking system using an ESP32 microcontroller and ultrasonic sensors.
