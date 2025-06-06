@@ -1,4 +1,7 @@
-# Arduino Mega 2560 Servo Control with Joystick Tutorial
+# Title: Arduino Mega 2560 Servo Control with Joystick Tutorial
+date: 2025-06-06
+authors:
+  - name: David Shapiro
 
 Note: While this tutorial uses the Arduino Mega 2560 (as my ESP32 was being used for the final project), the principles remain very similar. ESP32 code is provided at the end for reference.
 
