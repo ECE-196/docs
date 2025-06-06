@@ -5,7 +5,7 @@ author:
   - name: Aron Bariagabr
 ---
 
-![Workshop Logo](Team10ArPhotos/Logo_front.png)
+![Workshop Logo](Team10ArPhotos/Logo front.png)
 
 
 ## Introduction
