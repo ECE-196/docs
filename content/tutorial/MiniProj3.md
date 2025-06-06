@@ -235,7 +235,7 @@ A few things you may need to change in this code. In lines 7-8, replace these co
 
 
 ## Example
-Here is a short video of how it should be working once you do everything correctly and upload the right code. [Video here]([https://youtube.com/shorts/Ye-g7py5aYg?feature=share])
+Here is a short video of how it should be working once you do everything correctly and upload the right code. [Video here](https://youtube.com/shorts/Ye-g7py5aYg?feature=share)
 
 
 
