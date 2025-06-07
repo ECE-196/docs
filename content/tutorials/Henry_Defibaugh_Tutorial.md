@@ -1,4 +1,4 @@
-## Current/Voltage Sensor Turorial
+## Current/Voltage Sensor Turorial:
 
 Welcome to the Adafruit INA219 Current/Voltage Sensor tutorial where we will be using this sensor to measure the current, votlage, and power of our circuit. This was very useful for our project in ECE 196 when wanting to display our data so we know how well our solar charger is performing. However for this tutorial we will be measuring these things in a much simpler LED circuit.
 
