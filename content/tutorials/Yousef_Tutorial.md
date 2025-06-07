@@ -76,12 +76,9 @@ Download and install from:
 
 ---
 ## Writing the Code
-
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
 ### How the Threshold Works
-
 The `threshold` represents a **total acceleration level** that counts as "abnormal." You’ll likely want to experiment with this based on your use case.
-
 - **Low threshold (e.g., 12–15)**: detects small movements — useful for subtle shocks or light bumps.
 - **High threshold (e.g., 18–25)**: detects stronger or more sudden motions — ideal for fall detection or impact.
 
@@ -89,7 +86,6 @@ The `threshold` represents a **total acceleration level** that counts as "abnorm
 ---
 
 ### Objective
-
 - Generate a threshold-based motion detection system.
 - Use acceleration data to trigger an output signal (LED).
 - Demonstrate how to interface sensors and actuators using CircuitPython.
@@ -128,7 +124,7 @@ threshold = 18  # Adjust this based on your testing
 
 5. Create the main loop to read acceleration and control the LED
 while True:
-    # Read acceleration in X, Y, Z (in m/s²)
+    # Read acceleration in X, Y, Z
     x, y, z = mpu.acceleration
 
     # Calculate the total acceleration magnitude
@@ -173,6 +169,3 @@ Below are useful tools and references to help you complete, extend, or troublesh
   - PWM Tutorial: [https://learn.sparkfun.com/tutorials/pulse-width-modulation/all](https://learn.sparkfun.com/tutorials/pulse-width-modulation/all)  
   - Accelerometer Overview: [https://learn.adafruit.com/accelerometer-basics](https://learn.adafruit.com/accelerometer-basics)
 
-- **Optional Serial Monitors (for debugging)**  
-  - Mu Editor (simple CircuitPython editor + monitor): [https://codewith.mu/](https://codewith.mu/)  
-  - CoolTerm (lightweight serial monitor): [https://freeware.the-meiers.org/](https://freeware.the-meiers.org/)
