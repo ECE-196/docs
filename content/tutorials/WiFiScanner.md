@@ -116,7 +116,7 @@ Now that we have set up Arduino and successfully connected our ESP32 board, we w
 
 ### Instructions
 1. Assuming you have already opened a new sketch (File -> New Sketch), you should have the following template displayed:
-```
+```c
 void setup() {
   // put your setup code here, to run once:
 
@@ -128,11 +128,11 @@ void loop() {
 }
 ```
 2. You want to first include the Wifi.h library:
-```
+```c
 #include "WiFi.h"
 ```
 3. Inside your ```void setup()``` function you want to include this block inside:
-```
+```c
   Serial.begin(115200);
   delay(1000);
 
