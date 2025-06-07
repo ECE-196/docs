@@ -39,6 +39,7 @@ You should have Arduino IDE installed on your device, Please do so if you haven'
      ```
      https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
      ```
+  It should look like this in the correct section:
   <img width="749" alt="Screenshot 2025-06-06 at 9 30 14 PM" src="https://github.com/user-attachments/assets/152b56ce-38b9-466d-999c-05faeec9da85" />
 
   3. Go to *Tools > Board > Boards Manager* and search for “ESP32”.  
