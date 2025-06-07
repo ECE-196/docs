@@ -163,6 +163,10 @@ void loop() {
   - You’ll see the scan results appear in the Serial window
   - Note: Only 2.4 GHz Wi-Fi networks will appear.
 
+You should see something like this for the output in your Serial Monitor:
+
+<img width="619" alt="Screenshot 2025-06-06 at 11 32 49 PM" src="https://github.com/user-attachments/assets/7e80cd29-889a-403a-b422-d020374daa56" />
+
 ## Part 3: Scanning and Displaying on a Web Page (ESP32 as Access Point)
 
 ### Introduction
