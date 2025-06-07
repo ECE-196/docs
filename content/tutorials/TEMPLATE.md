@@ -83,6 +83,8 @@ Firstly, you would need to understand the ESP32 Dev board functionality in relat
 6. Connect MPU-6050 pin to GND and set it's address
 7. Upload I^2C sketch and verify that device is found using serial monitor
 
+![Breadboard Components put together 1](images/ESP32-MPU6050-Module-Accelerometer-Gyroscope-Temperature-Sensor-Arduino.webp)
+
 ## Example
 
 ### Introduction
