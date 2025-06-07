@@ -92,7 +92,7 @@ At this point, you should have Arduino IDE installed on your device. In this sec
 2. **Plug in your ESP32 board** via USB.
 4. **Select the correct board:**
    - Since it is your first time, you want to click the dropdown and select "Select other board and port"
-  <img width="234" alt="Screenshot 2025-06-06 at 10 53 01 PM" src="https://github.com/user-attachments/assets/3bbd9bac-5e52-41ff-a33e-31b0e4e13c83" />
+    <img width="234" alt="Screenshot 2025-06-06 at 10 53 01 PM" src="https://github.com/user-attachments/assets/3bbd9bac-5e52-41ff-a33e-31b0e4e13c83" />
        
    - Once you get there, you want to select these options on your end, then press "Ok".
      <img width="678" alt="Screenshot 2025-06-06 at 10 55 00 PM" src="https://github.com/user-attachments/assets/c2a647ae-7c26-4d3f-9171-4ba29c071032" />
