@@ -8,12 +8,7 @@ authors:
 
 ## Introduction
 
-This tutorial walks through building a simple **Wi-Fi scanner** using only the **ESP32 Dev Board**. 
-The project scans for nearby Wi-Fi networks and displays their names and signal strengths through the Serial Monitor. 
-
-This tutorial will show you how to use an **ESP32 Dev Board** to scan for Wi-Fi networks and display them in both the Arduino Serial Monitor and (optionally) on a simple web server.  
-By the end, you’ll know how to set up your board, write and upload code, and understand how Wi-Fi scanning works on the ESP32—even if you’re new to Arduino!
-
+This tutorial walks through building a simple **Wi-Fi scanner** using a **ESP32 Dev Board** you have created and a USB-C cable. It will then display them in both the Arduino Serial Monitor and on a simple web server, which this tutorial will walk you through. The project scans for nearby Wi-Fi networks and displays their names and signal strengths through the Serial Monitor. By the end, you’ll know how to set up your board, write and upload code, and understand how Wi-Fi scanning works on the ESP32!
 
 ### Learning Objectives
 
