@@ -9,14 +9,14 @@ authors:
 
 ## Introduction
 
-In the mini project, I will be making an obstacle detecting system using an IR obstacle avoidance senor, LED, and Resistor. From this students will be able to learn how to use the Arduino IDE software and write code so that the ESP tells the sensor an obstacle is near.
+In the mini project, I will be making an obstacle detecting system using an IR obstacle avoidance senor, LED, and Resistor. From this students will be able to learn how to use the Arduino IDE software and write code so that the ESP tells the sensor an obstacle is near. Most people would use a Proximity Sensor to detect an obstacle, this is an alternative!
 
 
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
-
-Any additional notes from the developers can be included here.
+- Be able to write basic code in Arduino IDE
+- Learn ho to use pinouts of ESP32-Mini
+- How you can further add to this project
 
 ### Background Information
 
@@ -24,6 +24,12 @@ Describe your topic here. What does it do? Why do you use it?
 Are there other similar things to use? What are the pros and cons?
 Explain important concepts that are necessary to understand.
 Include (and cite if needed) any visuals that will help the audience understand.
+
+- An IR Obstacle Detector, RED LED, and Resistor will be used together to act as a car parking sensor
+- We use the IR Obstacle Detector to use give back a binary value (if a obstacle is present or if its clear)
+- In total, there ill be to LED's used, one on the IR Obstacle Detector (green) and one on a seperate breadboard (red). These will be used to to visually represent if a car is present or not.
+
+
 
 ## Getting Started
 
