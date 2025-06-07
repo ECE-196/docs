@@ -19,8 +19,6 @@ This tutorial walks through building a simple **Wi-Fi scanner** using a **ESP32 
 - Understand 2.4 GHz vs. 5 GHz Wi-Fi limitations
 - Make your ESP32 create its own Wi-Fi for demonstration
 
-Any additional notes from the developers can be included here.
-
 ### Background Information
 
 Describe your topic here. What does it do? Why do you use it?
