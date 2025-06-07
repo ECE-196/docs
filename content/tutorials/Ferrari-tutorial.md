@@ -7,7 +7,7 @@ authors:
 
 # Team 3: ESP32 OLED Web Graphics 
 
-![esp32](./esp32.jpg)
+![esp32](./Ferrari-assets/esp32.jpg)
 
 ## Introduction
 
