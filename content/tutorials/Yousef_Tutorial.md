@@ -16,7 +16,7 @@ This tutorial will show how to light up LEDs connected to an ESP32 when abnormal
 - In this project, we will detect sudden changes in acceleration (abnormal motion) and respond by turning on LEDs.
 
 ### Required Downloads and Installations
-- Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
+- Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer.
 
 #### 1. Install CircuitPython on Your ESP32 DevBoard  
 Follow Adafruit’s guide here:  
@@ -25,10 +25,6 @@ Follow Adafruit’s guide here:
 #### 2. Install the CircuitPython Library Bundle  
 Download the bundle from:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
-
-#### 3. Install Visual Studio Code  
-Download and install from:  
-[https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 - Then install the **Python** and **Pymakr** extensions.
 #### Pros:
@@ -133,3 +129,21 @@ while True:
 ```
 ## Analysis
 This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity and what you consider as an abnormal motion.
+
+## Resources and links
+
+Below are useful tools and references to help you complete, extend, or troubleshoot this project:
+- **CircuitPython for ESP32-S3**  
+  Install CircuitPython on your ESP32 DevBoard:  
+  [https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/](https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/)
+
+- **Adafruit MPU6050 Library Documentation**  
+  Learn how to use the MPU6050 sensor with CircuitPython:  
+  [https://docs.circuitpython.org/projects/mpu6050/en/latest/](https://docs.circuitpython.org/projects/mpu6050/en/latest/)
+
+- **CircuitPython Library Bundle**   
+  [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
+
+- **Visual Studio Code**  
+  Recommended code editor with Python support:  
+  [https://code.visualstudio.com/](https://code.visualstudio.com/)
