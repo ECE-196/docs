@@ -19,24 +19,19 @@ By the end you should be able to precisely control the intensity and timing of a
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
+A vibration motor is one of the simplest and easiest ways to give applications a way to provide haptic feedback to the user. It is used in many devices that are handheld or worn of the body. One of the most common uses would be the vibration motor in a smartphone to notify the user of an incoming call or update. Vibration motors are advantageous over audio feedback in loud environments, but require the user to be in close contact as a downside.
+
+Pros
+- Intuitive, fast feedback
+- Reliable and easy to use
+
+Cons
+- User has to touch the device to receive feedback
+- Limited communication
 
 ## Getting Started
 
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
+For software we will be using Python in VSCode and Arduino. Make sure to install the latest versions on your corressponding operating system. 
 
 ### Required Downloads and Installations
 
@@ -46,17 +41,19 @@ customize these for each workshop.
   
 ### Required Components
 
-List your required hardware components and the quantities here.
-
 | Component Name  | Quanitity |
 | --------------- | --------- |
 | ESP32           | 1         |
 | Vibration Motor | 1         |
 
+Make sure the vibration motor operates in a range from 3V to 5V.
+
 ### Required Tools and Equipment
 
-List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
+- Computer capable of running VSCode and Arduino
+- USB-C data transferring cable
+- Soldering station
+- Wires or jumper cables
 
 ## Part 01: Controlling the Vibration Motor
 
