@@ -1,9 +1,8 @@
----
+
 title: ALERT LED
 date: 06-06-2025
 #authors
   - name: Yousef Alkhunaizi
----
 
 ![Motion Detection Setup](Team5/ESP32.png)
 
