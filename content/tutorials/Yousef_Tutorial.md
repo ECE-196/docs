@@ -23,7 +23,7 @@ Follow Adafruit’s guide here:
 [https://learn.adafruit.com/circuitpython-on-the-esp32-s2](https://learn.adafruit.com/circuitpython-on-the-esp32-s2)
 
 #### 2. Install the CircuitPython Library Bundle  
-- Download the bundle from:  
+Download the bundle from:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
 
 #### 3. Install Visual Studio Code  
