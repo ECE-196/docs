@@ -140,4 +140,9 @@ Make sure to upload this code to your dev board, and ensure that you have the co
 
 The HC-SR04 is a very well documented sensor, the internet is your friend if you want to learn more!
 
+Useful Links:
+1. [ESP32 with HC-SR04 Tutorial](https://randomnerdtutorials.com/esp32-hc-sr04-ultrasonic-arduino/)
+2. [Arduino Language References](https://docs.arduino.cc/language-reference/)
+3. [Espressif's Arduino + ESP32 Documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
+
 Congratulations! You have successfully completed the tutorial. Happy measuring!
