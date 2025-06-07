@@ -48,7 +48,7 @@ List your required hardware components and the quantities here.
 
 | Component Name | Quanitity |
 | -------------- | --------- |
-| ESP32 Dev Board (S3, C3, or classic) | 1 |
+| ESP32 Dev Board | 1 |
 | USB-C or Micro-USB Cable (for your board) | 1 |
 
 ### Required Tools and Equipment
