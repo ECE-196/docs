@@ -53,7 +53,12 @@ List your required hardware components and the quantities here.
 | Component Name | Quanitity |
 | -------------- | --------- |
 |       IR obstacle avoidance sensor         |       1    |
-|                |           |
+|      ESP32-Mini       |     1      |
+|        USB cable        |    1       |
+|        LED (Perferably Red)        |    1       |
+|       220 ohm Resistor         |      1     |
+|       Male to Male Jumper Wires         |    4       |
+|        Male to Female Jumper Wires        |   4        |
 
 ### Required Tools and Equipment
 
