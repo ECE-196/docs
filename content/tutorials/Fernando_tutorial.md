@@ -67,15 +67,16 @@ List any tools and equipment you need here.
 - Computer (Windows or MAC)
 - Very small phillips screwdriver
 
-## Part 01: Name: 
+## Part 01: Name: HardWare
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+In this section you will learn how to wire everything needed!
 
 ### Objective
 
-- List the learning objectives of this section
+- Learn how to wire IR obstacle detector
+- Learn how to wire the ESP32-Mini
 
 ### Background Information
 
@@ -83,6 +84,9 @@ Give a brief explanation of the technical skills learned/needed
 in this challenge. There is no need to go into detail as a
 separation document should be prepared to explain more in depth
 about the technical skills
+
+- Ensure you now how the polarity of an LED light works. The Cathode, the short end, will be connected to ground, the anode, the longer head, will be connected to power.
+- If you are using a different LED, make sure you have the right resistor value to prevent the LED from burning out
 
 ## Components
 
