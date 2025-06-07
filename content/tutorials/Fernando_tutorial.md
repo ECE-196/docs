@@ -39,6 +39,9 @@ the participant may need.
 The following are stylistic examples of possible prerequisites,
 customize these for each workshop.
 
+
+- Before anything, make sure you have Arduino IDE downloaded. [Use this link to download](https://www.arduino.cc/en/software/)
+
 ### Required Downloads and Installations
 
 List any required downloads and installations here.
