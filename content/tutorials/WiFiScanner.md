@@ -20,15 +20,9 @@ This tutorial walks through building a simple **Wi-Fi scanner** using a **ESP32 
 - Make your ESP32 create its own Wi-Fi for demonstration
 
 ### Background Information
-
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
-
 The ESP32 is a popular microcontroller with built-in Wi-Fi.  
 By scanning for nearby networks, you can learn about radio environments, understand Wi-Fi security, and practice displaying real-world data in your code.  
-**Note:** The ESP32 can only scan 2.4 GHz Wi-Fi networks, not 5 GHz networks (which is why some campus networks and personal hotspots may not appear if *Maximize Compatibility* is not enabled).
+**Note:** The ESP32 can only scan 2.4 GHz Wi-Fi networks, not 5 GHz networks (which is why some campus networks and personal hotspots may not appear if **Maximize Compatibility** is not enabled).
 
 
 ## Getting Started
