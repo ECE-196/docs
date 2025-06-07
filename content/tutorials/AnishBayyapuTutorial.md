@@ -5,7 +5,7 @@ authors:
   - name: Anish Bayyapu
 ---
 
-![NeoPixel on ESP32](image/path)
+![NeoPixel on ESP32](ABMedia/Example.jpg)
 
 ## Introduction
 
@@ -114,6 +114,9 @@ We’ll write a sketch that lights up each LED in solid red, then cycles through
 - Initialize the NeoPixel library.  
 - Set individual pixel colors.  
 - Create a simple color-cycling loop.  
+### Video
+
+<video width="640" controls> <source src="ABMedia/tutorial-part2.mov" type="video/mov"> Your browser does not support the video tag. </video>
 
 ### Instructional
 
@@ -147,7 +150,7 @@ void loop() {
     delay(20);
   }
 }
-
+```
 ## Example: Progress Meter with Color Gradient
 
 ### Introduction
@@ -155,7 +158,8 @@ void loop() {
 This example turns the NeoPixel strip into a horizontal progress meter. As the progress value increases, LEDs light up in a smooth gradient from green (0%) through yellow (50%) to red (100%).
 
 ### Video
-!(../AnishMedia/Example.gif)
+<video width="640" controls> <source src="ABMedia/tutorial-part2.mov" type="video/mov"> Your browser does not support the video tag. </video>
+
 ### Sketch
 
 ```cpp
