@@ -13,8 +13,11 @@ This tutorial walks through building a simple **Wi-Fi scanner** using a **ESP32 
 ### Learning Objectives
 
 - Understand how the ESP32 performs Wi-Fi network scans
-- Learn how to use the Serial Monitor to display data
-- Explore `WiFi.h` library functions and network properties
+- Set up Arduino IDE and connect your ESP32
+- Learn how to use the Serial Monitor to display data as well as on a web server
+- Explore `WiFi.h` library functions and network properties to scan for Wi-Fi networks
+- Understand 2.4 GHz vs. 5 GHz Wi-Fi limitations
+- Make your ESP32 create its own Wi-Fi for demonstration
 
 Any additional notes from the developers can be included here.
 
