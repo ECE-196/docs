@@ -71,7 +71,7 @@ The `threshold` represents a **total acceleration level** that counts as "abnorm
 - **Low threshold**: detects small movements — useful for subtle shocks or light bumps.
 - **High threshold**: detects stronger or more sudden motions — ideal for fall detection or impact.
 
-- You can determine a good threshold by printing out the `total_accel` value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
+- You can determine a good threshold by printing out the total_accel value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
 ---
 
 ### Objective
@@ -132,4 +132,4 @@ while True:
       time.sleep(0.1)
 ```
 ## Analysis
-This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity—lower values detect lighter motion, while higher values filter out minor noise and only respond to significant events like falls or sharp impacts. This makes the setup adaptable to various applications such as fall detection, impact monitoring, or security triggers.
+This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity and what you consider as an abnormal motion.
