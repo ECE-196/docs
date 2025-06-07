@@ -98,9 +98,6 @@ Download and install from:
 
 ---
 
-
----
-
 ## Part 02: Writing the Code
 
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
