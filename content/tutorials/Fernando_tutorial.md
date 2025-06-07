@@ -91,7 +91,7 @@ about the technical skills
 ## Components
 
 
-![IR Obstacle Detector](content/Team5/Breadboard.jpg)
+![IR Obstacle Detector](content/tutorials/Team5/Breadboard.jpg)
 
 ### Instructional
 
