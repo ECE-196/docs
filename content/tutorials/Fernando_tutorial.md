@@ -27,20 +27,10 @@ In the mini project, I will be making an obstacle detecting system using an IR o
 
 ## Getting Started
 
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
-
 
 - Before anything, make sure you have Arduino IDE downloaded. [Use this link to download](https://www.arduino.cc/en/software/)
+  -  For Windows click the first options
+  -  For MACOS, click the 6th option
 
 The Following are the parts needed for this project:
 - IR Obstacle Detector   [For data Sheet Click Here!](https://www.handsontec.com/dataspecs/sensor/IR%20Obstacle%20Detector.pdf)
@@ -54,9 +44,7 @@ The Following are the parts needed for this project:
 
 ### Required Downloads and Installations
 
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
+[For Basic Installation Process of Arduino IDE Click HERE!](https://www.youtube.com/watch?v=ADn67BYMdH0)
 
 ### Required Components
 
