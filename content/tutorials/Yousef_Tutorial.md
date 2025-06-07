@@ -182,7 +182,7 @@ while True:
 
     # Wait a bit to reduce rapid fluctuations
     time.sleep(0.1)
-    
+
 6. Test and fine-tune your project
 
 Observe acceleration output under normal and abnormal conditions.
@@ -190,10 +190,6 @@ Observe acceleration output under normal and abnormal conditions.
 Tune threshold to respond only to meaningful motion.
 
 For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
-
-python
-Copy
-Edit
 
 
 
