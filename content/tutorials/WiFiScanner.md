@@ -40,7 +40,9 @@ The following are stylistic examples of possible prerequisites,
 customize these for each workshop.
 
 ### Required Downloads and Installations
+
 [Arduino IDE](https://www.arduino.cc/en/software)
+
 - Arduino is the main environment for writing and uploading code to your ESP32.
 - **ESP32 Board Package for Arduino IDE**
   1. Open Arduino IDE → *Preferences*.
