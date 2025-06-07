@@ -65,7 +65,7 @@ The main objective is to be able to connect to power and confirm the MPU-6050 ad
 
 ### Background Information
 
-Firstly, you would need to understand the ESP32 Dev board functionality in relation to Arduino. We will connect MPU 6050 with the board. We need to ensure volage compatibility, to ensure both devices are compatable to avoid damages. We need to know debugging to confirm that the address is of the MPU 6050  sucessfully stored. LAstly, wiring and lining pins up for pairing the devicesis important too.
+Firstly, you would need to understand the ESP32 Dev board functionality in relation to Arduino. We will connect MPU 6050 with the board. We need to ensure volage compatibility, to ensure both devices are compatable to avoid damages. We need to know debugging to confirm that the address is of the MPU 6050  sucessfully stored. Lastly, wiring and lining pins up for pairing the devicesis important too.
 
 ### Components
 
@@ -91,6 +91,7 @@ This is an example of how the I^2C scanner confirms that the MPU-6050 is connect
 
 ### Example
 ![Example of I2C Scanner Monitor](./gy87-i2c.webp)
+This is the expected output on the serial monitor showing that the device was successfully connected with the corrrect.
 
 ### Analysis
 
@@ -99,7 +100,8 @@ Found I2C device at "address" tells the user that the MPU-6050 has been found an
 To successfully complete that you must ensure:
 1. Breadboard and Ground Rails are laid out correctly and they both share a common ground.
 2. The ESP32 Dev Board and MPU 6050 sensor both run at the same voltage (3.3V) and VCC must feed both devices.
-3. I2C will have 2 lines SDA and SCL that will
+3. I2C will have 2 lines SDA and SCL, do not mistakepins and wriring or it will print out "device not found".
+4. Success will print out "device found at 0x68" or something along those lines showing that the device was found at specific address.
 
 ## Additional Resources
 - Arduino Guide: https://www.arduino.cc/en/Guide/
