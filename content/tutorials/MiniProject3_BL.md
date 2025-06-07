@@ -53,7 +53,7 @@ Make sure the vibration motor operates in a range from 3V to 5V.
 
 ### Required Tools and Equipment
 
-- Computer capable of running VSCode and Arduino
+- Computer capable of running VSCode
 - USB-C data transferring cable
 - Soldering station
 
