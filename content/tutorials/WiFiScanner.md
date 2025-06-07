@@ -54,7 +54,8 @@ List your required hardware components and the quantities here.
 ### Required Tools and Equipment
 
 List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
+- Computer (Windows, Mac, or Linux)
+- Arduino IDE installed
 
 ## Part 01: Name
 
