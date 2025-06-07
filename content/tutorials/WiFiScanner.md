@@ -100,6 +100,60 @@ At this point, you should have Arduino IDE installed on your device. In this sec
    - Tools → Port → Select the new device (if not sure, unplug/replug and see which one disappears/reappears).
 
 
+## Part 2: Scanning Wi-Fi Networks (Serial Monitor Version)
+
+### Introduction
+
+Let’s write code to make your ESP32 scan and list all nearby Wi-Fi networks in the Serial Monitor.
+
+### Objective
+
+- Understand how to use the `WiFi.h` library
+- See the Wi-Fi networks displayed from the Serial Monitor
+
+### Background Information
+Now that we have set up Arduino and successfully connected our ESP32 board, we will start to see this Wi-Fi display in action!
+
+### Instructions
+1. Assuming you have already opened a new sketch (File -> New Sketch), you should have the following template displayed:
+```
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
+2. You want to first include the Wifi.h library:
+```
+#include "WiFi.h"
+```
+3. Inside your ```void setup()``` function you want to include this block inside:
+```
+  Serial.begin(115200);
+  delay(1000);
+
+  WiFi.mode(WIFI_STA);  // Station mode is best for scanning
+  Serial.println("Scanning for WiFi networks...");
+  int n = WiFi.scanNetworks();
+  if (n == 0) {
+    Serial.println("No networks found.");
+  } else {
+    Serial.println("Networks found:");
+    for (int i = 0; i < n; ++i) {
+      Serial.printf("%d: %s (%d dBm) Encryption: %s\n",
+        i + 1,
+        WiFi.SSID(i).c_str(),
+        WiFi.RSSI(i),
+        WiFi.encryptionType(i) == WIFI_AUTH_OPEN ? "Open" : "Secured"
+      );
+    }
+  }
+```
+
 ## Example
 
 ### Introduction
