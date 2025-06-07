@@ -83,7 +83,7 @@ Firstly, you would need to understand the ESP32 Dev board functionality in relat
 6. Connect MPU-6050 pin to GND and set it's address
 7. Upload I^2C sketch and verify that device is found using serial monitor
 
-![Example of I2C Scanner Monitor](./MPU5050_ESP32_Wiring-Schematic-Diagram.webp)
+![Example of I2C Scanner Monitor](./MPU6050_ESP32_Wiring-Schematic-Diagram.webp)
 
 
 ## Example
