@@ -5,7 +5,6 @@ authors:
   - name: Fernando Salgado
 ---
 
-![relevant graphic or workshop logo](image/path)
 
 ## Introduction
 
