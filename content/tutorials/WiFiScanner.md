@@ -64,30 +64,40 @@ List any tools and equipment you need here.
 - Computer (Windows, Mac, or Linux)
 - Arduino IDE installed
 
-## Part 01: Name
+## Part 01: Setting up Arduino & Connecting Your ESP32
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+In this section, you will install Arduino on your computer (if you haven't already). Once that is done, you will learn to connect your ESP32 to Arduino successfully.
 
 ### Objective
 
-- List the learning objectives of this section
+- Install and open Arduino IDE
+- Add the ESP32 board package
+- Select the correct board and port
 
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
+At this point, you should have Arduino IDE installed on your device. In this section, we will walk through how to connect your ESP32 to Arduino and select the correct board and modules.
 
 ### Components
 
-- List the components needed in this challenge
+- Computer/Laptop
+- ESP32 Board
+- USB-C cable
 
-### Instructional
+### Instructions
 
-Teach the contents of this section
+1. **Install Arduino IDE** and open it. If you don't have anything open, you can hover over to File -> New Sketch.
+2. **Plug in your ESP32 board** via USB.
+4. **Select the correct board:**
+   - Since it is your first time, you want to click the dropdown and select "Select other board and port"
+       <img width="234" alt="Screenshot 2025-06-06 at 10 53 01 PM" src="https://github.com/user-attachments/assets/3bbd9bac-5e52-41ff-a33e-31b0e4e13c83" />
+   - Once you get there, you want to select these options on your end, then press "Ok".
+     <img width="678" alt="Screenshot 2025-06-06 at 10 55 00 PM" src="https://github.com/user-attachments/assets/c2a647ae-7c26-4d3f-9171-4ba29c071032" />
+5. **Make sure the correct port is selected:**  
+   - Tools → Port → Select the new device (if not sure, unplug/replug and see which one disappears/reappears).
+
 
 ## Example
 
