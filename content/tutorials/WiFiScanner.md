@@ -43,6 +43,7 @@ You should have Arduino IDE installed on your device, Please do so if you haven'
      Click **Install**.
 
   It should look like this in your Boards Manager:
+  
   <img width="204" alt="Screenshot 2025-06-06 at 8 47 15 PM" src="https://github.com/user-attachments/assets/0f6d761e-8d25-435e-aa1b-7b39a4e92a93" />
 
 ### Required Components
