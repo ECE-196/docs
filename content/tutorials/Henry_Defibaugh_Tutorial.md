@@ -33,4 +33,5 @@ You will then proceed to type in the following code to ensure your LED is on and
 ![Screenshot 2025-06-06 225110](https://github.com/user-attachments/assets/d7b0a9ce-8729-42ad-80b7-094f0c9afbcd)
 
 These were the readings I was getting from the serial monitor (yours should be pretty similar):
+
 ![Screenshot 2025-06-06 224644](https://github.com/user-attachments/assets/053cdc93-084b-429c-b295-281a86d25cc8)
