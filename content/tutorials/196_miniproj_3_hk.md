@@ -1,4 +1,13 @@
-## Distance Finder:
+---
+title: Distance Finder with ESP and Ultrasonic
+date: 2025-06-06
+authors:
+  - name: Harihar Kaushik
+---
+
+## Distance Finder
+
+## Introduction
 
 In this guide, we will learn how to use the ESP32 devboard, the Arduino IDE and the HC-SR04 ultrasonic sensor to make an easy and (really quite) accurate distance sensor.
 
@@ -6,10 +15,20 @@ In this guide, we will learn how to use the ESP32 devboard, the Arduino IDE and 
 
 The HC-SR04 is an extremely popular ultrasonic sensor with a range of about 400cm, and a reasonably wide FOV (~30 degrees). The sensor is also accurate enough for most projects (0.1-0.5cm), which is why it is the sensor of choice for many projects that use distance or proximity readings. As such, becoming familiar with this sensor is advantageous, and can be very helpful for your final projects, or even just personal projects.
 
+### Learning Objectives
+In this guide, you will learn how to:
+- Set up the Arduino IDE for an ESP32
+- Use the Arduino IDE to read data from a sensor
+- Assemble basic sensor circuits
+
+## Getting Started
+
 This guide is split into 3 main parts:
 1. Getting the Arduino IDE set up for your dev board
 2. Assembling your circuit
 3. Coding your distance finder
+
+### Required Downloads, Installations and Components
 
 For this guide, you will need:
 1. Your dev board
@@ -17,6 +36,10 @@ For this guide, you will need:
 3. A breadboard
 4. Jumper wires 
 5. The Arduino IDE, which you can find [here](https://www.arduino.cc/en/software/ "Arduino downloads page")
+6. A computer
+7. USB-C cable for the dev board
+
+You do not need any special tools or equipment for this project
 
 **Note**: _Before starting, ensure that you have your dev board set up and the Arduino IDE is able to recognize and upload code to it. You can do this by connecting your dev board to your computer when it's OFF, and turn the switch on ONLY once connected. You can also hold down the BOOT button._
 
