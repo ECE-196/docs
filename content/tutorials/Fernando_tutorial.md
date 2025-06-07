@@ -91,13 +91,7 @@ about the technical skills
 ## Components
 
 
-![IR obstacle avoidance sensor](static/IRobstacle.jpg)
-![BreadBoard](static/Breadboard.jpg)
-![Jumper Wiresr](static/Jumper_Wires.jpg)
-![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
-![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
-![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
-![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![IR Obstacle Detector](content/Team5/Breadboard.jpg)
 
 ### Instructional
 
