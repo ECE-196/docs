@@ -102,8 +102,48 @@ Download and install from:
 
 ---
 
-## Code (CircuitPython)
-# %%
+
+---
+
+## Part 02: Writing the Code
+
+### Introduction
+
+This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
+---
+### 🔧 How the Threshold Works
+
+The `threshold` represents a **total acceleration level** that counts as "abnormal." You’ll likely want to experiment with this based on your use case.
+
+- **Low threshold (e.g., 12–15)**: detects small movements — useful for subtle shocks or light bumps.
+- **High threshold (e.g., 18–25)**: detects stronger or more sudden motions — ideal for fall detection or impact.
+
+You can determine a good threshold by printing out the `total_accel` value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
+---
+
+### Objective
+
+- Generate a threshold-based motion detection system.
+- Use acceleration data to trigger an output signal (LED).
+- Demonstrate how to interface sensors and actuators using CircuitPython.
+
+---
+
+### Background Information
+
+The MPU6050 sensor measures acceleration in three axes (X, Y, and Z). By summing the absolute values of all three components, we can estimate the overall "force" being experienced. If this total exceeds a preset value (the threshold), we consider that to be abnormal motion.
+
+This method is effective for:
+- Detecting sudden jolts or drops
+- Monitoring impact in wearable devices
+- Simplifying fall detection logic
+
+---
+
+### Instructional
+
+**1. Import CircuitPython modules for controlling your board**
+
 ```python
 import time
 import board
@@ -111,27 +151,50 @@ import busio
 import digitalio
 from adafruit_mpu6050 import MPU6050
 
-# Setup I2C and accelerometer
+2. Initialize I2C and the accelerometer
 i2c = busio.I2C(board.SCL, board.SDA)
 mpu = MPU6050(i2c)
 
-# Setup LED
+3. Set up the LED pin for output
 led = digitalio.DigitalInOut(board.IO5)
 led.direction = digitalio.Direction.OUTPUT
 
-# Threshold for abnormal motion (adjust based on tests)
-threshold = 18
+4. Define a threshold for abnormal motion
+This value can be adjusted depending on how sensitive you want detection to be.
+threshold = 18  # Adjust this based on your testing
 
+5. Create the main loop to read acceleration and control the LED
 while True:
+    # Read acceleration in X, Y, Z (in m/s²)
     x, y, z = mpu.acceleration
-    total = abs(x) + abs(y) + abs(z)
 
-    if total > threshold:
+    # Calculate the total acceleration magnitude
+    total_accel = abs(x) + abs(y) + abs(z)
+
+    # Print the value to help tune your threshold
+    print("Total Acceleration:", total_accel)
+
+    # Trigger LED if acceleration exceeds threshold
+    if total_accel > threshold:
         led.value = True
     else:
         led.value = False
 
+    # Wait a bit to reduce rapid fluctuations
     time.sleep(0.1)
+    
+6. Test and fine-tune your project
+
+Observe acceleration output under normal and abnormal conditions.
+
+Tune threshold to respond only to meaningful motion.
+
+For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
+
+python
+Copy
+Edit
+
 
 
 
