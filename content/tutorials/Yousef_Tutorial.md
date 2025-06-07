@@ -155,7 +155,6 @@ Tune threshold to respond only to meaningful motion.
 For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
 
 ## Analysis
-
 This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a tunable threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity—lower values detect lighter motion, while higher values filter out minor noise and only respond to significant events like falls or sharp impacts. This makes the setup adaptable to various applications such as fall detection, impact monitoring, or security triggers.
 
 
