@@ -92,7 +92,7 @@ This is an example of how the I^2C scanner confirms that the MPU-6050 is connect
 ### Example
 ![Example of I2C Scanner Monitor](./gy87-i2c.webp)
 
-This is the expected output on the serial monitor showing that the device was successfully connected with the corrrect.
+This is the expected output on the serial monitor showing that the device was successfully connected with the corrrect address.
 
 ### Analysis
 
