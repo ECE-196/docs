@@ -92,8 +92,8 @@ about the technical skills
 
 
 ![IR obstacle avoidance sensor](static/IRobstacle.jpg)
-![IR obstacle avoidance sensor](static/BreadBoard.jpg)
-![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![BreadBoard](static/Breadboard.jpg)
+![Jumper Wiresr](static/Jumper_Wires.jpg)
 ![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
 ![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
 ![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
