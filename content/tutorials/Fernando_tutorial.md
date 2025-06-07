@@ -92,6 +92,12 @@ about the technical skills
 
 
 ![IR Obstacle Detector](content/tutorials/Breadboard.jpg)
+![ESP32 Mini](content/tutorials/Breadboard.jpg)
+![Jumper Wires](content/tutorials/Breadboard.jpg)
+![LED](content/tutorials/Breadboard.jpg)
+![Resistor](content/tutorials/Breadboard.jpg)
+![Bread Board](content/tutorials/Breadboard.jpg)
+
 
 ### Instructional
 
