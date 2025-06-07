@@ -22,26 +22,16 @@ This tutorial will show how to light up LEDs connected to an ESP32 when abnormal
 Follow Adafruit’s guide here:  
 [https://learn.adafruit.com/circuitpython-on-the-esp32-s2](https://learn.adafruit.com/circuitpython-on-the-esp32-s2)
 
-Make sure you:
-- Use a **Chromium-based browser** (like Chrome or Edge)
-- Flash the `.uf2` firmware onto the board
-
 #### 2. Install the CircuitPython Library Bundle  
 You need libraries like `adafruit_mpu6050`.
-
 - Download the bundle from:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
-- Unzip the bundle
-- Copy the following into the `lib/` folder on your ESP32:
-  - `adafruit_mpu6050.mpy`
-  - `adafruit_bus_device` (folder)
 
 #### 3. Install Visual Studio Code  
 Download and install from:  
 [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-- Then install the **Python** and **Pymakr** extensions (optional but helpful).
-
+- Then install the **Python** and **Pymakr** extensions.
 #### Pros:
 - Useful for fall detection and alert systems.
 - Easy to implement with CircuitPython.
