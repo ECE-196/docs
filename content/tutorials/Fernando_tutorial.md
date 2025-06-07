@@ -67,7 +67,7 @@ List any tools and equipment you need here.
 - Computer (Windows or MAC)
 - Very small phillips screwdriver
 
-## Part 01: Name: HardWare
+## Part 01: Name: All in One
 
 ### Introduction
 
@@ -80,14 +80,10 @@ In this section you will learn how to wire everything needed!
 
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
 
 - Ensure you now how the polarity of an LED light works. The Cathode, the short end, will be connected to ground, the anode, the longer head, will be connected to power.
 - If you are using a different LED, make sure you have the right resistor value to prevent the LED from burning out
-
+- Need to know basic syntax in arduino IDE
 ## Components
 
 
@@ -105,22 +101,18 @@ about the technical skills
 - Step 2: Write code on Arduino IDE
 - Step 3: Test
 
-## Example
+![Image of Everything Wired Up](content/tutorials/Breadboard.jpg)
+![Screenshot of Arduino Code Used](content/tutorials/Breadboard.jpg)
 
-### Introduction
-
-Introduce the example that you are showing here.
-
-### Example
-
-Present the example here. Include visuals to help better understanding
 
 ### Analysis
 
 Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
-
-## Additional Resources
+- As you can see, we use the board bread board to be able to provide the 3.3V and GND from the ESP32-Mini to all our other components
+- From the code, you will see that the IR Obstacle Detector will give a binary reading, on the serial monitor it shows !Obstacle or Clear depending on if there is an object or not
+- The Red Led Used lights up if there is an obstacle (car), meaning a car is detected
+- The LED on the sensor, lights up if their is no obstacle (car), meaning no car is detected and space is available
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
+[For More Information on IR Obstacle Detector Pin Out](https://www.handsontec.com/dataspecs/sensor/IR%20Obstacle%20Detector.pdf)
