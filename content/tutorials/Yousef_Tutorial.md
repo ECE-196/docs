@@ -16,7 +16,7 @@ This tutorial will show how to light up LEDs connected to an ESP32 when abnormal
 - In this project, we will detect sudden changes in acceleration (abnormal motion) and respond by turning on LEDs.
 
 ### Required Downloads and Installations
--Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
+- Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
 ---
 
 #### 1. Install CircuitPython on Your ESP32 DevBoard  
