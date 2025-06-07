@@ -112,7 +112,7 @@ The `threshold` represents a **total acceleration level** that counts as "abnorm
 - **Low threshold (e.g., 12–15)**: detects small movements — useful for subtle shocks or light bumps.
 - **High threshold (e.g., 18–25)**: detects stronger or more sudden motions — ideal for fall detection or impact.
 
-You can determine a good threshold by printing out the `total_accel` value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
+- You can determine a good threshold by printing out the `total_accel` value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
 ---
 
 ### Objective
