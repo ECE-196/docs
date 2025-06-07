@@ -23,7 +23,6 @@ Follow Adafruit’s guide here:
 [https://learn.adafruit.com/circuitpython-on-the-esp32-s2](https://learn.adafruit.com/circuitpython-on-the-esp32-s2)
 
 #### 2. Install the CircuitPython Library Bundle  
-You need libraries like `adafruit_mpu6050`.
 - Download the bundle from:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
 
@@ -149,4 +148,3 @@ Below are useful tools and references to help you complete, extend, or troublesh
 - **CircuitPython Library Bundle**  
   Download all `.mpy` libraries including `adafruit_mpu6050` and `adafruit_bus_device`:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
-
