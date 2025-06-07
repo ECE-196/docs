@@ -1,5 +1,5 @@
 ---
-title: Proximity Detector
+Title: IR Car Detector
 date: 05/19/2025
 authors:
   - name: Fernando Salgado
