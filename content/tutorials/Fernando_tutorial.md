@@ -64,8 +64,10 @@ List your required hardware components and the quantities here.
 
 List any tools and equipment you need here.
 (Ex, computer, soldering station, etc.)
+- Computer (Windows or MAC)
+- Very small phillips screwdriver
 
-## Part 01: Name
+## Part 01: Name: 
 
 ### Introduction
 
