@@ -92,8 +92,12 @@ about the technical skills
 
 
 ![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
-
-
+![IR obstacle avoidance sensor](static/Fernando_tutorial/BreadBoard.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
+![IR obstacle avoidance sensor](static/Fernando_tutorial/IRobstacle.jpg)
 
 ### Instructional
 
