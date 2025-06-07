@@ -49,7 +49,7 @@ List your required hardware components and the quantities here.
 | Component Name | Quanitity |
 | -------------- | --------- |
 | ESP32 Dev Board | 1 |
-| USB-C or Micro-USB Cable (for your board) | 1 |
+| USB-C Cable | 1 |
 
 ### Required Tools and Equipment
 
