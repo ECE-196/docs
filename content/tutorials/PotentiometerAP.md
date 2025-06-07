@@ -5,7 +5,7 @@ authors:
   - name: Aatash Pestonjamasp
 ---
 
-<img src="PotentiometerAP/potentiometer.jpg" alt="Image of a potentiometer" width="35%" height="auto">
+<img src="PotentiometerAP/potentiometer.jpg" alt="Image of a potentiometer" width="25%" height="auto">
 
 
 ## Introduction/ Learning Objectives
@@ -86,7 +86,7 @@ By changing the position of the wiper, we effectively change the resistance and 
 
 ## Part 01: Reading Analog values with an ESP-32
 
-### Introductiom/ Learning Objectives
+### Introduction/ Learning Objectives
 
 In this section we will cover:
 - Preparing the ESP-32 to be flashed (if needed)
@@ -111,12 +111,12 @@ and view its status inside the Arduino IDE serial monitor.
 
 #### Wiring
 
-<img src="PotentiometerAP/potentiometer_wiring.jpg" alt="Potentiometer Connections" width="55%" height="auto">
+<img src="PotentiometerAP/potentiometer_wiring.jpg" alt="Potentiometer Connections" width="25%" height="auto">
 
 To begin, we will first connect the potentiometer to the ESP-32. Connect a wire to each pin of the potentiometer. 
 
 
-<img src="PotentiometerAP/pot_esp_connected.jpg" alt="Fully wired setup" width="55%" height="auto">
+<img src="PotentiometerAP/pot_esp_connected.jpg" alt="Fully wired setup" width="45%" height="auto">
 
 Then, paying attention to the wire ordering, connect the potentiometer wires to the ESP-32. One of the two outer pins should be connected to the 3.3V pin on the ESP, and the other should connect to a ground. In the image, the green wire connects to 3.3V supply, and the brown connects to ground. 
 
@@ -128,11 +128,13 @@ Connect the signal wire (yellow as pictured) to an IO port. In our case, we will
 <img src="PotentiometerAP/board_manager_s3_dev.JPG" alt="Arduino IDE Board Selector" width="55%" height="auto">
 
 
-Open Arduino IDE and ensure the ESP is plugged into the computer and powered off. You should see it appear in Arduino IDE as "ESP32S3 Dev Module".
+Open Arduino IDE and ensure the ESP is plugged into the computer and powered on. You should see it appear in Arduino IDE as "ESP32S3 Dev Module".
 
-<small>\* If you have never flashed the board before in Arduino IDE, turning the board on may not have it correctly show up. In order to have the board show up in the IDE, hold the switch labelled "BOOT" on the board down as you turn the board on, and keep it held down for a few seconds after the board powers on.</small>
+<small>\* If you have never flashed the board before in Arduino IDE, the board may not correctly show up. In order to have the board show up in the IDE, hold the switch labelled "BOOT" on the board down as you turn the board on, and keep it held down for a few seconds after the board powers on.</small>
 
 <img src="PotentiometerAP/family_device.JPG" alt="Board change menu" width="35%" height="auto">
+
+<img src="PotentiometerAP/board_selector.png" alt="Board change menu" width="65%" height="auto">
 
 
 <small>\* You may also see the board displayed as "ESP32 Family Device" or something similar. If this occurs, you will need to manually select the board by selecting "Tools->Board->esp32->ESP32S3 Dev Module" at the top of the IDE.
@@ -188,6 +190,9 @@ To view the output, go to "Tools-> Serial Monitor" and you can read the values p
 <small> In case you have issues with viewing output, you can also try to toggle "Tools-> Toggle USB CDC on Boot" to "Enabled". </small>
 
 
+<img src="PotentiometerAP/serial_output.JPG" alt="Serial Monitor output" width="35%" height="auto">
+
+
 Now you can turn the potentiometer knob and watch the values change!
 
 
@@ -201,6 +206,9 @@ In this section we will cover:
 - Using a potentiometer to actively control another device for controlling LED's
 
 ### Background Information
+
+<img src="PotentiometerAP/lightshield.jpg" alt="Image of lightshield" width="35%" height="auto">
+
 
 In this section, we will use the potentiometer to control a lightshield module. This allows us to actually do more with the potentiometer beyond reading values.
 
@@ -219,9 +227,9 @@ In this section, we will use the potentiometer to control a lightshield module. 
 
 **WARNING: This method involves installing the lightshield in a manner which is not the most ideal. You may use additional wires to connect the lightshield pins to the ESP if desired. Proceed with caution and at your own risk to not damage any components/pins.**
 
-<img src="PotentiometerAP/lightshield_connect1.jpg" alt="Lightshield setup1" width="55%" height="auto">
+<img src="PotentiometerAP/lightshield_connect1.jpg" alt="Lightshield setup1" width="40%" height="auto">
 
-<img src="PotentiometerAP/lightshield_connect2.jpg" alt="Lightshield setup2" width="55%" height="auto">
+<img src="PotentiometerAP/lightshield_connect2.jpg" alt="Lightshield setup2" width="40%" height="auto">
 
 Since the LED circuits on the lightshield use IO21 through IO39, we only need to plug in those pins. We can plug the lightshield in at an angle to still have access to the pins we used for the potentiometer in section 1.
 
@@ -302,9 +310,9 @@ We then call our function to display the correct number of LEDs, giving the need
 
 Once you flash the code, you should be able to turn the potentiometer knob and watch the LEDs go up and down. The images below show different numbers of LEDs being turned on based on only rotating the potentiometer.
 
-<img src="PotentiometerAP/leds1.jpg" alt="Picture of few leds lit up" width="55%" height="auto">
+<img src="PotentiometerAP/leds1.jpg" alt="Picture of few leds lit up" width="30%" height="auto">
 
-<img src="PotentiometerAP/leds2.jpg" alt="Picture of more leds lit up" width="55%" height="auto">
+<img src="PotentiometerAP/leds2.jpg" alt="Picture of more leds lit up" width="30%" height="auto">
 
-<img src="PotentiometerAP/leds3.jpg" alt="Picture of all leds lit up" width="55%" height="auto">
+<img src="PotentiometerAP/leds3.jpg" alt="Picture of all leds lit up" width="30%" height="auto">
 
