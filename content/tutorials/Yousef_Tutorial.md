@@ -75,7 +75,7 @@ Download and install from:
    - Cathode (short leg) → GND  
 
 ---
-## Part 02: Writing the Code
+## Writing the Code
 
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
 ### 🔧 How the Threshold Works
@@ -97,7 +97,6 @@ The `threshold` represents a **total acceleration level** that counts as "abnorm
 ---
 
 ### Background Information
-
 The MPU6050 sensor measures acceleration in three axes (X, Y, and Z). By summing the absolute values of all three components, we can estimate the overall "force" being experienced. If this total exceeds a preset value (the threshold), we consider that to be abnormal motion.
 
 This method is effective for:
@@ -154,3 +153,10 @@ Observe acceleration output under normal and abnormal conditions.
 Tune threshold to respond only to meaningful motion.
 
 For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
+
+## Analysis
+
+This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a tunable threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity—lower values detect lighter motion, while higher values filter out minor noise and only respond to significant events like falls or sharp impacts. This makes the setup adaptable to various applications such as fall detection, impact monitoring, or security triggers.
+
+
+
