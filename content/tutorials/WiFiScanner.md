@@ -129,7 +129,7 @@ void loop() {
 ```
 2. You want to first include the Wifi.h library:
 ```c
-#include "WiFi.h"
+#include <WiFi.h>
 ```
 3. Inside your ```void setup()``` function you want to include this block inside:
 ```c
@@ -153,16 +153,111 @@ void loop() {
     }
   }
 ```
+**What this code does:**
+- Sets up Serial Monitor
+- Scans for Wi-Fi networks
+- Prints each network’s name (SSID), signal strength, and encryption type
 
-## Example
+5. How to View Results:
+  - Click Tools → Serial Monitor 
+  - You’ll see the scan results appear in the Serial window
+  - Note: Only 2.4 GHz Wi-Fi networks will appear.
+
+## Part 3: Scanning and Displaying on a Web Page (ESP32 as Access Point)
 
 ### Introduction
 
-Introduce the example that you are showing here.
+Let’s make your ESP32 create its own Wi-Fi network and host a web page that lists all Wi-Fi networks it can see.
 
-### Example
+### Objective
 
-Present the example here. Include visuals to help better understanding
+- Set up the ESP32 in “Access Point” mode
+- Build a simple web server to show Wi-Fi scan results in any browser
+
+### Background Information
+Now that we have the Wi-Fi networks displaying, let's get a little fancy and host it on a web page!
+
+### Instructions
+1. With your existing code from the beginning add this right below the include WiFi.h:
+```c
+#include <WebServer.h>
+
+const char* ap_ssid = "ESP32-Scanner";
+const char* ap_password = "ece196test";
+
+WebServer server(80);
+```
+This block of code:
+- Includes the WebServer library in your program
+- The WebServer library lets your ESP32 run a simple website that you can view in your browser
+- For ```const char* ap_ssid```, you can change whatever you want in the parentheses, but in this case we are using "ESP32-Scanner"
+- The same applies for the password, in this case we are using "ece196test"
+```#include <WebServer.h>``` adds the web server functions to your code.
+
+```ap_ssid``` and ```ap_password``` set the Wi-Fi name and password for your ESP32’s own hotspot.
+
+```WebServer server(80);``` sets up a server that will listen for visitors on the standard web port.
+
+2. You will then create a ```void handleRoot()``` function here:
+```c
+void handleRoot() {
+  String page = "<h2>ESP32 Wi-Fi Scanner (AP Mode)</h2>";
+  page += "<p>Scanning for networks...</p>";
+  int n = WiFi.scanNetworks();
+  if (n == 0) {
+    page += "<b>No networks found.</b>";
+  } else {
+    page += "<ol>";
+    for (int i = 0; i < n; ++i) {
+      page += "<li>";
+      page += WiFi.SSID(i);
+      page += " (";
+      page += WiFi.RSSI(i);
+      page += " dBm) - ";
+      page += (WiFi.encryptionType(i) == WIFI_AUTH_OPEN ? "Open" : "Secured");
+      page += "</li>";
+    }
+    page += "</ol>";
+  }
+  page += "<p><button onclick=\"location.reload()\">Refresh</button></p>";
+  server.send(200, "text/html", page);
+}
+```
+The ```handleRoot()``` function is responsible for creating and displaying the main web page on your ESP32.
+Whenever someone connects to your ESP32’s Wi-Fi and visits its IP address in a browser, this function:
+- Scans for all nearby Wi-Fi networks
+- Builds an HTML page listing each network’s name, signal strength, and security type
+- Adds a Refresh button to allow users to re-scan
+- Sends the page to the browser for easy viewing
+
+3. You will want to replace everything in your ```void setup()``` to look like this:
+```c
+Serial.begin(115200);
+  delay(1000);
+
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP(ap_ssid, ap_password);
+  IPAddress myIP = WiFi.softAPIP();
+  Serial.println();
+  Serial.print("ESP32 AP IP address: ");
+  Serial.println(myIP);
+  Serial.print("Wi-Fi name: ");
+  Serial.println(ap_ssid);
+  Serial.print("Wi-Fi password: ");
+  Serial.println(ap_password);
+
+  server.on("/", handleRoot);
+  server.begin();
+  Serial.println("Web server started. Connect to ESP32 Wi-Fi and visit above IP in your browser.");
+```
+The web server version of setup() puts the ESP32 in Access Point mode, creates a Wi-Fi network, starts a simple web server, and displays the network and connection info in the Serial Monitor.
+The version just scans for nearby Wi-Fi in Station mode and prints results directly to the Serial Monitor with no web interface (See Part 2).
+
+4. In your ```void loop()``` function, you would want to add this line:
+```c
+server.handleClient();
+```
+The loop() function repeatedly calls server.handleClient(), which keeps the web server running and responsive. Every time a device tries to connect to your ESP32’s web page, this line ensures the page is served with up-to-date scan results.
 
 ### Analysis
 
