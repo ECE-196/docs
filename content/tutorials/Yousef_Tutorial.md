@@ -68,8 +68,8 @@ Download and install from:
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
 ### How the Threshold Works
 The `threshold` represents a **total acceleration level** that counts as "abnormal." You’ll likely want to experiment with this based on your use case.
-- **Low threshold (e.g., 12–15)**: detects small movements — useful for subtle shocks or light bumps.
-- **High threshold (e.g., 18–25)**: detects stronger or more sudden motions — ideal for fall detection or impact.
+- **Low threshold**: detects small movements — useful for subtle shocks or light bumps.
+- **High threshold**: detects stronger or more sudden motions — ideal for fall detection or impact.
 
 - You can determine a good threshold by printing out the `total_accel` value during normal operation and observing how it spikes when abnormal motion happens (like shaking the board or dropping it slightly).
 ---
@@ -108,8 +108,8 @@ led = digitalio.DigitalInOut(board.IO5)
 led.direction = digitalio.Direction.OUTPUT
 
 4. Define a threshold for abnormal motion
-This value can be adjusted depending on how sensitive you want detection to be.
-threshold = 18  # Adjust this based on your testing
+This value can be adjusted depending on the values you are getting from the MPU-6050 and how sensitive you want detection to be.
+threshold = N/A  # Adjust this based on your testing
 
 5. Create the main loop to read acceleration and control the LED
 while True:
@@ -131,3 +131,5 @@ while True:
     # Wait a bit to reduce rapid fluctuations
       time.sleep(0.1)
 ```
+## Analysis
+This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity—lower values detect lighter motion, while higher values filter out minor noise and only respond to significant events like falls or sharp impacts. This makes the setup adaptable to various applications such as fall detection, impact monitoring, or security triggers.
