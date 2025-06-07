@@ -46,6 +46,9 @@ You should have Arduino IDE installed on your device, Please do so if you haven'
   
   <img width="204" alt="Screenshot 2025-06-06 at 8 47 15 PM" src="https://github.com/user-attachments/assets/0f6d761e-8d25-435e-aa1b-7b39a4e92a93" />
 
+  <img width="749" alt="Screenshot 2025-06-06 at 9 30 14 PM" src="https://github.com/user-attachments/assets/152b56ce-38b9-466d-999c-05faeec9da85" />
+
+
 ### Required Components
 
 List your required hardware components and the quantities here.
