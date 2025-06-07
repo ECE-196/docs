@@ -1,120 +1,131 @@
 ---
-title:  ECE196 Mini Project 3 - renybn
+title: ECE196 Mini Project 3 - renybn
 date: 2025-05-19
 authors:
-  - name: Renato Navarro
+name: Renato Navarro
 ---
 
-![Waterfall!](./waterfall.jpeg)
+![Arduino IDE + EPS32](/Users/renybn/Desktop/arduino_esp32_hybrid_logo.png)
 
 ## Introduction
 
-# Fridge Fullness Meter
+# Creating a Simple AND gate using an ESP32 and Arduino IDE
 
-Write a short section on what the tutorial is aiming to accomplish.
+For this tutorial, the goal is to create an **AND gate** incorporating an *ESP32* and *Arduino IDE*. The goal of this tutorial is for the user to get comfortable being able to work with both hardware and software and be able to integrate them together.
 
-For this tutorial, my goal is to create a **Fridge Fullness Meter**. Having a *visual representation* indicating how full your fridge is will make it convenient to know how full your fridge is without opening it.
+Motivation behind this tutorial : 
 
-What is the motivation behind the tutorial?
+- The ESP32 is the "go-to" microcontroller that can be used for countless projects
+ 
+- Arduino IDE is the programming language most commonly used to upload code to an ESP32, making your useless components come to life  
 
-- null
+- There is a high probability that you will need to use an ESP32 and/or Arduino IDE for your final project in this class !
 
-What do you want readers to gain from the tutorial?
+What you will gain from completing this tutorial : 
 
-- Have the user be able to implement a real life circuit 
+- Be able to create a real-life circuit from reading a schematic 
 
-- Be able to learn how to use an ESP32
+- Be able to get comfortable with the ESP32, especially when it comes to pinouts and being able to read a datasheet
 
-- Get the user comfortable with basic Arduino syntax
+- Become comfortable using Arduino IDE; being able to understand fundamental syntax and getting familiar on how to write some simple code
 
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
+A good engineer can be good at hardware or good at software. But a great engineer is able to understand both. That is what I hope you will be able to expand your skills on :
 
-Any additional notes from the developers can be included here.
+- Hardware skills
+
+- Software skills 
+
+- Integration
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
+The goal of this project is to create an AND gate by combining both software and hardware aspects. On the breadbaord, you will have two buttons. When clicked simultanbeously, this will turn on an LED that is incorporated with the circuit on the breadboard. But if you only click one button at a time, nothing will happen. Though this project may sound simple, it is important that you understand how to incorporate multiple different pieces of technology together to create something, whether it is small or big. There may be other components that you can use but these components are good for now, since they are things we can get familiar with. The good thing and bad thing about this project is that we have to incorporate many different components and technology to create something. This may seem bad because it can be seen as overkill but can also be seen as good since we are incorporating a variety of components that are fundamental for engineers to know about.
 
 ## Getting Started
 
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
+Software : As mentioned earlier, you will need to use Arduino IDE to complete this project. Below is a great video that will show you how to use Arduino IDE step-by-step. You will get an understanding on how to use the Arduino board (same logic applies to the ESP32), downloading Arduino IDE, and getting familiar with common functions and variables. 
+
+https://www.youtube.com/watch?v=BLrHTHUjPuw&t=1440s&ab_channel=ProgrammingElectronicsAcademy
+
+
+Hardware: For the hardware side of things, as mentioned earlier, you will receive a couple of components, which can be seen below in Required Components. All of these are very common items that you are familiar with.
 
 ### Required Downloads and Installations
 
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
+To install Arduino IDE, please click the link down below and download the latest version of the operating system you are using (MacOS, Windows, or Linux) :
+
+https://www.arduino.cc/en/software/
 
 ### Required Components
 
-List your required hardware components and the quantities here.
+For this mini project, you will need a small list of hardware components which include:
 
-| Component Name | Quanitity |
-| -------------- | --------- |
-|                |           |
-|                |           |
+- M-F Wires 5x 
+- M-M Wires 2x 
+- 10k ohm resistors 2x 
+- 220 ohm resistor 1x 
+- single-pole single-throw buttons 2x 
+- 1x breadboard 
+- esp32 1x 
 
 ### Required Tools and Equipment
 
-List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
+Some tools and equipment that you will need:
 
-## Part 01: Name
+- Computer
+
+- Cable to connect computer to esp32
+
+## Part 1: Circuit Design
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+In this part, you will be creating the AND circuit onto a breadboard by referencing a schematic
 
 ### Objective
 
-- List the learning objectives of this section
+- Get the reader to become comfortable creating a real-life circuit from viewing a schematic
 
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
+Every engineer needs to know how to read a schematic and be able to replicate it into real-life. This is vital skill to learn, because schematics are the universal language of circuitry and in everything you will ever build. For this part, we will use a few fundamental components that you will guarantee use throughout your engineering journey.
 
 ### Components
 
-- List the components needed in this challenge
+The components that you will need for this section are :
+
+- M-F Wires 5x 
+- M-M Wires 2x 
+- 10k ohm resistors 2x 
+- 220 ohm resistor 1x 
+- single-pole single-throw buttons 2x 
+- 1x breadboard 
+- ESP32
 
 ### Instructional
 
 Teach the contents of this section
 
+Create an AND gate using the components up above. Surpirsingly, there are a variety of ways you are able to set this up, don't be afraid to get creative. If you are having trouble trying to figure things out, try drawing a schematic or use the example down below as a reference.
+
 ## Example
 
 ### Introduction
 
-Introduce the example that you are showing here.
+Below is the schematic that you will be creating your circuit from
+
+![circuit schematic](/Users/renybn/Desktop/circuit_schematic_redo.png)
 
 ### Example
 
-Present the example here. Include visuals to help better understanding
+Here is a real-life example of the how the circuit should look like. 
+
+![irl circuit representation](/Users/renybn/Desktop/irl_circuit_fr.png)
 
 ### Analysis
 
 Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
 
-## Additional Resources
-
-### Useful links
-
-List any sources you used, documentation, helpful examples, similar projects etc.
+This example used the tutorial topic by utilizing a schematic to create our circuit, which we have stated multiple times throughout the tutorial. From the getco, I was able to provide the reader with all of the components and resources that were required for this project. I was able to describe in great detail what the objective of this project was going to be and also explained as to why this proejct was important to learn. I provided beginner friendly resources for the reader to use to get familiar with Arduino IDE. I provided all necesary components that was required for part 1 and also provided schematics and real-life examples of how the circuit should look like. I do believe that I provided more than enough information for the user to be able to understand what is going and how to proceed with minimal hesistation. 
