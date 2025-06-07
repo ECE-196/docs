@@ -17,7 +17,6 @@ This tutorial will show how to light up LEDs connected to an ESP32 when abnormal
 
 ### Required Downloads and Installations
 - Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
----
 
 #### 1. Install CircuitPython on Your ESP32 DevBoard  
 Follow Adafruit’s guide here:  
@@ -26,8 +25,6 @@ Follow Adafruit’s guide here:
 Make sure you:
 - Use a **Chromium-based browser** (like Chrome or Edge)
 - Flash the `.uf2` firmware onto the board
-
----
 
 #### 2. Install the CircuitPython Library Bundle  
 You need libraries like `adafruit_mpu6050`.
@@ -39,14 +36,12 @@ You need libraries like `adafruit_mpu6050`.
   - `adafruit_mpu6050.mpy`
   - `adafruit_bus_device` (folder)
 
----
-
 #### 3. Install Visual Studio Code  
 Download and install from:  
 [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 - Then install the **Python** and **Pymakr** extensions (optional but helpful).
----
+
 #### Pros:
 - Useful for fall detection and alert systems.
 - Easy to implement with CircuitPython.
@@ -54,7 +49,7 @@ Download and install from:
 #### Cons:
 - Sensitive to orientation and noise.
 - Requires tuning threshold values for each use case.
----
+
 ### Materials Required
 
 | Component             | Quantity |
