@@ -107,7 +107,7 @@ This method is effective for:
 
 ---
 
-### Instructional
+### Code
 ```python
 import time
 import board
