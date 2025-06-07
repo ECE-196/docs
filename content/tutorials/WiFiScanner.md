@@ -165,7 +165,7 @@ void loop() {
 
 You should see something like this for the output in your Serial Monitor:
 
-<img width="619" alt="Screenshot 2025-06-06 at 11 32 49 PM" src="https://github.com/user-attachments/assets/7e80cd29-889a-403a-b422-d020374daa56" />
+<img width="412" alt="Screenshot 2025-06-06 at 11 55 12 PM" src="https://github.com/user-attachments/assets/f24a8811-45bb-4f18-84bc-2aeb21a6c438" />
 
 ## Part 3: Scanning and Displaying on a Web Page (ESP32 as Access Point)
 
@@ -262,6 +262,16 @@ The version just scans for nearby Wi-Fi in Station mode and prints results direc
 server.handleClient();
 ```
 The loop() function repeatedly calls server.handleClient(), which keeps the web server running and responsive. Every time a device tries to connect to your ESP32’s web page, this line ensures the page is served with up-to-date scan results.
+
+5. Once you upload your code you should see something like this on your Serial Monitor Output:
+<img width="619" alt="Screenshot 2025-06-06 at 11 32 49 PM" src="https://github.com/user-attachments/assets/7e80cd29-889a-403a-b422-d020374daa56" />
+
+This is the information you will use to connect to the Wi-Fi that you just created. You will select taht Wi-fi and enter in the password you set it to:
+![IMG_8254](https://github.com/user-attachments/assets/65cf377d-524d-4890-bc9c-350193b73636)
+
+6. Once you are successfully connected, you will head over to your webrowser and enter in the ip adress given, in this case: ```192.168.4.1``` and you should see your web server look like this!
+
+![IMG_8253](https://github.com/user-attachments/assets/b59c0766-ee86-458e-8c1d-fd9ccc834189)
 
 ### Analysis
 
