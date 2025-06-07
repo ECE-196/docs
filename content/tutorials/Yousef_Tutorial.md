@@ -78,7 +78,7 @@ Download and install from:
 ## Writing the Code
 
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
-### 🔧 How the Threshold Works
+### How the Threshold Works
 
 The `threshold` represents a **total acceleration level** that counts as "abnormal." You’ll likely want to experiment with this based on your use case.
 
@@ -144,18 +144,35 @@ while True:
         led.value = False
 
     # Wait a bit to reduce rapid fluctuations
-    time.sleep(0.1)
-
-6. Test and fine-tune your project
-
-Observe acceleration output under normal and abnormal conditions.
-
-Tune threshold to respond only to meaningful motion.
-
-For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
-
-## Analysis
-This code effectively detects abnormal motion using the total acceleration from all three axes of the MPU6050 sensor. By comparing the calculated value to a tunable threshold, the system provides a simple yet reliable way to trigger an LED alert during sudden movement. The threshold value can be adjusted depending on the desired sensitivity—lower values detect lighter motion, while higher values filter out minor noise and only respond to significant events like falls or sharp impacts. This makes the setup adaptable to various applications such as fall detection, impact monitoring, or security triggers.
+      time.sleep(0.1)
+```
 
 
+### Resources
 
+Below are useful tools and references to help you complete, extend, or troubleshoot this project:
+
+- **CircuitPython for ESP32-S3**  
+  Install CircuitPython on your ESP32 DevBoard:  
+  [https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/](https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/)
+
+- **Adafruit MPU6050 Library Documentation**  
+  Learn how to use the MPU6050 sensor with CircuitPython:  
+  [https://docs.circuitpython.org/projects/mpu6050/en/latest/](https://docs.circuitpython.org/projects/mpu6050/en/latest/)
+
+- **CircuitPython Library Bundle**  
+  Download all `.mpy` libraries including `adafruit_mpu6050` and `adafruit_bus_device`:  
+  [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
+
+- **Visual Studio Code**  
+  Recommended code editor with Python support:  
+  [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+- **PWM and Accelerometer Basics**  
+  Learn how Pulse Width Modulation and accelerometers work:  
+  - PWM Tutorial: [https://learn.sparkfun.com/tutorials/pulse-width-modulation/all](https://learn.sparkfun.com/tutorials/pulse-width-modulation/all)  
+  - Accelerometer Overview: [https://learn.adafruit.com/accelerometer-basics](https://learn.adafruit.com/accelerometer-basics)
+
+- **Optional Serial Monitors (for debugging)**  
+  - Mu Editor (simple CircuitPython editor + monitor): [https://codewith.mu/](https://codewith.mu/)  
+  - CoolTerm (lightweight serial monitor): [https://freeware.the-meiers.org/](https://freeware.the-meiers.org/)
