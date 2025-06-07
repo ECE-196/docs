@@ -19,13 +19,6 @@ This tutorial will show how to light up LEDs connected to an ESP32 when abnormal
 
 - In this project, we will detect sudden changes in acceleration (abnormal motion) and respond by turning on LEDs.
 
-
-## Materials Required
-- ESP32 Envision DevBoard  
-- MPU6050 (or any 3-axis accelerometer)  
-- Breadboard and jumper wires  
-- 1 or more LEDs
-
 ### Required Downloads and Installations
 
 Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
@@ -72,7 +65,7 @@ Download and install from:
 
 ---
 
-## Materials Required
+### Materials Required
 
 | Component             | Quantity |
 |-----------------------|----------|
@@ -84,7 +77,7 @@ Download and install from:
 | Breadboard            | 1        |
 
 ---
-## Circuit Setup
+### Circuit Setup
 
 1. Connect MPU6050:
    - VCC → 3.3V  
@@ -101,7 +94,6 @@ Download and install from:
 ## Part 02: Writing the Code
 
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
----
 ### 🔧 How the Threshold Works
 
 The `threshold` represents a **total acceleration level** that counts as "abnormal." You’ll likely want to experiment with this based on your use case.
