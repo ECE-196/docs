@@ -108,9 +108,6 @@ This method is effective for:
 ---
 
 ### Instructional
-
-**1. Import CircuitPython modules for controlling your board**
-
 ```python
 import time
 import board
