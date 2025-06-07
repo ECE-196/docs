@@ -20,16 +20,11 @@ In the mini project, I will be making an obstacle detecting system using an IR o
 
 ### Background Information
 
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
-
 - An IR Obstacle Detector, RED LED, and Resistor will be used together to act as a car parking sensor
 - We use the IR Obstacle Detector to use give back a binary value (if a obstacle is present or if its clear)
 - In total, there ill be to LED's used, one on the IR Obstacle Detector (green) and one on a seperate breadboard (red). These will be used to to visually represent if a car is present or not.
-
-
+- An alternative to the IR Obstacle Detector could be an Ultrasonic sensor. Ultrasonic sensors might be preferred if distance meaasurement is needed.
+- Before starting, it is important to know how IR detection works. All objects emit heat signatures that cause changes in infared light. These sensors, emit infared light and then detect the reflected radiation to determine if an object is present.
 
 ## Getting Started
 
