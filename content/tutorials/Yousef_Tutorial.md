@@ -131,20 +131,3 @@ while True:
     # Wait a bit to reduce rapid fluctuations
       time.sleep(0.1)
 ```
-
-
-### Resources
-
-Below are useful tools and references to help you complete, extend, or troubleshoot this project:
-
-- **CircuitPython for ESP32-S3**  
-  Install CircuitPython on your ESP32 DevBoard:  
-  [https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/](https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/)
-
-- **Adafruit MPU6050 Library Documentation**  
-  Learn how to use the MPU6050 sensor with CircuitPython:  
-  [https://docs.circuitpython.org/projects/mpu6050/en/latest/](https://docs.circuitpython.org/projects/mpu6050/en/latest/)
-
-- **CircuitPython Library Bundle**  
-  Download all `.mpy` libraries including `adafruit_mpu6050` and `adafruit_bus_device`:  
-  [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
