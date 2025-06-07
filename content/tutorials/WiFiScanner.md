@@ -26,18 +26,7 @@ By scanning for nearby networks, you can learn about radio environments, underst
 
 
 ## Getting Started
-
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
+You should have Arduino IDE installed on your device, Please do so if you haven't (link down below). This is all you need in terms of a software application that is both Mac and Windows supported. You will then use the ESP32 that you have assembled to use for wireless communication on the Wifi Scan tutorial we will be going through.
 
 ### Required Downloads and Installations
 
