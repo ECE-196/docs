@@ -14,8 +14,8 @@ By the end you should be able to precisely control the intensity and timing of a
 
 ### Learning Objectives
 
-- Controlling ESP32 in Python and Arduino
-- Making a GUI in Python to control a vibration motor
+- Configure the ESP32 Dev board to control a vibration motor
+- Use Circuit Python to control the intensity and delay of the vibration motor
 
 ### Background Information
 
@@ -31,20 +31,23 @@ Cons
 
 ## Getting Started
 
-For software we will be using Python in VSCode and Arduino. Make sure to install the latest versions on your corressponding operating system. 
+For software we will be using Python and Circuit Python in VSCode. Make sure to install the latest versions on your corressponding operating system. 
 
 ### Required Downloads and Installations
 
   [Python in VSCode](https://code.visualstudio.com/docs/languages/python)
 
-  [Arduino](https://www.arduino.cc/en/software/)
+  [Circuit Python](https://circuitpython.org/board/espressif_esp32s3_devkitc_1_n8/)
   
 ### Required Components
 
-| Component Name  | Quanitity |
-| --------------- | --------- |
-| ESP32           | 1         |
-| Vibration Motor | 1         |
+| Component Name   | Quanitity |
+| ---------------- | --------- |
+| ESP32            | 1         |
+| Vibration Motor  | 1         |
+| Breadboard/PCB   | 1         |
+| 220 Ohm Resistor | 1         |
+| Wires            | 2         |
 
 Make sure the vibration motor operates in a range from 3V to 5V.
 
@@ -53,50 +56,108 @@ Make sure the vibration motor operates in a range from 3V to 5V.
 - Computer capable of running VSCode and Arduino
 - USB-C data transferring cable
 - Soldering station
-- Wires or jumper cables
 
-## Part 01: Controlling the Vibration Motor
+## Part 01: Assembling the Vibration Motor
 
 ### Introduction
 
-Briefly introduce what  you are teaching in this section.
+First we will connect a vibration motor directly to the ESP32 Dev board through the use of wires. You can also use a PCB or a breadboard, but this is the simplest way to do it.
 
 ### Objective
 
 - Wire vibration motor to ESP32 pins
-- Create python code to control vibration motor
 
 ### Background Information
 
-Give a brief explanation of the technical skills learned/needed
-in this challenge. There is no need to go into detail as a
-separation document should be prepared to explain more in depth
-about the technical skills
+You will need to know the basics of soldering to complete this step.
 
 ### Components
 
-- List the components needed in this challenge
+- 1 ESP32 Dev board
+- 1 Vibration motor
+- 220 Ohm resistor
+- Breadboard/PCB
+- Wires
 
 ### Instructional
 
-Teach the contents of this section
+First, solder one wire to each of two terminals of the vibration motor. Make sure that the connection is separated and secure. Then, attach one wire to the resistor, and the other side of the resistor to one of the VCC pins on the ESP32 Dev board. Attach the other wire to any one of the IO pins. For the purposes of this tutorial we will be using the IO21 pin, but the other IO pins should work as well.
 
-## Example
+Here is an example of a PCB setup:
 
-### Introduction
+![Image](https://github.com/user-attachments/assets/6d3eb2cd-9f30-4d04-a955-deac4093dbeb)
 
-Introduce the example that you are showing here.
+Here are the pin connections on the ESP32 board:
 
-### Example
+<img src="https://github.com/user-attachments/assets/b13305bb-e34f-4798-8879-59e4984ae455" alt="Alt text" width="200" height="270"/>
 
-Present the example here. Include visuals to help better understanding
+## Part 02: Controlling the Vibration Motor
 
-### Analysis
+### Objective
 
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+- Control the vibration motor through python in VSCode.
 
-## Additional Resources
+### Background Information
+
+You will need to set up the ESP32 Dev board in the same way that you did with the VU meter.
+Tutorial can be found here: [VU Meter](https://ece-196.github.io/docs/assignments/vu-meter/)
+
+### Components
+
+- USB-C data transferring cable
+- Computer
+- ESP32 Dev board with vibration motor connected
+  
+### Instructional
+
+After following the steps of the VU meter tutorial up to the initial circuit python code, we will set up the vibration motor in this way:
+
+```python
+import board
+from digitalio import DigitalInOut, Direction
+from time import sleep
+
+# setup pin
+vibration_motor = DigitalInOut(board.IO21) # Assign vibration motor to whichever pin you connected it to during assembly
+vibration_motor.direction = Direction.OUTPUT
+
+# main loop
+while True:
+    vib.value = True   # on
+    time.sleep(1)
+    vib.value = False  # off
+    time.sleep(1)
+
+```
+This code will toggle the vibration motor between on and off, but what if we wanted to control the intensity? We can do so by importing `pwmio` and change our code like so:
+
+```python
+import board
+from digitalio import DigitalInOut, Direction
+from time import sleep
+import pwmio
+
+# setup pin
+vibration_motor = pwmio.PWMOut(board.IO21, frequency=1000, duty_cycle=0) #Assign the correct pin you used
+int MAX_VAL = 65535 #maximum intensity for pwm
+
+# main loop
+while True:
+    vibration_motor.duty_cycle = int(0.5 * MAX_VAL) #half intensity
+    time.sleep(1)
+    vibration_motor.duty_cycle = int(1 * MAX_VAL) #full intensity
+    time.sleep(1)
+
+```
+
+As you can see we can now modify the intensity of the vibration motor like so.
+And now you are able to precisely configure the vibration motor using the ESP32 Dev board.
+Try expirimenting on your own different intensities and time delays for your vibration motor!
 
 ### Useful links
 
-List any sources you used, documentation, helpful examples, similar projects etc.
+[Circuit Python documentation](https://docs.circuitpython.org/en/latest/README.html)
+
+[Vibration Motor datasheet](https://www.vybronics.com/coin-vibration-motors/with-brushes/v-c0720b001f)
+
+[Resistor datasheet](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RHC2512FT220R/1646043)
