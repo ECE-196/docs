@@ -156,4 +156,4 @@ Observe acceleration output under normal and abnormal conditions.
 
 Tune threshold to respond only to meaningful motion.
 
-For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.
+For more control, filter motion on just one axis (e.g., z) if vertical impact matters most.lo
