@@ -42,6 +42,16 @@ customize these for each workshop.
 
 - Before anything, make sure you have Arduino IDE downloaded. [Use this link to download](https://www.arduino.cc/en/software/)
 
+The Following are the parts needed for this project:
+- IR Obstacle Detector   [For data Sheet Click Here!](https://www.handsontec.com/dataspecs/sensor/IR%20Obstacle%20Detector.pdf)
+- ESP32-Mini
+- USB Cable
+- LED (Perferably Red)
+- 220 ohm Resistor
+- Jumper Wires (male to male and male to female)
+- Breadboard
+
+
 ### Required Downloads and Installations
 
 List any required downloads and installations here.
