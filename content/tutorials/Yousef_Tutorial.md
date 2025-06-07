@@ -4,25 +4,19 @@
 ![Motion Detection Setup](Team5/ESP32.png)
 
 ## Introduction
-
 This tutorial will show how to light up LEDs connected to an ESP32 when abnormal motion is detected by an accelerometer.
 
 ### Learning Objectives
-
 -  Understand how to read and interpret accelerometer data using CircuitPython.
 - Detect sudden motion or acceleration beyond a threshold.
 - Trigger LEDs to respond to abnormal movement.
 
 ### Background Information
-
 - Accelerometers are sensors that measure acceleration forces. These forces may be static, like the constant force of gravity, or dynamic — caused by moving or vibrating the sensor.
-
 - In this project, we will detect sudden changes in acceleration (abnormal motion) and respond by turning on LEDs.
 
 ### Required Downloads and Installations
-
 Before you begin, you'll need to install a few things to program the ESP32 and interact with the accelerometer:
-
 ---
 
 #### 1. Install CircuitPython on Your ESP32 DevBoard  
@@ -52,19 +46,15 @@ Download and install from:
 [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 - Then install the **Python** and **Pymakr** extensions (optional but helpful).
-
 ---
 #### Pros:
 - Useful for fall detection and alert systems.
 - Easy to implement with CircuitPython.
 - Compatible with low-cost components.
-
 #### Cons:
 - Sensitive to orientation and noise.
 - Requires tuning threshold values for each use case.
-
 ---
-
 ### Materials Required
 
 | Component             | Quantity |
@@ -90,7 +80,6 @@ Download and install from:
    - Cathode (short leg) → GND  
 
 ---
-
 ## Part 02: Writing the Code
 
 - This section provides the CircuitPython code for detecting abnormal motion using an MPU6050 accelerometer. When motion exceeds a certain threshold, the ESP32 triggers an LED. This is ideal for applications such as fall detection, impact sensing, or security systems.
