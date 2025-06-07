@@ -150,12 +150,3 @@ Below are useful tools and references to help you complete, extend, or troublesh
   Download all `.mpy` libraries including `adafruit_mpu6050` and `adafruit_bus_device`:  
   [https://circuitpython.org/libraries](https://circuitpython.org/libraries)
 
-- **Visual Studio Code**  
-  Recommended code editor with Python support:  
-  [https://code.visualstudio.com/](https://code.visualstudio.com/)
-
-- **PWM and Accelerometer Basics**  
-  Learn how Pulse Width Modulation and accelerometers work:  
-  - PWM Tutorial: [https://learn.sparkfun.com/tutorials/pulse-width-modulation/all](https://learn.sparkfun.com/tutorials/pulse-width-modulation/all)  
-  - Accelerometer Overview: [https://learn.adafruit.com/accelerometer-basics](https://learn.adafruit.com/accelerometer-basics)
-
