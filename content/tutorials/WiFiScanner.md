@@ -45,6 +45,16 @@ List any required downloads and installations here.
 Make sure to include tutorials on how to install them.
 You can either make your own tutorials or include a link to them.
 
+  - The main environment for writing and uploading code to your ESP32.
+- **ESP32 Board Package for Arduino IDE**
+  1. Open Arduino IDE → *Preferences*.
+  2. In “Additional Board Manager URLs” add:  
+     ```
+     https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+     ```
+  3. Go to *Tools > Board > Boards Manager* and search for “ESP32”.  
+     Click **Install**.
+
 ### Required Components
 
 List your required hardware components and the quantities here.
