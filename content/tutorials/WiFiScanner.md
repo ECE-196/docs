@@ -275,10 +275,13 @@ This is the information you will use to connect to the Wi-Fi that you just creat
 
 ### Analysis
 
-Explain how the example used your tutorial topic. Give in-depth analysis of each part and show your understanding of the tutorial topic
+This project demonstrates how to use the ESP32’s built-in Wi-Fi hardware as a sensor to detect and report information about the wireless networks in its environment. By utilizing WiFi.h and WebServer.h libraries, we not only scan for available 2.4 GHz networks but also present this data to users in two accessible ways: through the Arduino Serial Monitor and via a simple web page hosted on the ESP32 itself. By following this tutorial, students gain hands-on experience with embedded Wi-Fi scanning, basic web serving, and troubleshooting real hardware/software interactions. These skills are foundational for networking and embedded systems projects.
 
 ## Additional Resources
 
 ### Useful links
+[Installing the ESP32 Board in Arduino IDE](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
 
-List any sources you used, documentation, helpful examples, similar projects etc.
+[ESP32 Useful Wi-Fi Library Functions](https://randomnerdtutorials.com/esp32-useful-wi-fi-functions-arduino/)
+
+[How to Set an ESP32 Access Point (AP) for Web Server](https://randomnerdtutorials.com/esp32-access-point-ap-web-server/)
