@@ -5,7 +5,7 @@ authors:
   - name: Ghsialin Demeester
 ---
 
-![relevant graphic or workshop logo](image/path)
+![LED flashing](Team17Photos/ledFlashing.jpg)
 
 ## Introduction
 
