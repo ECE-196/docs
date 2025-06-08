@@ -1,3 +1,9 @@
+---
+title: Bloch Sphere Quantum-Bit Model Tutorial
+date: 2025-06-06
+author:
+  - name: Miki Korol
+---
 Bloch Sphere Quantum-Bit Model Tutorial
 =======
 06-06-25
