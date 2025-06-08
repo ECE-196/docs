@@ -1,6 +1,6 @@
 ---
-title: Flash ESP32 Led after Succesful File Upload tutorial
-date: 2025-05-19
+title: Leaderboard and Flash ESP32 LED after Successful Upload
+date: 2025-06-06
 authors:
   - name: Ghsialin Demeester
 ---
