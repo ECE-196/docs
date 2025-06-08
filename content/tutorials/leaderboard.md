@@ -1,5 +1,5 @@
 ---
-title: My Super Awesome Tutorial
+title: Leaderboard tutorial
 date: 2025-05-19
 authors:
   - name: Ghsialin Demeester
@@ -9,68 +9,61 @@ authors:
 
 ## Introduction
 
-Write a short section on what the tutorial is aiming to accomplish.
-In this tutorial I want to teach people how to setup website that hosts a leaderboard and show it being updated with a LED flashing on an ESP32.
-What is the motivation behind the tutorial?
-I need to make a leaderboard for the fitness we are desigining so I can put what I learn into this tutorial
-What do you want readers to gain from the tutorial?
-I want it to be easy for readers to set up a leaderboard on a website.
+This tutorial will teach you how to build a **live leaderboard** and get your ESP32's led to flash once you've updated it! By the end of this tutorial you will:
 
+1. Build a simple web page that displays people's standings in real - time.
+2. Program an ESP32 to submit new scores and **flash an on-board LED** each time the POST succeeds.
+   
 ### Learning Objectives
 
-- Bullet list of skills/concepts to be covered
 - Web development(dealing with result requests)
 - ESP32, how to update leaderboard
-- LED flashing when updating leaderboard
-- 
+- Toggle LED flash when leaderboard is updated
+  
 
-Any additional notes from the developers can be included here.
 
 ### Background Information
 
 This leaderboard can keep track of the scores of you and your friends. 
-We need to understand website requests and wifi connection to understand clearly this tutorial.
-Describe your topic here. What does it do? Why do you use it?
-Are there other similar things to use? What are the pros and cons?
-Explain important concepts that are necessary to understand.
-Include (and cite if needed) any visuals that will help the audience understand.
+
+A leaderboard is essentially a **key/value database** (user → points) exposed via a REST interface.  
+We’ll implement two endpoints:
+
+| Action | HTTP Verb | Path      | Body / Params             | Purpose                    |
+|--------|-----------|-----------|---------------------------|----------------------------|
+| Read   | `GET`     | `/scores` | –                         | Return full standings      |
+| Write  | `POST`    | `/scores` | `{ "user": "...", "pts": n }` | Add or update a user score |
+
+
+
 
 ## Getting Started
 
-You will need VSCode, a computer to host the website and an ESP32 with an LED.
+Three pieces are required:
+1. **Computer** to host the API and front-end capable of running python and Arduino IDE
+2. **ESP32** with an LED either on-board or external
+3. **Network** this tutorial was tested with mobile hotspot
+
+### Required Downloads and Installations  
+
+| Tool / Library              | Purpose                         | Install Guide |
+|-----------------------------|---------------------------------|---------------|
+| **Python ≥ 3.10**           | Run FastAPI server              | <https://python.org> |
+| **FastAPI & Uvicorn**       | REST framework / ASGI host      | `pip install fastapi uvicorn` |
+| **Arduino IDE (or VS Code + PlatformIO)** | Flash ESP32 | <https://arduino.cc/en/software> |
+
+### Required Components  
+
+| Component Name            | Quantity |
+|---------------------------|----------|
+| ESP32 DevKit (S2/S3/C3)   | 1 |
+| USB cable (data-capable)  | 1 |
+| Breadboard LED (optional) | 1 |
+| 220 Ω resistor (if external LED) | 1 |
+| Jumper wires              | 2–3 |
 
 
-For any software prerequisites, write a simple excerpt on each
-technology the participant will be expecting to download and install.
-Aim to demystify the technologies being used and explain any design
-decisions that were taken. Walk through the installation processes
-in detail. Be aware of any operating system differences.
-For hardware prerequisites, list all the necessary components that
-the participant will receive. A table showing component names and
-quantities should suffice. Link any reference sheets or guides that
-the participant may need.
-The following are stylistic examples of possible prerequisites,
-customize these for each workshop.
 
-### Required Downloads and Installations
-
-List any required downloads and installations here.
-Make sure to include tutorials on how to install them.
-You can either make your own tutorials or include a link to them.
-
-### Required Components
-
-List your required hardware components and the quantities here.
-
-| Component Name | Quanitity |
-| -------------- | --------- |
-|                |           |
-|                |           |
-
-### Required Tools and Equipment
-
-List any tools and equipment you need here.
-(Ex, computer, soldering station, etc.)
 
 ## Part 01: Name
 
