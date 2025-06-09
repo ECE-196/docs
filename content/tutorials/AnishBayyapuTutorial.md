@@ -116,7 +116,9 @@ We’ll write a sketch that lights up each LED in solid red, then cycles through
 - Create a simple color-cycling loop.  
 ### Video
 
-<video width="640" controls> <source src="ABMedia/tutorial-part2.mov" type="video/quicktime"> Your browser does not support the video tag. </video>
+https://github.com/user-attachments/assets/7aa7db10-c95b-401f-bfc3-a8fc18ed6d51
+
+
 
 ### Instructional
 
@@ -158,7 +160,7 @@ void loop() {
 This example turns the NeoPixel strip into a horizontal progress meter. As the progress value increases, LEDs light up in a smooth gradient from green (0%) through yellow (50%) to red (100%).
 
 ### Video
-<video width="640" controls> <source src="ABMedia/tutorial-part2.mov" type="video/quicktime"> Your browser does not support the video tag. </video>
+https://github.com/user-attachments/assets/d883f0ae-f304-42a1-9c68-dc3172175f2d
 
 ### Sketch
 
