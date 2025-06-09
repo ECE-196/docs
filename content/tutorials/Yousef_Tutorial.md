@@ -1,9 +1,9 @@
 
 # ESP32 LED ALERT WHEN DETECTING ABNORMAL MOTION
-title: ESP32 LED ALERT WHEN DETECTING ABNORMAL MOTION
+---title: ESP32 LED ALERT WHEN DETECTING ABNORMAL MOTION
 date: 06-06-2025
 authors:
-  - name: Yousef Alkhunaizi
+  - name: Yousef Alkhunaizi---
 
 ![Motion Detection Setup](Team5/ESP32.png)
 
