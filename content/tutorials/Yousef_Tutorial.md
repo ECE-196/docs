@@ -6,7 +6,6 @@ date: 2025-05-07
 authors:
   - name: Yousef Alkhunaizi
 ---
-
 ![Motion Detection Setup](Team5/ESP32.png)
 
 ## Introduction
