@@ -5,7 +5,7 @@ Bestest ESP-32 RGB Web Server Tutorial Ever
 
 **Author:** *Long Phan*
 
-![RGB!] (Images/RGB.jpg)
+![RGB!] (RGB.jpg)
 
 ## Introduction
 
@@ -48,13 +48,12 @@ Below is everything you need to put the project on its feet and running.
 | Arduino IDE                  | ≥ 2.0   | Compile & upload firmware | Install the ESP32 by Espressif core via Boards Manager |
 | CP210x / CH34x Drivers       | Current | USB‑to‑UART bridge        | Needed if your OS doesn’t detect the DevKit            |
 | ESPAsyncWebServer + AsyncTCP | Latest  | Lightweight HTTP server   | Grab them through Library Manager                      |
-|                              |         |                           |                                                        |
 
 Quick‑start tip: If you’d rather not install extra libraries, you can stick with the built‑in WebServer.h. Just be aware it is single‑threaded and blocks while sending large pages.
 
 ### Required Components
 
-! [Components] (Images/Components.jpeg)
+! [Components] (Components.jpeg)
 
 |                Component Name                  | Quanitity |
 | ---------------------------------------------- | --------- |
@@ -63,7 +62,6 @@ Quick‑start tip: If you’d rather not install extra libraries, you can stick 
 | 220 Ω resistors                                |     3     |
 | Breadboard & jumper wires                      |   1 set   |
 | Micro‑USB cable                                |     1     |
-|                                                |           |
 
 ### Required Tools and Equipment
 
@@ -111,7 +109,7 @@ See the Required Components table above – nothing else is needed.
 
 ### Circuit/Wiring
 
-! [Circuit] (Images/Circuit.jpeg)
+! [Circuit] (Circuit.jpeg)
 
 ### Arduino Sketch Code
 
@@ -232,7 +230,7 @@ void loop() {
 ```
 ### Final Product!
 
-! [Done] (Images/done.jpeg)
+! [Done] (done.jpeg)
 
 ## Example
 
@@ -250,7 +248,7 @@ Let’s mix a teal colour (R = 0, G = 128, B = 128) to prove everyth
 
 - The LED should glow a pleasant teal.
 
-! [teal] (Images/teal.jpeg)
+! [teal] (teal.jpeg)
 
 ### Analysis
 
