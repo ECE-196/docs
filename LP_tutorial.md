@@ -5,7 +5,7 @@ Bestest ESP-32 RGB Web Server Tutorial Ever
 
 **Author:** *Long Phan*
 
-![RGB!] (RGB.jpg)
+![RGB!](RGB.jpg)
 
 ## Introduction
 
@@ -53,7 +53,7 @@ Quick‑start tip: If you’d rather not install extra libraries, you can stick 
 
 ### Required Components
 
-! [Components] (Components.jpeg)
+![Components](Components.jpeg)
 
 |                Component Name                  | Quanitity |
 | ---------------------------------------------- | --------- |
@@ -109,7 +109,7 @@ See the Required Components table above – nothing else is needed.
 
 ### Circuit/Wiring
 
-! [Circuit] (Circuit.jpeg)
+![Circuit](Circuit.jpeg)
 
 ### Arduino Sketch Code
 
@@ -248,7 +248,7 @@ Let’s mix a teal colour (R = 0, G = 128, B = 128) to prove everyth
 
 - The LED should glow a pleasant teal.
 
-! [teal] (teal.jpeg)
+![teal](teal.jpeg)
 
 ### Analysis
 
