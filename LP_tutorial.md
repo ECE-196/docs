@@ -230,7 +230,7 @@ void loop() {
 ```
 ### Final Product!
 
-! [Done] (done.jpeg)
+![Done](done.jpeg)
 
 ## Example
 
