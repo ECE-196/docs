@@ -89,10 +89,12 @@ An Organic Light-Emitting Diode (OLED) display is a type of screen that uses org
 Since the OLED display uses I2C to communicate with the ESP32-S3 Dev Board, the OLED display can be directly wired to the ESP32-S3 Dev Board. 
 
 Using your 4 male to female jumper wires, connect the following. 
-- Connect the Vin pin on the OLED to the 3.3V pin on the ESP32
+- Connect the VCC pin on the OLED to the 3.3V pin on the ESP32
 - Conenct the GND pin on the OLED to the GND pin on the ESP32
-- Connect the SCL pin on the OLED to the 22 pin on the ESP32
-- Connect the SDA pin on the OLED to the 21 pin on the ESP32
+- Connect the SCL pin on the OLED to the 45 pin on the ESP32
+- Connect the SDA pin on the OLED to the 46 pin on the ESP32
+
+![OLED connected to ESP32-S3](./Ferrari-assets/IMG_4777.jpg)
 
 #### Software
 
@@ -107,6 +109,38 @@ Note: If you are on the legacy version of Arduino IDE, you may need to add the [
 There are some example code for you to refer to under `File > Examples > Adafruit SSD1306`
 <br>
 Connect your ESP32-S3 Dev Board to your computer with a USB C cable and try them out. 
+
+Here is some code for you to get started with:
+```
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_GFX.h>
+#include <Wire.h>
+#include <SPI.h>
+
+const int OLED_WIDTH = 128;
+const int OLED_HEIGHT = 16;
+const int reset = -1;
+
+#define OLED_ADDR   0x3C
+
+#define SCL_PIN     45
+#define SDA_PIN     46
+
+Adafruit_SSD1306 display(OLED_WIDTH, OLED_HEIGHT, &Wire, reset);
+
+void setup(){
+    Serial.begin(115200);
+    Wire.begin(SDA_PIN, SCL_PIN);
+    display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+    display.display();
+    delay(10000);
+    display.clearDisplay();
+}
+
+void loop(){
+   
+}
+```
 
 You may read the article in the Sources and Useful Links section (first link) to learn all the functions for the [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306) library to create your own pictures. 
 
