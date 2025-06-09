@@ -258,7 +258,7 @@ The sliders sent a GET request like /slider?r=0&g=128&b=128. In the handler, tho
 
 ### Useful links
 
-- Random Nerd Tutorials – ESP32 Web Server: Control an RGB LED https://randomnerdtutorials.com/esp32-rgb-led-web-server/
+- Random Nerd Tutorials – ESP32 Web Server: Control an RGB LED https://randomnerdtutorials.com/esp32-web-server-beginners-guide/#more-169410
 
 - Espressif docs – LEDC PWM Controller overview https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/ledc.html
 
