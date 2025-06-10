@@ -77,8 +77,8 @@ Here you'll wire each ESP32 S3 Mini 1 to its own LoRa module. Proper wiring ensu
 
 Photos below show the labeled pins on the underside of the ESP32 S3 Mini 1 and the layout of the RYLR993 LoRa module, including GND, TXD, RXD, RST (not used), and VDD.
 
-![ESP32 S3 Mini 1 Pinout](images/esp32-bottom.jpeg)
-![RYLR993 Module Pinout](images/ryl993-front.jpeg)
+![ESP32 S3 Mini 1 Pinout](../support/images/esp32-bottom.jpeg)
+![RYLR993 Module Pinout](../support/images/ryl993-front.jpeg)
 
 ### Objective
 
@@ -119,7 +119,7 @@ Repeat these steps for the second ESP32 and second LoRa module using the second 
 
 Make sure both boards are connected to power either through your computer or a USB-C power bank before continuing.
 
-![Wired ESP32 to RYLR993](images/wired-esp32-ryl993.jpeg)
+![Wired ESP32 to RYLR993](../support/images/wired-esp32-ryl993.jpeg)
 
 ## Part 02: Sending a Basic Message with AT Commands
 
@@ -299,8 +299,8 @@ This example shows how the receiver ESP32 responds to messages from the sender b
 
 Once both ESP32 boards are powered and running the correct code, the LED on the receiver should turn on for 5 seconds, then turn off for 5 seconds, repeating continuously. The message "H" turns the LED on, and "L" turns it off. This confirms that LoRa communication is working and the receiver is correctly parsing the message.
 
-![LED ON](images/led-on.jpeg)
-![LED OFF](images/led-off.jpeg)
+![LED ON](../support/images/led-on.jpeg)
+![LED OFF](../support/images/led-off.jpeg)
 
 ### Analysis
 
