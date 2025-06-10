@@ -5,7 +5,7 @@ author:
   - name: Joshua Villanueva
 ---
 
-![LORA_WORKSHOP](content/support/images/lora-workshop-logo.jpeg)
+![LORA_WORKSHOP](images/workshop-logo.jpeg)
 
 ## Introduction
 
