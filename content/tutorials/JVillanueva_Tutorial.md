@@ -318,7 +318,7 @@ With this setup, your ESP32 boards automatically communicate over LoRa without n
 
 If your LoRa modules aren't communicating, first check your antenna connections. For detailed configuration steps like setting the right frequency, address, and operating mode, refer directly to the following guide. It clearly explains how to verify and correct these settings:
 
-[RYLR993 Configuration Troubleshooting Guide](Mini_Project_3/content/support/RYLR993_Config_Guide.md)  
+[RYLR993 Configuration Troubleshooting Guide](../support/RYLR993_Config_Guide.md)  
 *Credit to Sebastian Campos for the Configuration Troubleshooting Guide
 
 Make sure your wiring matches the recommended TX and RX connections from the guide, and double-check antenna connections carefully.
