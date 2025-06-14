@@ -3,7 +3,7 @@
 The ECE 196 website, visit [here](https://ece-196.github.io/docs).
 
 ---
-title: Windows Blink ESP32 Digital Privacy Window Tutorial
+title: ESP32 Digital Privacy Window Tutorial
 date: 2025-06-06
 authors:
   - name: Jason Young
@@ -362,3 +362,4 @@ We’ll diagnose a non-switching film.
 - [ESP32 Troubleshooting Guide](https://randomnerdtutorials.com/esp32-troubleshooting-guide/)
 - [DIY Window Film Installation Videos](https://www.apexfilms.ca/video-tutorials) [6]
 - [Smart Privacy Glass Installation Guide](https://www.smartglasscountry.com/installation/)
+
