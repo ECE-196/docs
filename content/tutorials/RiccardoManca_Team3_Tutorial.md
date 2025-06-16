@@ -5,7 +5,7 @@ authors:
   name: Riccardo Augusto Manca
 ---
 
-![](RiccardoManca_Team3_Tutorial_Photos/ultrasonic-sensor.png)
+![test name](RiccardoManca_Team3_Tutorial_Photos/ultrasonic-sensor.png)
 
 This tutorial will guide you through using an **ultrasonic sensor** with an **ESP32** Devboard. Ultrasonic sensors are used to measure distance using sound waves, and they are usually used for obstacle detection.
 
@@ -44,7 +44,7 @@ Ultrasonic sensors are electronic devices that measure the distance to an object
   5. The ECHO pin goes LOW, after it hears the second wave. The period of time the pin was high, is equal to the round-trip time of the sound wave.
   6. By measuring this time in microseconds and applying the formula, we will get the total distance:
   
-  ![](RiccardoManca_Team3_Tutorial_Photos/formula_distance.png)
+![](RiccardoManca_Team3_Tutorial_Photos/formula_distance.png)
 
 - **It can detect objects between 2 cm and 400 cm away**
 

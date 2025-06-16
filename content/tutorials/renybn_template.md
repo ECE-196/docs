@@ -5,7 +5,7 @@ authors:
 name: Renato Navarro
 ---
 
-![Arduino IDE + EPS32](/Users/renybn/Desktop/arduino_esp32_hybrid_logo.png)
+![Arduino IDE + EPS32](/misc_images/arduino_esp32_hybrid_logo.png)
 
 ## Introduction
 
@@ -116,13 +116,13 @@ Create an AND gate using the components up above. Surpirsingly, there are a vari
 
 Below is the schematic that you will be creating your circuit from
 
-![circuit schematic](/Users/renybn/Desktop/circuit_schematic_redo.png)
+![circuit schematic](/misc_images/circuit_schematic_redo.png)
 
 ### Example
 
 Here is a real-life example of the how the circuit should look like. 
 
-![irl circuit representation](/Users/renybn/Desktop/irl_circuit_fr.png)
+![irl circuit representation](/misc_images/irl_circuit_fr.png)
 
 ### Analysis
 
