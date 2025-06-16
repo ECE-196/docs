@@ -87,12 +87,12 @@ In this section you will learn how to wire everything needed!
 ## Components
 
 
-![IR Obstacle Detector](content/tutorials/Breadboard.jpg)
-![ESP32 Mini](content/tutorials/Breadboard.jpg)
-![Jumper Wires](content/tutorials/Breadboard.jpg)
-![LED](content/tutorials/Breadboard.jpg)
-![Resistor](content/tutorials/Breadboard.jpg)
-![Bread Board](content/tutorials/Breadboard.jpg)
+![IR Obstacle Detector](content/tutorials/misc_images/Breadboard.jpg)
+![ESP32 Mini](content/tutorials/misc_images/Breadboard.jpg)
+![Jumper Wires](content/tutorials/misc_images/Breadboard.jpg)
+![LED](content/tutorials/misc_images/Breadboard.jpg)
+![Resistor](content/tutorials/misc_images/Breadboard.jpg)
+![Bread Board](content/tutorials/misc_images/Breadboard.jpg)
 
 
 ### Instructional
@@ -101,8 +101,8 @@ In this section you will learn how to wire everything needed!
 - Step 2: Write code on Arduino IDE
 - Step 3: Test
 
-![Image of Everything Wired Up](content/tutorials/Breadboard.jpg)
-![Screenshot of Arduino Code Used](content/tutorials/Breadboard.jpg)
+![Image of Everything Wired Up](content/tutorials/misc_images/Breadboard.jpg)
+![Screenshot of Arduino Code Used](content/tutorials/misc_images/Breadboard.jpg)
 
 
 ### Analysis
