@@ -20,7 +20,7 @@ For now, we will start simple by simply measuring the current and voltage across
 ## Wiring
 Here is a picture of everything put together.
 
-![my image](./IMG_2875.JPG)
+![my image](./misc_images/IMG_2875.JPG)
 
 Below is a step-by-step guide to wiring the circuit:
 1. Lay out your parts, making sure you have all the materials needed.
@@ -46,7 +46,7 @@ Using Arduino C, we will be able to read the current and voltage. Again, it is c
 
 Now, watch your circuit read data. :)
 
-![my image](./IMG_2868.JPG)
+![my image](./misc_images/IMG_2868.JPG)
 
 Very good! At this point, the tutorial for using the INA219 is over. It is that simple. 
 
@@ -57,7 +57,7 @@ It is great that we can see current and voltage. However, how about we apply thi
 
 We will use a typical servo monitor, I will be using the 9g Tiankongrc servo motor. You can also use a TowerPro servo motor, just be sure it a PWM-controlled servo.
 
-![my.image](./IMG_3195.JPG)
+![my.image](./misc_images/IMG_3195.JPG)
 
 ## Wiring
 Now, let's wire this motor. This will be relatively straightforward compared to the INA219.
@@ -87,7 +87,7 @@ Now, watch the code work it's magic! The servo should begin to spin.
 
 How are we going to apply this with our current sensor? Merge the INA219 example code with the servo code. Wire accordingly, and make sure you understand the order of where the wires are placed.
 
-![my.image](./IMG_3196.JPG)
+![my.image](./misc_images/IMG_3196.JPG)
 
 ```
 #include <Servo.h>
@@ -187,6 +187,6 @@ Using Arduino C, we will be able to read the current and voltage. Again, it is c
 
 Now, watch your circuit read data. :)
 
-![my image](./IMG_2868.JPG)
+![my image](./2868.JPG)
 
 >>>>>>> 0b332635d4413c95403bcd2156f858628f09822f
