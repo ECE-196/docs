@@ -1,5 +1,3 @@
-
-
 ---
 title: Tempature/Gas sensors on ESP32
 date: 2025-06-06

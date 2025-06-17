@@ -5,7 +5,7 @@ authors:
   - name: Majd Abu-Shamiyeh
 ---
 
-![ESP32+MPU-6050](./ESP32-MPU6050-Module-Accelerometer-Gyroscope-Temperature-Sensor-Arduino.jpg)
+![ESP32+MPU-6050](./misc_images/ESP32-MPU6050-Module-Accelerometer-Gyroscope-Temperature-Sensor-Arduino.jpg)
 
 ## Introduction
 This tutorial is aiming to teach how to interface an accelerometer sensor with an ESP32 Dev Board to detect motion. The motivation behind this tutorial is to help measure forces in all directions which allow to detect shakes, tilts and falls. I want readers to understand how to detect any type of motion and understand how to link the accelerometer with the Dev Board and how they can work correspondingly.
@@ -83,7 +83,7 @@ Firstly, you would need to understand the ESP32 Dev board functionality in relat
 6. Connect MPU-6050 pin to GND and set it's address
 7. Upload I^2C sketch and verify that device is found using serial monitor
 
-![Example of I2C Scanner Monitor](./MPU6050_ESP32_Wiring-Schematic-Diagram.webp)
+![Example of I2C Scanner Monitor](./misc_images/MPU6050_ESP32_Wiring-Schematic-Diagram.webp)
 
 
 ## Example
@@ -93,7 +93,7 @@ Firstly, you would need to understand the ESP32 Dev board functionality in relat
 This is an example of how the I^2C scanner confirms that the MPU-6050 is connected and the sensor is communicating with the board effectively.
 
 ### Example
-![Example of I2C Scanner Monitor](./gy87-i2c.webp)
+![Example of I2C Scanner Monitor](./misc_images/gy87-i2c.webp)
 
 This is the expected output on the serial monitor showing that the device was successfully connected with the corrrect address.
 

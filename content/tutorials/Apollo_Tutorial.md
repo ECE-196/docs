@@ -161,7 +161,7 @@ For now, we will start simple by simply measuring the current and voltage across
 ## Wiring
 Here is a picture of everything put together.
 
-![my image](./IMG_2875.JPG)
+![my image](./misc_images/IMG_2875.JPG)
 
 Below is a step-by-step guide to wiring the circuit:
 1. Lay out your parts, making sure you have all the materials needed.
